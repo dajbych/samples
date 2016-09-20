@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>3D Transforms</title>
+    <style type="text/css">
+        html, body, #parentDiv {
+            height: 100%;
+        }
+
+        body {
+            background: black;
+            overflow: hidden; /* Mars - Gale Crater */
+            background: black url(http://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA14293-1024x768.jpg) no-repeat center center;
+        }
+        
+        #childDiv {
+            font-size: 20pt;
+            font-family: Verdana, Sans-Serif;
+            color: #FFFF99;
+            width: 500px;
+            text-align: justify;
+            padding-left: 5px;
+            padding-right: 5px;
+            -ms-animation: scrollText 200s linear infinite;
+            -webkit-animation: scrollText 200s linear infinite;
+            -moz-animation: scrollText 200s linear infinite;
+            -o-animation: scrollText 200s linear infinite;
+            margin: auto;
+        }
+        
+        #parentDiv {
+            -ms-perspective: 500px;
+            -ms-perspective-origin: 50% 500px;
+            -webkit-perspective: 500px;
+            -webkit-perspective-origin: 50% 500px;
+			-moz-perspective: 500px;
+            -moz-perspective-origin: 50% 500px;
+			-o-perspective: 500px;
+            -o-perspective-origin: 50% 500px;
+            overflow: hidden;
+        }
+        
+        @-ms-keyframes scrollText {
+	        0%		{ -ms-transform: rotateX(45deg) translateY(500px); }
+	        100%	{ -ms-transform: rotateX(45deg) translateY(-8300px); }
+        }
+
+        @-webkit-keyframes scrollText {
+	        0% { -webkit-transform: rotateX(45deg) translateY(500px); }
+	        100% { -webkit-transform: rotateX(45deg) translateY(-8300px); }
+        }
+
+        @-o-keyframes scrollText {
+	        0% { -o-transform: rotateX(45deg) translateY(500px); }
+	        100% { -o-transform: rotateX(45deg) translateY(-8300px); }
+        }
+
+        @-moz-keyframes scrollText {
+	        0% { -moz-transform: rotateX(45deg) translateY(500px); }
+	        100% { -moz-transform: rotateX(45deg) translateY(-8300px); }
+        }
+    </style>
+</head>
+<body>
+    <div id="parentDiv">
+        <div id="childDiv">
+            <h2>Episode 3D</h2>
+            <h3>CSS 3D Transforms</h3>
+            <p>If your browser supports animation of CSS 3D Transforms, this text should look like
+                it's moving further away from you.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut turpis nibh,
+                at convallis ipsum. Sed commodo tortor eu dui lacinia vitae hendrerit neque rhoncus.
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                himenaeos. Nam tincidunt rutrum porta. Nulla posuere, risus ut faucibus imperdiet,
+                nisi mi euismod lacus, vitae dignissim ante nibh at elit. Maecenas quis nisi in
+                metus porttitor interdum nec consectetur est. Donec elit mauris, commodo tristique
+                ultrices et, luctus a quam. </p>
+            <p>Fusce in elit a enim sollicitudin mollis vel a purus. Nam auctor molestie justo,
+                nec tempus elit faucibus at. Integer dictum erat vitae magna dapibus a scelerisque
+                massa malesuada. Duis vitae odio augue. Nunc vitae ipsum diam, sit amet placerat
+                nunc. Fusce sagittis quam eget ligula placerat malesuada. Pellentesque vel porta
+                velit.</p>
+        </div>
+    </div>
+</body>
+</html>

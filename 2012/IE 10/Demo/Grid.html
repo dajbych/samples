@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Grid</title>
+    <style type="text/css">
+
+        html, body, section {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            color: #fff;
+            font-size: 2.5em;
+            font-family: Consolas;
+        }
+
+        section {
+            display: -ms-grid;
+            -ms-grid-columns: 200px 4fr 1fr;
+            -ms-grid-rows: 100px 1fr 50px;
+        }
+
+        header {
+            -ms-grid-column: 1;
+            -ms-grid-row: 1;
+            -ms-grid-column-span: 3;
+            background-color: #7da131;
+        }
+ 
+        nav {
+            -ms-grid-column: 1;
+            -ms-grid-row: 2;
+            background-color: #228ece;
+        }
+ 
+        article {
+            -ms-grid-column: 2;
+            -ms-grid-row: 2;
+            background-color: #517700;
+        }
+ 
+        aside {
+            -ms-grid-column: 3;
+            -ms-grid-row: 2;
+            background-color: #696969;
+        }
+                         
+        footer {
+            -ms-grid-column: 1;
+            -ms-grid-row: 3;
+            -ms-grid-column-span: 3;
+            background-color: #2b380f;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <header>&lt;header&gt;</header>
+        <nav>&lt;nav&gt;</nav>
+        <article>&lt;article&gt;</article>
+        <aside>&lt;aside&gt;</aside>
+        <footer>&lt;footer&gt;</footer>
+    </section>
+</body>
+</html>

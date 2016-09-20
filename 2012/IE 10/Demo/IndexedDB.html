@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>IndexedDB</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script type="text/ecmascript">
+        var db;
+
+        if (window.addEventListener) {
+            window.addEventListener('DOMContentLoaded', initDB, false);
+        }
+
+        function initDB() {
+            if (window.indexedDB) {
+                var rq = indexedDB.open('Demo Database', 1);
+                rq.onsuccess = function (evnt) {
+                    db = evnt.target.result;
+                    showDB();
+                };
+                rq.onupgradeneeded = function (evnt) {
+                    db = evnt.target.result;
+                    $('#messages').prepend('Úložiště vytvořeno.<br/>');
+                    var store = db.createObjectStore('StoreName', { keyPath: 'id', autoIncrement: true });
+                    store.createIndex('IndexName', 'id', { unique: true });
+                };
+                rq.onerror = function (evnt) {
+                    $('#messages').prepend('Chyba databáze #' + evt.target.errorCode + '<br/>');
+                };
+            }
+        }
+
+        function showDB() {
+            $('#databaseTable').empty();
+            var transaction = db.transaction('StoreName', 'readonly');
+            var objectStore = transaction.objectStore('StoreName');
+            var request = objectStore.openCursor();
+            request.onsuccess = function (evnt) {
+                var cursor = evnt.target.result;
+                if (cursor) {
+                    $('#databaseTable').append('<tr><td>' + cursor.key + '</td><td><input id="record' + cursor.key + '" value="' + cursor.value.text + '"/></td><td><input type="submit" onclick="updateRecord(' + cursor.key + ')" value="Upravit"/></td><td><input type="submit" onclick="deleteRecord(' + cursor.key + ')" value="Smazat"/></td></tr>');
+                    cursor.continue();
+                }
+            };
+        }
+
+        function deleteDB() {
+            if (db != null) db.close();
+            indexedDB.deleteDatabase('Demo Database');
+            $('#messages').prepend('Smazáno.<br/>');
+        }
+
+        function insertRecord() {
+            var record = new Object();
+            record.text = $('#recordText').val();
+            var transaction = db.transaction('StoreName', 'readwrite');
+            var objectStore = transaction.objectStore('StoreName');
+            objectStore.add(record);
+            $('#messages').prepend('Záznam vložen.<br/>');
+            showDB();
+        }
+
+        function updateRecord(key) {
+            var record = { id: key, text: $('#record' + key).val() };
+            var transaction = db.transaction('StoreName', 'readwrite');
+            var objectStore = transaction.objectStore('StoreName');
+            objectStore.put(record);
+            $('#messages').prepend('Záznam ' + key + ' byl upraven.<br/>');
+            showDB();
+        }
+
+        function deleteRecord(key) {
+            var transaction = db.transaction('StoreName', 'readwrite');
+            var objectStore = transaction.objectStore('StoreName');
+            objectStore.delete(key);
+            $('#messages').prepend('Záznam ' + key + ' byl smazán.<br/>');
+            showDB();
+        }
+    </script>
+</head>
+<body>
+    <table id="databaseTable"></table>
+    <br />
+    <br />
+    <input id="recordText" />
+    <input type="submit" id="insertBtn" value="Vložit" onclick="insertRecord()" />
+    <br />
+    <br />
+    <input type="submit" id="deleteBtn" value="Smazat" onclick="deleteDB()"/>
+    <br />
+    <br />
+    <div id="messages"></div>
+</body>
+</html>

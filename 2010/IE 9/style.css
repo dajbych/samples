@@ -1,0 +1,103 @@
+﻿/* Web Open Font Format */
+
+@font-face {
+    font-family: Ubuntu WOFF;
+    src: url(Ubuntu-R.woff);
+}
+
+@font-face {
+    font-family: Ubuntu WOFF;
+    src: url(Ubuntu-I.woff);
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Ubuntu WOFF;
+    src: url(Ubuntu-B.woff);
+    font-weight: bold;
+}
+
+/* Embedded OpenType */
+
+@font-face {
+    font-family: Ubuntu EOT;
+    src: url(Ubuntu-R.eot);
+}
+
+@font-face {
+    font-family: Ubuntu EOT;
+    src: url(Ubuntu-B.eot);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Ubuntu EOT;
+    src: url(Ubuntu-I.eot);
+    font-style: italic;
+}
+
+/* TrueType */
+
+@font-face {
+    font-family: Ubuntu TTF;
+    src: url(Ubuntu-R.ttf);
+}
+
+@font-face {
+    font-family: Ubuntu TTF;
+    src: url(Ubuntu-I.ttf);
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Ubuntu TTF;
+    src: url(Ubuntu-B.ttf);
+    font-weight: bold;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Ubuntu EOT, Ubuntu WOFF, Ubuntu TTF;
+}
+
+p {
+    font-size: 2em;
+}
+
+a {
+    outline-style: none;
+    text-decoration: none;
+    color: Black;
+}
+
+iframe {
+    display: none;
+}
+
+button {
+    outline-style: none;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0 170px 0;
+    background: white url(wave.png) bottom center no-repeat;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+section * {
+    margin-left: 30px;
+}
+
+#transform > img {
+    margin: 100px 100px 100px 250px;
+}
+
+#transform > img:hover {
+    -ms-transform: rotate(10deg) scale(1.5);
+}

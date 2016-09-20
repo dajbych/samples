@@ -1,0 +1,11 @@
+﻿<Application x:Class="Dajbych.Demo6.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:Dajbych.Demo6.Converters"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <c:MachineToUriConverter x:Key="MachineToUriConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

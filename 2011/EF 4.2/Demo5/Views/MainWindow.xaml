@@ -1,0 +1,74 @@
+﻿<Window x:Class="Dajbych.Demo5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:s="clr-namespace:Dajbych.Demo5.Selectors"
+        xmlns:vm="clr-namespace:Dajbych.Demo5.ViewModels"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="listbox" TargetType="ListBox">
+                <Style.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
+                </Style.Resources>
+                <Setter Property="BorderBrush" Value="White"/>
+            </Style>
+            <Style x:Key="zeropadding" TargetType="ListBoxItem">
+                <Setter Property="Padding" Value="0,1,0,1" />
+            </Style>
+            <Style x:Key="selectableListBox" TargetType="TextBox">
+                <Setter Property="IsHitTestVisible" Value="False" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource FindAncestor,AncestorType=ListBoxItem}}" Value="True">
+                        <Setter Property="IsHitTestVisible" Value="True" />
+                        <Setter Property="FocusManager.FocusedElement" Value="{Binding RelativeSource={RelativeSource Self}}"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="bgrect" TargetType="Rectangle">
+                <Setter Property="StrokeThickness" Value="3"/>
+                <Setter Property="RadiusX" Value="5"/>
+                <Setter Property="RadiusY" Value="5"/>
+                <Setter Property="Stroke" Value="Black"/>
+                <Setter Property="Fill" Value="LightBlue"/>
+                <Style.Triggers>
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource FindAncestor,AncestorType=ListBoxItem}}" Value="True" />
+                            <Condition Binding="{Binding TypeName}" Value="Boeing"/>
+                        </MultiDataTrigger.Conditions>
+                        <Setter Property="Fill" Value="LightGreen" />
+                    </MultiDataTrigger>
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource FindAncestor,AncestorType=ListBoxItem}}" Value="True" />
+                            <Condition Binding="{Binding TypeName}" Value="Airbus"/>
+                        </MultiDataTrigger.Conditions>
+                        <Setter Property="Fill" Value="LightGoldenrodYellow" />
+                    </MultiDataTrigger>
+                </Style.Triggers>
+            </Style>
+            <DataTemplate x:Key="airbus">
+                <Grid Width="240" Height="75">
+                    <Rectangle Style="{StaticResource bgrect}" />
+                    <TextBox Style="{StaticResource selectableListBox}" Name="value" Height="29" Margin="12,34,12,0" VerticalAlignment="Top" Background="White" />
+                    <Label Content="{Binding Name}" Height="28" Margin="12,6,12,0" Name="name" VerticalAlignment="Top" />
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="boeing">
+                <Grid Width="240" Height="75">
+                    <Rectangle Style="{StaticResource bgrect}" />
+                    <Label Content="{Binding Name}" Height="28" Margin="12,6,12,0" Name="name" VerticalAlignment="Top" />
+                </Grid>
+            </DataTemplate>
+            <s:PropertyDataTemplateSelector x:Key="templateSelector" Airbus="{StaticResource airbus}" Boeing="{StaticResource boeing}"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.DataContext>
+        <vm:WorkspaceViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <ListBox Name="listBox" ItemsSource="{Binding Aircrafts}" HorizontalAlignment="Left" Width="250" ItemContainerStyle="{StaticResource zeropadding}" ItemTemplateSelector="{StaticResource templateSelector}" Style="{StaticResource listbox}" />
+        <Label Content="{Binding ElementName=listBox, Path=SelectedItem.Name}" Height="28" HorizontalAlignment="Left" Margin="357,74,0,0" Name="label1" VerticalAlignment="Top" />
+    </Grid>
+</Window>

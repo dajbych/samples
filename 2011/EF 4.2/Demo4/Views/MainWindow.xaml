@@ -1,0 +1,43 @@
+﻿<Window x:Class="Dajbych.Demo4.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wm="clr-namespace:Dajbych.Demo4.ViewModels"
+        Title="Václav Dajbych – MVVM" Height="500" Width="900" ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="listbox" TargetType="ListBox">
+                <Style.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
+                </Style.Resources>
+                <Setter Property="BorderBrush" Value="White"/>
+            </Style>
+            <Style x:Key="zeropadding" TargetType="ListBoxItem">
+                <Setter Property="Padding" Value="0" />
+            </Style>
+            <DataTemplate x:Key="aircraft">
+                <Grid Width="200" Height="70">
+                    <Rectangle Name="rectangle" RadiusX="5" RadiusY="5" Margin="5" StrokeThickness="1" Stroke="DimGray" Fill="White"/>
+                    <Label Content="{Binding Manufacturer}" Margin="12,12,0,0" Height="19" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" FontWeight="SemiBold" Padding="2,0,0,0" />
+                    <Label Content="{Binding Type}" Margin="55,12,0,0" Height="19" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" FontWeight="SemiBold" Padding="2,0,0,0" />
+                    <Label Content="{Binding Name}" Margin="12,30,0,0" Height="19" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Padding="2,0,0,0" />
+                </Grid>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="True">
+                        <Setter TargetName="rectangle" Property="Fill" Value="SkyBlue"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+            <DataTemplate x:Key="image">
+                <Image Source="{Binding Uri}" Width="655" />
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.DataContext>
+        <wm:WorkspaceViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <ListBox ItemsSource="{Binding Aircrafts}" SelectedValuePath="Images" Name="aircraftList" Style="{StaticResource listbox}" ItemContainerStyle="{StaticResource zeropadding}" ItemTemplate="{StaticResource aircraft}" Width="205" HorizontalAlignment="Left" />
+        <ListBox ItemsSource="{Binding Path=SelectedValue, ElementName=aircraftList}" Style="{StaticResource listbox}" ItemContainerStyle="{StaticResource zeropadding}" ItemTemplate="{StaticResource image}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="205,0,0,0" />
+    </Grid>
+</Window>

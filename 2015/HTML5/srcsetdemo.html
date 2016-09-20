@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title>srcset</title>
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body style="">
+        <div style="width: 60%; padding: 2rem; margin: 0 auto; background-color: rgb(220, 220, 220); height: 100%">
+
+
+            <img src="200.png" srcset="300.png 1.5x, 400.png 2x" />
+
+            <br /><br /><br />
+
+            <img src="200.png" srcset="200.png 600w, 300.png 1200w, 400.png 2400w" style="width: 100%" />
+
+        </div>
+    </body>
+</html>

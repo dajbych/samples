@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Gradient</title>
+    <style type="text/css">
+    html, body {
+        height: 100%;
+        margin: 0;
+        background-color: #f5e4c6;
+    }
+    
+    div {
+        width: 50%;
+        height: 600px;
+        float: left;
+    }
+    
+    #left {
+        background-image: -ms-linear-gradient(top, #38295e 0%, #49a3d3 35%, #f5e4c6 99%);
+        /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#000000');*/ /* ActiveX IE 5.5 - 9 */
+    }
+    
+    #right {
+        background: #f5e4c6 url(http://mff.dajbych.net/design/bg.png) repeat-x;
+    }
+    </style>
+</head>
+<body>
+    <div id="left"></div>
+    <div id="right"></div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="Václav Dajbych" />
+        <title>Internet Explorer 9 Beta</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="shortcut icon" href="favicon.ico" />
+
+        <!-- Site Pin -->
+        <meta name="application-name" content="Internet Explorer 9 Beta"/> 
+        <meta name="msapplication-tooltip" content="Start the page in Site Mode"/> 
+        <meta name="msapplication-starturl" content="http://ie.dajbych.net/"/> 
+        <meta name="msapplication-window" content="width=924;height=668"/> 
+        <meta name="msapplication-navbutton-color" content="#0f86d5"/>
+
+        <!-- Jump List -->
+        <meta name="msapplication-task" content="name=Vykreslování;action-uri=http://ie.dajbych.net/#gpu;icon-uri=drive.ico" />
+        <meta name="msapplication-task" content="name=Video;action-uri=http://ie.dajbych.net/#video;icon-uri=xp.ico" />
+        <meta name="msapplication-task" content="name=Canvas;action-uri=http://ie.dajbych.net/#canvas;icon-uri=xp.ico" />
+        <meta name="msapplication-task" content="name=Selektory;action-uri=http://ie.dajbych.net/#selectors;icon-uri=fix.ico" />
+        <meta name="msapplication-task" content="name=SVG;action-uri=uri=http://ie.dajbych.net/#svg;icon-uri=xp.ico" />
+
+        <!-- Preview Buttons -->
+        <script type="text/javascript">
+            var btnPlay, btnPause;
+            
+            function init() {
+                btnPlay = window.external.msSiteModeAddThumbBarButton('play.ico', 'Play');
+                btnPause = window.external.msSiteModeAddThumbBarButton('pause.ico', 'Pause');
+                window.external.msSiteModeShowThumbBar();
+            }
+
+            function onButtonClicked(e) {
+                var videos = document.getElementsByTagName('video');
+
+                switch (e.buttonID) {
+                    case btnPlay:
+                        videos[0].play();
+                        break;
+                    case btnPause:
+                        videos[0].pause();
+                        break;
+                }
+            }
+
+            if (window.addEventListener) {
+                document.addEventListener('msthumbnailclick', onButtonClicked, false);
+                window.addEventListener('load', init, false);
+            }
+        </script>
+
+    </head>
+    <body>
+
+        <!--
+            HTML5 schema pro Visual Studio 2010 a 2010 je ke stažení na adrese:
+            http://visualstudiogallery.msdn.microsoft.com/en-us/d771cbc8-d60a-40b0-a1d8-f19fc393127d
+        -->
+
+        <!--
+            Ke konverzi videa do OGG Theora se osvědčil ffmepg2theora:
+            http://v2v.cc/~j/ffmpeg2theora/
+        -->
+
+        <article>
+            <hgroup>
+                <h1>
+                    <img src="IE9.png" alt="Internet Explorer 9 Beta" />
+                </h1>
+            </hgroup>
+            <section id="gpu">
+
+                <h2>Vykreslování na GPU</h2>
+
+                <p>
+                    <a href="http://ie.microsoft.com/testdrive/Performance/FlyingImages/Default.html">Flying Images</a><br />
+                    <a href="http://ie.microsoft.com/testdrive/Performance/SpeedReading/Default.html">Speed Reading</a>
+                </p>
+
+            </section>
+            <section id="video">
+
+                <h2>&lt;video&gt;</h2>
+        
+                <video controls="controls" onplay="window.external.msSiteModeSetIconOverlay('overlay.ico','Playing')" onpause="window.external.msSiteModeClearIconOverlay()">
+                    <source src="video.mp4" type="video/mp4" />
+                    <source src="video.ogv" type="video/ogg" />
+                </video>
+
+            </section>
+            <section id="canvas">
+
+                <h2>&lt;canvas&gt;</h2>
+        
+                <p>
+                    <a href="http://ie.microsoft.com/testdrive/Graphics/CanvasPad/Default.html?c=rectangles">obdélníky</a><br />
+                    <a href="http://ie.microsoft.com/testdrive/Graphics/CanvasPad/Default.html?c=lineCap">cesty</a><br />
+                    <a href="http://ie.microsoft.com/testdrive/Graphics/CanvasPad/Default.html?c=fillStyle">výplně</a><br />
+                    <a href="http://ie.microsoft.com/testdrive/Graphics/CanvasPad/Default.html?c=arcs">oblouky</a><br />
+                    <a href="http://ie.microsoft.com/testdrive/Graphics/CanvasPad/Default.html?c=image">bitmapa</a><br />
+                    <a href="http://ie.microsoft.com/testdrive/Graphics/CanvasPad/Default.html?c=bezier">Bézierovy křivky</a><br />
+                    <a href="http://ie.microsoft.com/testdrive/Graphics/CanvasPad/Default.html?c=quadratic">kvadratické křivky</a><br />
+                    <a href="http://ie.microsoft.com/testdrive/Graphics/CanvasPad/Default.html?c=shadows">stíny</a><br />
+                </p>
+
+            </section>
+            <section id="selectors">
+
+                <h2>CSS3 Selectors</h2>
+
+                <p>
+                    <a href="http://tools.css3.info/selectors-test/test.html">CSS3 Selectors Test</a>       
+                </p>
+
+            </section>
+            <section id="transform">
+                
+                <h2>CSS3 2D Transforms</h2>
+
+                <img src="moraine.jpg" alt="Moraine Lake" />
+
+            </section>
+            <section>
+
+                <h2>@font-face</h2>
+
+                <p style="font-size: 2em; font-family: Ubuntu WOFF, Ubuntu EOT, Ubuntu TTF; font-weight: bold">Ubuntu bold: Příliš žluťoučký kůň úpěl ďábelské ódy!</p>
+                <p style="font-size: 2em; font-family: Ubuntu WOFF, Ubuntu EOT, Ubuntu TTF; font-style: italic">Ubuntu italic: Příliš žluťoučký kůň úpěl ďábelské ódy!</p>
+                <p style="font-size: 2em; font-family: Ubuntu WOFF, Ubuntu EOT, Ubuntu TTF">Ubuntu: Příliš žluťoučký kůň úpěl ďábelské ódy!</p>
+
+            </section>
+            <section id="svg">
+
+                <h2>SVG</h2>
+
+                <p>
+                    <a href="http://ie.microsoft.com/testdrive/Graphics/MBSCustomerModel/Default.html">The Microsoft Dynamics Customer Model</a>
+                </p>
+
+            </section>
+            <section>
+
+                <h2>Odkazy</h2>
+
+                <p>
+                    <a href="http://dajbych.net/">Dajbych.net blog</a><br />
+                    <a href="http://events.dajbych.net/">Prezentace o IE9</a><br />
+                    <a href="http://blogs.msdn.com/ie/">IE Team Blog</a><br />
+                    <a href="http://ie.microsoft.com/testdrive/">Internet Explorer Test Drive</a><br />
+                    <a href="http://channel9.msdn.com/Tags/ie9">Channel 9</a><br />
+                    <a href="http://msdn.microsoft.com/en-us/ie/ff468705.aspx">Internet Explorer 9 Beta Guide for Developers</a><br />
+                    <a href="http://arstechnica.com/microsoft/news/2010/10/ie9-preview-6-available-now-with-sekrit-beta-ui.ars">How to enable a Beta UI in Platform Preview</a><br />
+                    <a href="http://adblock.dajbych.net/">České tracking protection filtry</a>
+                </p>
+
+            </section>
+        </article>
+    </body>
+</html>

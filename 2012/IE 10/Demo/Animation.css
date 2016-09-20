@@ -1,0 +1,101 @@
+﻿.FishSwimming {
+	-ms-animation-duration: 21s;
+	-ms-animation-name: FishSwimming;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-timing-function: linear;
+	-ms-transform-origin: 400px 200px;
+	-webkit-animation-duration: 21s;
+	-webkit-animation-name: FishSwimming;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-webkit-transform-origin: 400px 200px;
+	-moz-animation-duration: 21s;
+	-moz-animation-name: FishSwimming;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: linear;
+	-moz-transform-origin: 400px 200px;
+}
+
+@-ms-keyframes FishSwimming {
+	from {
+        top: 50%;
+        left: 0%;
+        -ms-transform: scaleX(1);
+	}
+	48% {
+        top: 50%;
+        left: 90%;
+        -ms-transform: scaleX(1);
+	}
+	50% {
+        top: 50%;
+        left: 100%;
+        -ms-transform: scaleX(-1);
+	}
+	98% {
+        top: 50%;
+        left: 10%;
+        -ms-transform: scaleX(-1);
+	}
+	to {
+        top: 50%;
+        left: 0%;
+        -ms-transform: scaleX(1);
+	}
+}
+
+@-webkit-keyframes FishSwimming {
+	from {
+        top: 50%;
+        left: 0%;
+        -webkit-transform: scaleX(1);
+	}
+	48% {
+        top: 50%;
+        left: 90%;
+        -webkit-transform: scaleX(1);
+	}
+	50% {
+        top: 50%;
+        left: 100%;
+        -webkit-transform: scaleX(-1);
+	}
+	98% {
+        top: 50%;
+        left: 10%;
+        -webkit-transform: scaleX(-1);
+	}
+	to {
+        top: 50%;
+        left: 0%;
+        -webkit-transform: scaleX(1);
+	}
+}
+
+@-moz-keyframes FishSwimming {
+	from {
+        top: 50%;
+        left: 0%;
+        -moz-transform: scaleX(1);
+	}
+	48% {
+        top: 50%;
+        left: 90%;
+        -moz-transform: scaleX(1);
+	}
+	50% {
+        top: 50%;
+        left: 100%;
+        -moz-transform: scaleX(-1);
+	}
+	98% {
+        top: 50%;
+        left: 10%;
+        -moz-transform: scaleX(-1);
+	}
+	to {
+        top: 50%;
+        left: 0%;
+        -moz-transform: scaleX(1);
+	}
+}
