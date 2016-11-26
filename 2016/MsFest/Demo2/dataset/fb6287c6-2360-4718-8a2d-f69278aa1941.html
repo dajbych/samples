@@ -1,0 +1,339 @@
+  <html lang="en" xmlns="http://www.w3.org/1999/xhtml"> <head> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <meta name="robots" content="noindex,nofollow" /> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <meta name="keywords" content="free patents, patent information, patent documents online, Espacenet, Espacenet, database, inventions, inventor, innovation, industry, ideas" /> <meta http-equiv="Content-Script-Type" content="text/javascript" /> <meta http-equiv="Content-Style-Type" content="text/css" /> <meta http-equiv="content-language" content="en" /> <title>Espacenet - Bibliographic data</title> <link href="/6_1_8/css/cssEpo.css" media="screen" rel="stylesheet" type="text/css" /> <link href="/6_1_8/css/cssSitemap.css" media="screen" rel="stylesheet" type="text/css" /> <link href="/6_1_8/css/cssJQuery.css" media="screen" rel="stylesheet" type="text/css" /> <link href="/6_1_8/css/espacenet.css" media="screen" rel="stylesheet" type="text/css" /> <link href="/6_1_8/images/favicon.ico" rel="favicon" /> <link href="/6_1_8/css/cssPrint.css" type="text/css" rel="stylesheet" media="print" /> <link href="/6_1_8/css/cssPrintLayout.css" type="text/css" rel="stylesheet" media="print" /> <link href="/6_1_8/css/espacenetPrint.css" media="print" rel="stylesheet" type="text/css" />     <link href="/6_1_8/css/jquery-ui.custom.css" media="screen" rel="stylesheet" type="text/css" /> <link href="/6_1_8/opensearch.xml" rel="search" type="application/opensearchdescription+xml" title="espacenet searchplugin" /> <script type="text/javascript">
+        //&lt;![CDATA[
+        var LOADING_MESSAGE = &apos;Please wait while the data is being retrieved&apos;;
+		var dataFeedRequestHost = &apos;&apos;;
+		var dataFeedRequestExtraParams = &apos;&apos;;
+
+        var scriptStyles = document.createElement(&apos;link&apos;);
+        scriptStyles.rel = &apos;stylesheet&apos;;
+        scriptStyles.type = &apos;text/css&apos;;
+        scriptStyles.href = &apos;/6_1_8/css/dyn.css&apos;;
+        scriptStyles.media = &apos;all&apos;;
+        if (head = document.getElementsByTagName(&apos;head&apos;)[0]) {
+            head.appendChild(scriptStyles);
+        }
+        //]]&gt;
+    </script> <script type="text/javascript">
+    	// for access in javascript files
+	    var isRtlLanguage = false;    
+    </script> <script type="text/javascript" src="/dwr/util.js" /> <script type="text/javascript" src="/6_1_8/javascript/jquery.js" /> <script type="text/javascript" src="/6_1_8/javascript/jquery.mb.browser.js" /> <script type="text/javascript" src="/6_1_8/javascript/jquery.jsonp-2.1.4.js" /> <script type="text/javascript" src="/6_1_8/javascript/jquery-ui.custom.min.js" /> <script type="text/javascript" src="/6_1_8/javascript/jquery.tools.min.js" /> <script type="text/javascript" src="/6_1_8/javascript/jquery.cookie.js" /> <script type="text/javascript" src="/6_1_8/javascript/jquery.expandableinput.js" /> <script type="text/javascript" src="/6_1_8/javascript/jquery.download.js" /> <script type="text/javascript" src="/6_1_8/scripts/util20081010.js" /> <script type="text/javascript" src="/6_1_8/javascript/blockUI.js" />  <script type="text/javascript" src="/6_1_8/javascript/iutil.js" /> <script type="text/javascript" src="/6_1_8/javascript/accordion.js" /> <script type="text/javascript" src="/6_1_8/javascript/main.js" /> <script type="text/javascript" src="/6_1_8/javascript/espacenet.js" /> <script type="text/javascript" src="/6_1_8/scripts/espacenet.utils.js" /> <script type="text/javascript" src="/6_1_8/scripts/browser_all.js" /> <script type="text/javascript" src="/6_1_8/javascript/splashpopup.js" /> <script type="text/javascript">
+        $(document).ready(function() {
+            showSplashPopup(&apos;false&apos;);
+        });
+    </script> <link href="/6_1_8/cpc/css/cpcbrowser.min.css" media="all" rel="stylesheet" type="text/css" /> <link href="/6_1_8/cpc/css/feedback.css" media="all" rel="stylesheet" type="text/css" /> <link href="/6_1_8/cpc/css/cpcbrowser.print.css" media="print" rel="stylesheet" type="text/css" /> <script type="text/javascript" src="/6_1_8/cpc/js/3rdparty.min.js" /> <script type="text/javascript" src="/6_1_8/cpc/js/cpcbrowser.min.js" /> <script type="text/javascript" src="/6_1_8/cpc/js/Configuration.js" /> <script type="text/javascript" src="/6_1_8/cpc/js/models/Feedback.js" /> <script type="text/javascript" src="/6_1_8/cpc/js/controllers/CPCBrowserApplication.js" /> <script src="/6_1_8/javascript/cpcbrowser.config.js" type="text/javascript" /> <script type="text/javascript">
+            //labels (localization)
+            var labels = {
+                //Search labels
+                SearchForLabel: &apos;Search for&apos;,
+                SearchButtonLabel: &apos;Search&apos;,
+                AKeywordOrAClassificationSymbol: &apos;a keyword or a classification symbol&apos;,
+                EnterAKeywordOrAClassificationSymbolWarning: &apos;enter a keyword or a classification symbol&apos;,
+                ClassificationNotFoundMessage: &apos;The classification you requested, &lt;em&gt;{0}&lt;/em&gt;, could not be found. Please change your request, or try finding the classification you are looking for by traversing &lt;a href=&quot;{1}&quot;&gt;the hierarchy&lt;/a&gt;.&apos;,
+                NoResultsMessage: &apos;Your search for &lt;em&gt;{0}&lt;/em&gt; did not give any results.&apos;,
+                NoResponseMessage: &apos;Your search for &lt;em&gt;{0}&lt;/em&gt; did not get any response.&apos;,
+
+                // Letter-picker
+                OrPickASectionSemicolonLabel: &apos;or pick a section:&apos;,
+                ViewSectionLabel: &apos;View section&apos;,
+                Index: &apos;Index&apos;,
+
+                // Menu
+                FlipSymbolsLeftOrRightTitle: &apos;flip symbols (left or right)&apos;,
+                ToggleTreeTitle: &apos;toggle tree&apos;,
+                ToggleNotesAndWarningsAlwaysVisibleTitle: &apos;toggle notes and warnings always visible&apos;,
+                ToggleSchemeColorsIpcVersusCPCTitle: &apos;toggle scheme colors (IPC versus CPC)&apos;,
+                ToggleDatesTitle: &apos;toggle dates&apos;,
+                ToggleReferencesTitle: &apos;toggle references&apos;,
+                Toggle2000SeriesTitle: &apos;toggle 2000-series&apos;,
+                Previous: &apos;Previous&apos;,
+                Next: &apos;Next&apos;,
+
+                // Headers
+                SymbolHeader: &apos;Symbol&apos;,
+                ClassificationAndDescriptionHeader: &apos;Classification and description&apos;,
+
+                //Date range picker
+                NoticeOfChanges: &apos;Notice of changes&apos;,
+                HighlightDate: &apos;Highlight date&apos;,
+                SelectRange: &apos;Select range&apos;,
+                SelectSingleMonth: &apos;Select single month&apos;,
+                Months: [&apos;JAN&apos;, &apos;FEB&apos;, &apos;MAR&apos;, &apos;APR&apos;, &apos;MAY&apos;, &apos;JUN&apos;, &apos;JUL&apos;, &apos;AUG&apos;, &apos;SEP&apos;, &apos;OCT&apos;, &apos;NOV&apos;, &apos;DEC&apos;],
+
+                // Classification list
+                ToggleNotes: &apos;Toggle notes&apos;,
+                ToggleWarnings: &apos;Toggle warnings&apos;,
+                ToggleNotesTitle: &apos;toggle notes&apos;,
+                ToggleWarningsTitle: &apos;toggle warnings&apos;,
+                NotesSectionHeader: &apos;Notes&apos;,
+                WarningsSectionHeader: &apos;Warnings&apos;,
+                AddThisClassificationToMySelectionTitle: &apos;add this classification to my selection&apos;,
+                DefinitionsSectionHeader: &apos;Definitions&apos;,
+
+                // Cart
+                SelectedClassifications: &apos;Selected classifications&apos;,
+                NothingSelected: &apos;nothing selected&apos;,
+                RemoveTitle: &apos;remove&apos;,
+                FindPatentsButtonLabel: &apos;Find patents&apos;,
+                CopyToSearchformButtonLabel: &apos;Copy to search form&apos;,
+                LowRelationTitle: &apos;You have selected /low for this classification. This means all children classifications will also be taken into consideration.\n\nClick to change this.&apos;,
+                HighRelationTitle: &apos;You have selected /high for this classification. This means all parent classifications will also be taken into consideration.\n\nClick to change this.&apos;,
+                SameRelationTitle: &apos;You have selected /same for this classification. This means all sibling classifications will also be taken into consideration.\n\nClick to change this.&apos;,
+                ExactRelationTitle: &apos;You have selected /exact for this classification. This means that only this classification will be taken into consideration.\n\nClick to change this.&apos;,
+                CartMaxLengthError: &apos;You have selected the maximum number of classifications. You must remove a classification from your selection before you can add a new one.&apos;,
+                CartClearLabel:	&apos;Clear&apos;,
+
+                // Miscellaneous
+                NoCorrectOPSResponse: &apos;Currently unable to connect to Open Patent Service. Please try again later&apos;,
+                BrowserPerformanceMessage: &apos;Your browser may face performance issues rendering this large amount of data.&apos;,
+                OPSResponseParseError: &apos;Unable to parse the response from Open Patent Service.&apos;,
+                OPSConnectionError: &apos;Unable to set up a connection to Open Patent Services (OPS). Please try again later.&apos;,
+                OPSDefinitionLoadingFailure: &apos;Loading of the definition failed. Please try again later.&apos;,
+                IPCCaveat: &apos;description from relevant CPC&apos;,
+
+                //Apigee errors (translate only the values if necessary, NOT the keys!)
+                ApigeeErrors:	{
+                    &apos;This request has been rejected due to the violation of Fair Use policy&apos; : &apos;This request has been rejected due to the violation of Fair Use policy&apos;,
+                    &apos;This request has been rejected&apos;: &apos;This request has been rejected&apos;,
+                    &apos;Developer account is blocked&apos;: &apos;Developer account is blocked&apos;
+                }
+            };
+
+            var options = {
+                ShowNonInterleavedData: &apos;true&apos;
+                
+            };
+
+
+	       	$(document).ready(function() {
+                   // setup cpc browser
+                   
+
+                   // setup cpc tooltip
+                   
+                   configureCpcTooltips(labels);
+                   
+
+	        });
+		</script> </head> <body class="present" onunload="doPageUnload();"> <a href="#page" id="pageLinkId" tabindex="-1" accesskey="s" /> <div id="page" class="pageWrap printGrid screenWide"> <div class="printLogo printIt"> <img src="/images/logo_EP.gif" onerror="this.src='/images/logo_EP.gif'" alt="Logo" /> <h1>Espacenet</h1> </div> <div class="epoHeader"> <div id="epoHeader" class="clearfix"> <a id="epoLogo" name="epoLogo" href="//www.epo.org"><img alt="Patent Office logo" src="/images/logo_EP.gif" onerror="this.src='/images/logo_EP.gif'" /></a> <div id="epoHeaderCenter"> <div id="espacenetLogoTitle"><span>Espace</span>net</div> <div id="espacenetLogoSubTitle">Patent search</div> </div> <div id="epoHeaderMetaNav"> <ul class="modLanguageNavi clearfix"> <li> <a title="Deutsch auswählen" href="/publicationDetails/biblio?locale=de_EP&FT=D&CC=GB&rss=true&DB=EPODOC&NR=2527723A&date=20151230&KC=A"> Deutsch</a> </li> <li> <a title="Switch to English" href="/publicationDetails/biblio?locale=en_EP&FT=D&CC=GB&rss=true&DB=EPODOC&NR=2527723A&date=20151230&KC=A" class="sel"> English</a> </li> <li class="last"> <a title="Sélectionner Français" href="/publicationDetails/biblio?locale=fr_EP&FT=D&CC=GB&rss=true&DB=EPODOC&NR=2527723A&date=20151230&KC=A"> Français</a> </li> </ul> <ul class="modServiceNavi clearfix"> <li class="navElem contact  "><a href="https://forms.epo.org/service-support/contact-us/contact0-form.html?topic=OnlineServices&subject=Espacenet">Contact</a></li> </ul> <div class="noScript modFlyout twoColumn"> <div id="flyoutBodyId" class="flyoutBody"> <div class="flyoutLine" /> <a href="#" id="changeCountryLinkId" onkeydown="if (event.keyCode==$.ui.keyCode.ENTER){handleOpenCloseServiceMenu(document.getElementById('flyoutBodyId'));}" class="flyoutLink">Change country</a> <ul class="epoMenu twoColumn"> <li class="odd spacer"> </li> <li class="even spacer"> </li> <li class="odd first"> <a class="ext" href="//al.espacenet.com/">Albania </a> </li> <li class="even first"> <a class="ext" href="//at.espacenet.com/">Austria </a> </li> <li class="odd"> <a class="ext" href="http://be.espacenet.com/">Belgium </a> </li> <li class="even"> <a class="ext" href="http://bg.espacenet.com/">Bulgaria </a> </li> <li class="odd"> <a class="ext" href="//worldwide.espacenet.com/?locale=cn_EP">China </a> </li> <li class="even"> <a class="ext" href="http://hr.espacenet.com/">Croatia </a> </li> <li class="odd"> <a class="ext" href="http://cy.espacenet.com/">Cyprus </a> </li> <li class="even"> <a class="ext" href="http://dk.espacenet.com/">Denmark </a> </li> <li class="odd"> <a class="ext" href="//ee.espacenet.com/">Estonia </a> </li> <li class="even"> <a class="ext" href="http://ea.espacenet.com/">EAPO</a> </li> <li class="odd"> <a class="ext" href="//fi.espacenet.com/">Finland </a> </li> <li class="even"> <a class="ext" href="http://gr.espacenet.com/">Greece </a> </li> <li class="odd"> <a class="ext" href="//hu.espacenet.com/">Hungary </a> </li> <li class="even"> <a class="ext" href="http://is.espacenet.com/">Iceland </a> </li> <li class="odd"> <a class="ext" href="http://ie.espacenet.com/">Ireland </a> </li> <li class="even"> <a class="ext" href="//it.espacenet.com/">Italy </a> </li> <li class="odd"> <a class="ext" href="//worldwide.espacenet.com/?locale=jp_EP">Japan </a> </li> <li class="even"> <a class="ext" href="//worldwide.espacenet.com/?locale=kr_EP">Korea </a> </li> <li class="odd"> <a class="ext" href="http://lp.espacenet.com/">Latipat </a> </li> <li class="even"> <a class="ext" href="//worldwide.espacenet.com/?locale=lv_LV">Latvia </a> </li> <li class="odd"> <a class="ext" href="http://lt.espacenet.com/">Lithuania </a> </li> <li class="even"> <a class="ext" href="//lu.espacenet.com/">Luxembourg </a> </li> <li class="odd"> <a class="ext" href="//nl.espacenet.com/">Netherlands </a> </li> <li class="even"> <a class="ext" href="http://no.espacenet.com/">Norway </a> </li> <li class="odd"> <a class="ext" href="http://pl.espacenet.com/">Poland </a> </li> <li class="even"> <a class="ext" href="//pt.espacenet.com/">Portugal </a> </li> <li class="odd"> <a class="ext" href="http://ro.espacenet.com/">Romania </a> </li> <li class="even"> <a class="ext" href="http://ru.espacenet.com/">Russia </a> </li> <li class="odd"> <a class="ext" href="//sm.espacenet.com/">San Marino </a> </li> <li class="even"> <a class="ext" href="http://rs.espacenet.com/">Serbia </a> </li> <li class="odd"> <a class="ext" href="http://sk.espacenet.com/">Slovakia </a> </li> <li class="even"> <a class="ext" href="http://si.espacenet.com/">Slovenia </a> </li> <li class="odd"> <a class="ext" href="//es.espacenet.com/">Spain </a> </li> <li class="even"> <a class="ext" href="//se.espacenet.com/">Sweden </a> </li> <li class="odd last"> <a class="ext" href="http://tr.espacenet.com/">Turkey </a> </li> </ul> <div class="flyoutSpacer" /> </div> </div> </div> </div> </div> <script type="text/javascript">
+	resetServiceMenu(document.getElementById(&apos;flyoutBodyId&apos;));
+</script> <div class="modAppFlyoutNavi noScript noPrint"> <ul class="lvl1ul clearfix"> <li class="lvl1li"> <a class="leftArrow" href="//www.epo.org/searching-for-patents/technical/espacenet.html">About Espacenet</a> </li> <li class="lvl1li"> <a class="hasSubMenu sel" href="#" onclick="handleOpenCloseMenu(this.parentNode)">Other EPO online services</a> <div class="lvl2ul epoMenu"> <ul class="epoGrpList epoGrpLeft"> <li class="grpTitle"> <a>Searching for patents</a> </li> <li> <a class="grpLink" href="http://ops.epo.org">Open patent services</a> </li> <li> <a class="grpLink" href="https://register.epo.org/espacenet/regviewer?lng=en">European Patent Register</a> </li> <li> <a class="grpLink" href="http://www.epo.org/patents/patent-information/european-patent-documents/publication-server.html">European publication server</a> </li> <li> <a class="grpLink" href="http://www.epo.org/searching/subscription/gpi.html">Global patent index</a> </li> </ul> </div> </li> </ul> </div> <div id="epoNavigation" class="epoNavigation"> <div class="modAppNav noScript clearfix"> <ul> <li class="bendr"> <a href="/?locale=en_EP" accesskey="a">Search</a> </li> <li class="bendr"><span>Result list</span></li> <li class="bendr"><a id="menuPnStar" class="ptn" href="/mydocumentslist?submitted=true&locale=en_EP" accesskey="c">My patents list (<span id="menuPnCount" />)</a></li> <li class="bendr"><a href="/queryHistory?locale=en_EP" accesskey="d">Query history</a></li> <li class="spacer" /> <li class="bendl"><a href="/settings?locale=en_EP" accesskey="e">Settings</a></li> <li class="bendl last"> <a href="/help?locale=en_EP&method=handleHelpTopic&topic=index" accesskey="f">Help</a> </li> </ul> </div> <a href="#skipToMainNavigationAnchor" id="epoBreadcrumbsId" tabindex="-1" accesskey="m" /> <ul style="width:0px;height:0px;" id="skipToMainNavigationAnchor" /> <ul id="epoBreadcrumbs"> </ul> </div> <div id="epoContentLeft"> <ul class="epoContentNav"> <li> <span class="sel"> GB2527723A </span> <ul> <li> <span class="disabled">Bibliographic data</span> </li> <li> <span class="disabled">Description</span> </li> <li> <span class="disabled">Claims</span> </li> <li> <span class="disabled">Mosaics</span> </li> <li> <span class="disabled">Original document</span> </li> <li> <span class="disabled">Cited documents</span> </li> <li> <span class="disabled">Citing documents</span> </li> <li> <span class="disabled">INPADOC legal status</span> </li> <li> <span class="disabled">INPADOC patent family</span> </li> </ul> </li> </ul> <div class="clearerRight"> </div> <div class="epoAccordionContainer"> <div class="dijitContainer dijitAccordionContainer dijitLayoutContainer"> <div class="dijitAccordionTitle" id="dijitAccordionTitleId6"> <a onclick="return false;" id="dijitAccordionLinkId6" href="#" class="dijitAccordionLink"> <span class="dijitInline dijitAccordionArrow" /> <img src="/images/blank.gif" alt /> <span class="dijitAccordionText">Quick help</span> </a></div> <div class="dijitContentPane dijitAccordionContainer-child dijitAccordionContainer-dijitContentPane"> <ul> <li><a href="/help?quickHelpPage=bibliographicdata.1&locale=en_EP&method=handleQuickHelp" title="As an alternative to the patent translate tool, you can access the high quality translation of the description of a suitable family member by clicking on the document  number." class="int">What is meant by high quality text as facsimile?</a></li> <li><a href="/help?quickHelpPage=bibliographicdata.2&locale=en_EP&method=handleQuickHelp" title="When a European patent application is published together with the search report, it is known as an A1 publication. When this application is published without the search report, it is an A2 document. The search report is then published later as an A3 document. When the patent is granted, it is published as a B document." class="int">What does A1, A2, A3 and B stand for after a European publication number?</a></li> <li><a href="/help?quickHelpPage=bibliographicdata.3&locale=en_EP&method=handleQuickHelp" title="Clicking on "In my patents list" adds the document to your "My patents list". The star appears in red as soon as the document is in the list. You can store up to 100 documents in this list. The list expires after one year of non-use. This period resets automatically each time you modify the list." class="int">What happens if I click on &quot;In my patents list&quot;?</a></li> <li><a href="/help?quickHelpPage=bibliographicdata.4&locale=en_EP&method=handleQuickHelp" title="If you click on the "Register" link (where activated) for a particular country this takes you straight to the corresponding entry in the national register concerned. For EP and Euro-PCT documents, clicking on the "EP Register" button allows you to view all the information pertaining to the patent application concerned, from first publication through to grant and beyond (legal status data, patent family details, etc.) in the European Patent Register." class="int">What happens if I click on the &quot;Register&quot; button?</a></li> <li><a href="/help?quickHelpPage=bibliographicdata.5&locale=en_EP&method=handleQuickHelp" title="Although the Espacenet database is continually being expanded to include additional countries and provide more extensive coverage, we do not have all items of data for all documents. For example, we may have the bibliographic data for a particular document, but not the full text or the images of the document. In this case, the sidebar options normally used for accessing the missing data are deactivated. They are re-activated when the content becomes available." class="int">Why are some sidebar options deactivated for certain documents?</a></li> <li><a href="/help?quickHelpPage=bibliographicdata.6&locale=en_EP&method=handleQuickHelp" title="Simply right-click on the page bookmark link and select "Add to Favorites/Bookmarks" from the context menu." class="int">How can I bookmark this page?</a></li> <li><a href="/help?quickHelpPage=bibliographicdata.7&locale=en_EP&method=handleQuickHelp" title="A single invention can be the subject of a patent application in many different countries. In Espacenet, these related applications are known as "corresponding documents" or "equivalents". It is these that are listed under the "Also published as" heading." class="int">Why does a list of documents with the heading &quot;Also published as&quot; sometimes appear, and what are these documents?</a></li> <li><a href="/help?quickHelpPage=bibliographicdata.8&locale=en_EP&method=handleQuickHelp" title="Espacenet aims to have an English-language abstract available for each set of corresponding patents (also known as "equivalents"). When a document retrieved during a search does not have an English-language abstract, but there is one available for a corresponding document, the latter is displayed." class="int">Why do I sometimes find the abstract of a corresponding document?</a></li> <li><a href="/help?quickHelpPage=bibliographicdata.9&locale=en_EP&method=handleQuickHelp" title="This feature provides machine translations of English abstracts into one of the supported languages, and of non-English texts into English. The text for translation is sent to specially "trained" machine translation engines, jointly developed by the EPO and Google, where it is processed and returned to the user." class="int">What happens if I click on the red &quot;patent translate&quot; button?</a></li> <li><a href="/help?quickHelpPage=bibliographicdata.10&locale=en_EP&method=handleQuickHelp" title="Global dossier gives you access to the file content of the IP5 partner offices. For more information please refer to our Help section on Global dossier" class="int">What is Global dossier?</a></li> </ul> </div> </div> </div> <div id="cart" /> <script type="text/javascript">
+    //5 - relatedLinks, 6 - quick help
+    $(&apos;#dijitAccordionTitleId5&apos;).bind(&apos;mouseover&apos;, function() {onLinkOver(5);});
+    $(&apos;#dijitAccordionTitleId5&apos;).bind(&apos;mouseout&apos;, function() {onLinkOut(5);});
+    $(&apos;#dijitAccordionTitleId6&apos;).bind(&apos;mouseover&apos;, function() {onLinkOver(6);});
+    $(&apos;#dijitAccordionTitleId6&apos;).bind(&apos;mouseout&apos;, function() {onLinkOut(6);});
+</script> </div> <div class="epoContentWrap clearfix"> <script type="text/javascript" src="/6_1_8/javascript/jquery.cookie.js" /> <div id="pagebody"> <div id="body"> <script type="text/javascript" src="/6_1_8/javascript/documentDetails.js" /> <script type="text/javascript" src="/6_1_8/javascript/xdm.js" /> <script type="text/javascript" src="/6_1_8/javascript/translate.js" /> <script type="text/javascript" src="/6_1_8/javascript/cpcbrowser.config.js" /> <script type="text/javascript" src="/dwr/engine.js" /> <script type="text/javascript" src="/dwr/interface/jsFirstPageClippingHelper.js" /> <script type="text/javascript" src="/6_1_8/scripts/ajax/retrieveFirstPageClipping.js" /> <script type="text/javascript" src="/6_1_8/javascript/dataloader.js" /> <script type="text/javascript">
+    $(document).ready(function () {
+        updateParamsFromHash();
+        dataloader.loadDataPageForUrlWithHost(dataFeedRequestHost, window.location.pathname + window.location.search, dataFeedRequestExtraParams, onDataLoaded);
+    });
+
+    function onDataLoaded(data){
+            $(&quot;#pagebody&quot;).empty();
+            $(&quot;#pagebody&quot;).append($(data).find(&quot;#pagebody&quot;).html());
+            $(&quot;#epoContentLeft&quot;).empty();
+            $(&quot;#epoContentLeft&quot;).append($(data).find(&quot;#epoContentLeft&quot;).html());
+            $(&quot;#epoBreadcrumbs&quot;).empty();
+            $(&quot;#epoBreadcrumbs&quot;).append($(data).find(&quot;#epoBreadcrumbs&quot;).html());
+            $(&quot;.dijitTooltip&quot;).remove();
+            espacenetReady();
+            mainReady();
+            documentDetailsReady(onDataLoaded);
+
+            contentReady();
+            initpage();
+            translateReady();
+            addHashToURL(data);
+            updateLinksInLanguageNavigator(data);
+            //labels (localization)
+            var labels = {
+                //Search labels
+                SearchForLabel: &apos;Search for&apos;,
+                SearchButtonLabel: &apos;Search&apos;,
+                AKeywordOrAClassificationSymbol: &apos;a keyword or a classification symbol&apos;,
+                EnterAKeywordOrAClassificationSymbolWarning: &apos;enter a keyword or a classification symbol&apos;,
+                ClassificationNotFoundMessage: &apos;The classification you requested, &lt;em&gt;{0}&lt;/em&gt;, could not be found. Please change your request, or try finding the classification you are looking for by traversing &lt;a href=&quot;{1}&quot;&gt;the hierarchy&lt;/a&gt;.&apos;,
+                NoResultsMessage: &apos;Your search for &lt;em&gt;{0}&lt;/em&gt; did not give any results.&apos;,
+                NoResponseMessage: &apos;Your search for &lt;em&gt;{0}&lt;/em&gt; did not get any response.&apos;,
+
+                // Letter-picker
+                OrPickASectionSemicolonLabel: &apos;or pick a section:&apos;,
+                ViewSectionLabel: &apos;View section&apos;,
+                Index: &apos;Index&apos;,
+
+                // Menu
+                FlipSymbolsLeftOrRightTitle: &apos;flip symbols (left or right)&apos;,
+                ToggleTreeTitle: &apos;toggle tree&apos;,
+                ToggleNotesAndWarningsAlwaysVisibleTitle: &apos;toggle notes and warnings always visible&apos;,
+                ToggleSchemeColorsIpcVersusCPCTitle: &apos;toggle scheme colors (IPC versus CPC)&apos;,
+                ToggleDatesTitle: &apos;toggle dates&apos;,
+                ToggleReferencesTitle: &apos;toggle references&apos;,
+                Toggle2000SeriesTitle: &apos;toggle 2000-series&apos;,
+                Previous: &apos;Previous&apos;,
+                Next: &apos;Next&apos;,
+
+                // Headers
+                SymbolHeader: &apos;Symbol&apos;,
+                ClassificationAndDescriptionHeader: &apos;Classification and description&apos;,
+
+                //Date range picker
+                NoticeOfChanges: &apos;Notice of changes&apos;,
+                HighlightDate: &apos;Highlight date&apos;,
+                SelectRange: &apos;Select range&apos;,
+                SelectSingleMonth: &apos;Select single month&apos;,
+                Months: [&apos;JAN&apos;, &apos;FEB&apos;, &apos;MAR&apos;, &apos;APR&apos;, &apos;MAY&apos;, &apos;JUN&apos;, &apos;JUL&apos;, &apos;AUG&apos;, &apos;SEP&apos;, &apos;OCT&apos;, &apos;NOV&apos;, &apos;DEC&apos;],
+
+                // Classification list
+                ToggleNotes: &apos;Toggle notes&apos;,
+                ToggleWarnings: &apos;Toggle warnings&apos;,
+                ToggleNotesTitle: &apos;toggle notes&apos;,
+                ToggleWarningsTitle: &apos;toggle warnings&apos;,
+                NotesSectionHeader: &apos;Notes&apos;,
+                WarningsSectionHeader: &apos;Warnings&apos;,
+                AddThisClassificationToMySelectionTitle: &apos;add this classification to my selection&apos;,
+                DefinitionsSectionHeader: &apos;Definitions&apos;,
+
+                // Cart
+                SelectedClassifications: &apos;Selected classifications&apos;,
+                NothingSelected: &apos;nothing selected&apos;,
+                RemoveTitle: &apos;remove&apos;,
+                FindPatentsButtonLabel: &apos;Find patents&apos;,
+                CopyToSearchformButtonLabel: &apos;Copy to search form&apos;,
+                LowRelationTitle: &apos;You have selected /low for this classification. This means all children classifications will also be taken into consideration.\n\nClick to change this.&apos;,
+                HighRelationTitle: &apos;You have selected /high for this classification. This means all parent classifications will also be taken into consideration.\n\nClick to change this.&apos;,
+                SameRelationTitle: &apos;You have selected /same for this classification. This means all sibling classifications will also be taken into consideration.\n\nClick to change this.&apos;,
+                ExactRelationTitle: &apos;You have selected /exact for this classification. This means that only this classification will be taken into consideration.\n\nClick to change this.&apos;,
+                CartMaxLengthError: &apos;You have selected the maximum number of classifications. You must remove a classification from your selection before you can add a new one.&apos;,
+                CartClearLabel:	&apos;Clear&apos;,
+
+                // Miscellaneous
+                NoCorrectOPSResponse: &apos;Currently unable to connect to Open Patent Service. Please try again later&apos;,
+                BrowserPerformanceMessage: &apos;Your browser may face performance issues rendering this large amount of data.&apos;,
+                OPSResponseParseError: &apos;Unable to parse the response from Open Patent Service.&apos;,
+                OPSConnectionError: &apos;Unable to set up a connection to Open Patent Services (OPS). Please try again later.&apos;,
+                OPSDefinitionLoadingFailure: &apos;Loading of the definition failed. Please try again later.&apos;,
+                IPCCaveat: &apos;description from relevant CPC&apos;,
+
+                //Apigee errors (translate only the values if necessary, NOT the keys!)
+                ApigeeErrors:	{
+                    &apos;This request has been rejected due to the violation of Fair Use policy&apos; : &apos;This request has been rejected due to the violation of Fair Use policy&apos;,
+                    &apos;This request has been rejected&apos;: &apos;This request has been rejected&apos;,
+                    &apos;Developer account is blocked&apos;: &apos;Developer account is blocked&apos;
+                }
+            };
+
+            var options = {
+                ShowNonInterleavedData: &apos;true&apos;
+            };
+
+            // setup cpc browser
+        
+
+            // setup cpc tooltip
+        
+            configureCpcTooltips(labels);
+        
+    }
+
+    var firstPageClippingUrl;
+    var firstPageClippingNotAvailable;
+    var documentId;
+    var selectLangOption;
+    var isRtlLanguage;
+    var inventors;
+    var secondaryInventors;
+    var applicants;
+    var secondaryApplicants;
+    var bookmarkTitle;
+    var preferableLanguage;
+    var abstractLanguage;
+    var translationOptions;
+    var languageDatabase;
+    var isPopulated = false;
+    var isRecognized = false;
+    var opsUrl;
+    var sUrl;
+    var dataLanguage;
+    var unsupportedLanguageMsg;
+    var translateThisTextFeatureLinkHref;
+    var selectLangOption;
+    var disabledEpBTranslationFlag;
+    var disabledEpBTranslationMessage;
+
+    function contentReady() {
+        firstPageClippingUrl = $(&apos;input[name=firstPageClippingUrl]&apos;).val();
+        firstPageClippingNotAvailable = $(&apos;input[name=firstPageClippingNotAvailable]&apos;).val()==&apos;true&apos;?true:false;
+        documentId = $(&apos;input[name=documentId]&apos;).val();
+        selectLangOption = $(&apos;input[name=selectLangOption]&apos;).val();
+
+        isRtlLanguage = $(&apos;input[name=isRtlLanguage]&apos;).val()==&apos;true&apos;?true:false;
+        if (isRtlLanguage) {
+            inventors = $(&quot;#inventors&quot;).text();
+            if (!isArabic(inventors) &amp;&amp; !isHebrew(inventors)) {
+                $(&quot;#inventors&quot;).addClass(&apos;directionLTR&apos;);
+            }
+
+            secondaryInventors = $(&quot;#secondaryInventors&quot;).text();
+            if (!isArabic(secondaryInventors) &amp;&amp; !isHebrew(secondaryInventors)) {
+                $(&quot;#secondaryInventors&quot;).addClass(&apos;directionLTR&apos;);
+            }
+
+            applicants = $(&quot;#applicants&quot;).text();
+            if (!isArabic(applicants) &amp;&amp; !isHebrew(applicants)) {
+                $(&quot;#applicants&quot;).addClass(&apos;directionLTR&apos;);
+            }
+
+            secondaryApplicants = $(&quot;#secondaryApplicants&quot;).text();
+            if (!isArabic(secondaryApplicants) &amp;&amp; !isHebrew(secondaryApplicants)) {
+                $(&quot;#secondaryApplicants&quot;).addClass(&apos;directionLTR&apos;);
+            }
+
+            bookmarkTitle = $(&quot;#bookmarkTitle&quot;).text();
+            if (!isArabic(bookmarkTitle) &amp;&amp; !isHebrew(bookmarkTitle)) {
+                $(&quot;#rtlBookmarkSpan&quot;).addClass(&apos;directionLTR&apos;);
+            }
+
+            // position the &quot;+&quot; sign correctly
+            $(&quot;#inventorsRow&quot;).addClass(&apos;bidiOverride&apos;);
+            $(&quot;#applicantsRow&quot;).addClass(&apos;bidiOverride&apos;);
+        }
+
+
+        if ($(&quot;input[name=showPatentTranslate]&quot;).val()){
+            preferableLanguage = $.cookie(&apos;languageForTranslation&apos;);
+            if (preferableLanguage == null || $.trim(preferableLanguage) == &apos;&apos;) {
+                preferableLanguage = $(&quot;input[name=localeParamName]&quot;).val().substring(0, 2);
+            }
+
+            abstractLanguage = $(&quot;input[name=abstractLanguage]&quot;).val();
+
+
+        
+        
+        
+        
+
+
+            translationOptions = [ [&quot;en&quot;,[&quot;sq&quot;,&quot;bg&quot;,&quot;zh&quot;,&quot;hr&quot;,&quot;cs&quot;,&quot;da&quot;,&quot;nl&quot;,&quot;et&quot;,&quot;fi&quot;,&quot;fr&quot;,&quot;de&quot;,&quot;el&quot;,&quot;hu&quot;,&quot;is&quot;,&quot;it&quot;,&quot;ja&quot;,&quot;ko&quot;,&quot;lv&quot;,&quot;lt&quot;,&quot;mk&quot;,&quot;no&quot;,&quot;pl&quot;,&quot;pt&quot;,&quot;ro&quot;,&quot;ru&quot;,&quot;sr&quot;,&quot;sk&quot;,&quot;sl&quot;,&quot;es&quot;,&quot;sv&quot;,&quot;tr&quot;]], [&quot;zh&quot;,[&quot;en&quot;]], [&quot;ja&quot;,[&quot;en&quot;]], [&quot;ru&quot;,[&quot;en&quot;]], [&quot;ko&quot;,[&quot;en&quot;]], [&quot;de&quot;,[&quot;sq&quot;,&quot;bg&quot;,&quot;hr&quot;,&quot;cs&quot;,&quot;da&quot;,&quot;fi&quot;,&quot;hu&quot;,&quot;is&quot;,&quot;nl&quot;,&quot;et&quot;,&quot;fr&quot;,&quot;el&quot;,&quot;en&quot;,&quot;it&quot;,&quot;lv&quot;,&quot;lt&quot;,&quot;no&quot;,&quot;mk&quot;,&quot;pl&quot;,&quot;pt&quot;,&quot;ro&quot;,&quot;sr&quot;,&quot;sk&quot;,&quot;sl&quot;,&quot;es&quot;,&quot;sv&quot;,&quot;tr&quot;]], [&quot;fr&quot;,[&quot;sq&quot;,&quot;bg&quot;,&quot;hr&quot;,&quot;cs&quot;,&quot;da&quot;,&quot;fi&quot;,&quot;de&quot;,&quot;hu&quot;,&quot;is&quot;,&quot;nl&quot;,&quot;et&quot;,&quot;el&quot;,&quot;en&quot;,&quot;it&quot;,&quot;lv&quot;,&quot;lt&quot;,&quot;no&quot;,&quot;mk&quot;,&quot;pl&quot;,&quot;pt&quot;,&quot;ro&quot;,&quot;sr&quot;,&quot;sk&quot;,&quot;sl&quot;,&quot;es&quot;,&quot;sv&quot;,&quot;tr&quot;]], [&quot;sq&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;bg&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;hr&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;cs&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;da&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;fi&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;hu&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;is&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;nl&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;et&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;fr&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;el&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;en&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;it&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;lv&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;lt&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;no&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;mk&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;pl&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;pt&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;ro&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;sr&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;sk&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;sl&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;es&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;sv&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]], [&quot;tr&quot;,[&quot;en&quot;,&quot;de&quot;,&quot;fr&quot;]] ];
+            languageDatabase = [             [&quot;ab&quot;,&quot;Abkhaz&quot;] ,            [&quot;aa&quot;,&quot;Afar&quot;] ,            [&quot;af&quot;,&quot;Afrikaans&quot;] ,            [&quot;ak&quot;,&quot;Akan&quot;] ,            [&quot;sq&quot;,&quot;Albanian&quot;] ,            [&quot;am&quot;,&quot;Amharic&quot;] ,            [&quot;ar&quot;,&quot;Arabic&quot;] ,            [&quot;an&quot;,&quot;Aragonese&quot;] ,            [&quot;hy&quot;,&quot;Armenian&quot;] ,            [&quot;as&quot;,&quot;Assamese&quot;] ,            [&quot;av&quot;,&quot;Avaric&quot;] ,            [&quot;ae&quot;,&quot;Avestan&quot;] ,            [&quot;ay&quot;,&quot;Aymara&quot;] ,            [&quot;az&quot;,&quot;Azerbaijani&quot;] ,            [&quot;bm&quot;,&quot;Bambara&quot;] ,            [&quot;ba&quot;,&quot;Bashkir&quot;] ,            [&quot;eu&quot;,&quot;Basque&quot;] ,            [&quot;be&quot;,&quot;Belarusian&quot;] ,            [&quot;bn&quot;,&quot;Bengali&quot;] ,            [&quot;bh&quot;,&quot;Bihari&quot;] ,            [&quot;bi&quot;,&quot;Bislama&quot;] ,            [&quot;bs&quot;,&quot;Bosnian&quot;] ,            [&quot;br&quot;,&quot;Breton&quot;] ,            [&quot;bg&quot;,&quot;Bulgarian&quot;] ,            [&quot;my&quot;,&quot;Burmese&quot;] ,            [&quot;ca&quot;,&quot;Catalan&quot;] ,            [&quot;ch&quot;,&quot;Chamorro&quot;] ,            [&quot;ce&quot;,&quot;Chechen&quot;] ,            [&quot;ny&quot;,&quot;Chichewa&quot;] ,            [&quot;zh&quot;,&quot;Chinese&quot;] ,            [&quot;cv&quot;,&quot;Chuvash&quot;] ,            [&quot;kw&quot;,&quot;Cornish&quot;] ,            [&quot;co&quot;,&quot;Corsican&quot;] ,            [&quot;cr&quot;,&quot;Cree&quot;] ,            [&quot;hr&quot;,&quot;Croatian&quot;] ,            [&quot;cs&quot;,&quot;Czech&quot;] ,            [&quot;da&quot;,&quot;Danish&quot;] ,            [&quot;dv&quot;,&quot;Divehi&quot;] ,            [&quot;nl&quot;,&quot;Dutch&quot;] ,            [&quot;dz&quot;,&quot;Dzongkha&quot;] ,            [&quot;en&quot;,&quot;English&quot;] ,            [&quot;eo&quot;,&quot;Esperanto&quot;] ,            [&quot;et&quot;,&quot;Estonian&quot;] ,            [&quot;ee&quot;,&quot;Ewe&quot;] ,            [&quot;fo&quot;,&quot;Faroese&quot;] ,            [&quot;fj&quot;,&quot;Fijian&quot;] ,            [&quot;fi&quot;,&quot;Finnish&quot;] ,            [&quot;fr&quot;,&quot;French&quot;] ,            [&quot;ff&quot;,&quot;Fula&quot;] ,            [&quot;gl&quot;,&quot;Galician&quot;] ,            [&quot;ka&quot;,&quot;Georgian&quot;] ,            [&quot;de&quot;,&quot;German&quot;] ,            [&quot;el&quot;,&quot;Greek&quot;] ,            [&quot;gn&quot;,&quot;Guaraní&quot;] ,            [&quot;gu&quot;,&quot;Gujarati&quot;] ,            [&quot;ht&quot;,&quot;Haitian&quot;] ,            [&quot;ha&quot;,&quot;Hausa&quot;] ,            [&quot;he&quot;,&quot;Hebrew&quot;] ,            [&quot;hz&quot;,&quot;Herero&quot;] ,            [&quot;hi&quot;,&quot;Hindi&quot;] ,            [&quot;ho&quot;,&quot;HiriMotu&quot;] ,            [&quot;hu&quot;,&quot;Hungarian&quot;] ,            [&quot;ia&quot;,&quot;Interlingua&quot;] ,            [&quot;id&quot;,&quot;Indonesian&quot;] ,            [&quot;ie&quot;,&quot;Interlingue&quot;] ,            [&quot;ga&quot;,&quot;Irish&quot;] ,            [&quot;ig&quot;,&quot;Igbo&quot;] ,            [&quot;ik&quot;,&quot;Inupiaq&quot;] ,            [&quot;io&quot;,&quot;Ido&quot;] ,            [&quot;is&quot;,&quot;Icelandic&quot;] ,            [&quot;it&quot;,&quot;Italian&quot;] ,            [&quot;iu&quot;,&quot;Inuktitut&quot;] ,            [&quot;ja&quot;,&quot;Japanese&quot;] ,            [&quot;jv&quot;,&quot;Javanese&quot;] ,            [&quot;kl&quot;,&quot;Kalaallisut&quot;] ,            [&quot;kn&quot;,&quot;Kannada&quot;] ,            [&quot;kr&quot;,&quot;Kanuri&quot;] ,            [&quot;ks&quot;,&quot;Kashmiri&quot;] ,            [&quot;kk&quot;,&quot;Kazakh&quot;] ,            [&quot;km&quot;,&quot;Khmer&quot;] ,            [&quot;ki&quot;,&quot;Kikuyu&quot;] ,            [&quot;rw&quot;,&quot;Kinyarwanda&quot;] ,            [&quot;ky&quot;,&quot;Kyrgyz&quot;] ,            [&quot;kv&quot;,&quot;Komi&quot;] ,            [&quot;kg&quot;,&quot;Kongo&quot;] ,            [&quot;ko&quot;,&quot;Korean&quot;] ,            [&quot;ku&quot;,&quot;Kurdish&quot;] ,            [&quot;kj&quot;,&quot;Kwanyama&quot;] ,            [&quot;la&quot;,&quot;Latin&quot;] ,            [&quot;lb&quot;,&quot;Luxembourgish&quot;] ,            [&quot;lg&quot;,&quot;Ganda&quot;] ,            [&quot;li&quot;,&quot;Limburgish&quot;] ,            [&quot;ln&quot;,&quot;Lingala&quot;] ,            [&quot;lo&quot;,&quot;Lao&quot;] ,            [&quot;lt&quot;,&quot;Lithuanian&quot;] ,            [&quot;lu&quot;,&quot;Luba-Katanga&quot;] ,            [&quot;lv&quot;,&quot;Latvian&quot;] ,            [&quot;gv&quot;,&quot;Manx&quot;] ,            [&quot;mk&quot;,&quot;Macedonian&quot;] ,            [&quot;mg&quot;,&quot;Malagasy&quot;] ,            [&quot;ms&quot;,&quot;Malay&quot;] ,            [&quot;ml&quot;,&quot;Malayalam&quot;] ,            [&quot;mt&quot;,&quot;Maltese&quot;] ,            [&quot;mi&quot;,&quot;Maori&quot;] ,            [&quot;mr&quot;,&quot;Marathi&quot;] ,            [&quot;mh&quot;,&quot;Marshallese&quot;] ,            [&quot;mn&quot;,&quot;Mongolian&quot;] ,            [&quot;na&quot;,&quot;Nauru&quot;] ,            [&quot;nv&quot;,&quot;Navajo&quot;] ,            [&quot;nb&quot;,&quot;Norwegian Bokmål&quot;] ,            [&quot;nd&quot;,&quot;North Ndebele&quot;] ,            [&quot;ne&quot;,&quot;Nepali&quot;] ,            [&quot;ng&quot;,&quot;Ndonga&quot;] ,            [&quot;nn&quot;,&quot;Norwegian Nynorsk&quot;] ,            [&quot;no&quot;,&quot;Norwegian&quot;] ,            [&quot;ii&quot;,&quot;Nuosu&quot;] ,            [&quot;nr&quot;,&quot;South Ndebele&quot;] ,            [&quot;oc&quot;,&quot;Occitan&quot;] ,            [&quot;oj&quot;,&quot;Ojibwe&quot;] ,            [&quot;om&quot;,&quot;Oromo&quot;] ,            [&quot;or&quot;,&quot;Oriya&quot;] ,            [&quot;os&quot;,&quot;Ossetian&quot;] ,            [&quot;pa&quot;,&quot;Panjabi&quot;] ,            [&quot;pi&quot;,&quot;Pali&quot;] ,            [&quot;fa&quot;,&quot;Persian&quot;] ,            [&quot;pl&quot;,&quot;Polish&quot;] ,            [&quot;ps&quot;,&quot;Pashto&quot;] ,            [&quot;pt&quot;,&quot;Portuguese&quot;] ,            [&quot;qu&quot;,&quot;Quechua&quot;] ,            [&quot;rm&quot;,&quot;Romansh&quot;] ,            [&quot;rn&quot;,&quot;Kirundi&quot;] ,            [&quot;ro&quot;,&quot;Romanian&quot;] ,            [&quot;ru&quot;,&quot;Russian&quot;] ,            [&quot;sa&quot;,&quot;Sanskrit&quot;] ,            [&quot;sc&quot;,&quot;Sardinian&quot;] ,            [&quot;sd&quot;,&quot;Sindhi&quot;] ,            [&quot;se&quot;,&quot;Northern Sami&quot;] ,            [&quot;sm&quot;,&quot;Samoan&quot;] ,            [&quot;sg&quot;,&quot;Sango&quot;] ,            [&quot;sr&quot;,&quot;Serbian&quot;] ,            [&quot;gd&quot;,&quot;Scottish Gaelic&quot;] ,            [&quot;sn&quot;,&quot;Shona&quot;] ,            [&quot;si&quot;,&quot;Sinhala&quot;] ,            [&quot;sk&quot;,&quot;Slovak&quot;] ,            [&quot;sl&quot;,&quot;Slovene&quot;] ,            [&quot;so&quot;,&quot;Somali&quot;] ,            [&quot;st&quot;,&quot;Southern Sotho&quot;] ,            [&quot;es&quot;,&quot;Spanish&quot;] ,            [&quot;su&quot;,&quot;Sundanese&quot;] ,            [&quot;sw&quot;,&quot;Swahili&quot;] ,            [&quot;ss&quot;,&quot;Swati&quot;] ,            [&quot;sv&quot;,&quot;Swedish&quot;] ,            [&quot;ta&quot;,&quot;Tamil&quot;] ,            [&quot;te&quot;,&quot;Telugu&quot;] ,            [&quot;tg&quot;,&quot;Tajik&quot;] ,            [&quot;th&quot;,&quot;Thai&quot;] ,            [&quot;ti&quot;,&quot;Tigrinya&quot;] ,            [&quot;bo&quot;,&quot;Tibetan&quot;] ,            [&quot;tk&quot;,&quot;Turkmen&quot;] ,            [&quot;tl&quot;,&quot;Tagalog&quot;] ,            [&quot;tn&quot;,&quot;Tswana&quot;] ,            [&quot;to&quot;,&quot;Tonga&quot;] ,            [&quot;tr&quot;,&quot;Turkish&quot;] ,            [&quot;ts&quot;,&quot;Tsonga&quot;] ,            [&quot;tt&quot;,&quot;Tatar&quot;] ,            [&quot;tw&quot;,&quot;Twi&quot;] ,            [&quot;ty&quot;,&quot;Tahitian&quot;] ,            [&quot;ug&quot;,&quot;Uighur&quot;] ,            [&quot;uk&quot;,&quot;Ukrainian&quot;] ,            [&quot;ur&quot;,&quot;Urdu&quot;] ,            [&quot;uz&quot;,&quot;Uzbek&quot;] ,            [&quot;ve&quot;,&quot;Venda&quot;] ,            [&quot;vi&quot;,&quot;Vietnamese&quot;] ,            [&quot;vk&quot;,&quot;Viking&quot;] ,            [&quot;vo&quot;,&quot;Volapük&quot;] ,            [&quot;wa&quot;,&quot;Walloon&quot;] ,            [&quot;cy&quot;,&quot;Welsh&quot;] ,            [&quot;wo&quot;,&quot;Wolof&quot;] ,            [&quot;fy&quot;,&quot;Western Frisian&quot;] ,            [&quot;xh&quot;,&quot;Xhosa&quot;] ,            [&quot;yi&quot;,&quot;Yiddish&quot;] ,            [&quot;yo&quot;,&quot;Yoruba&quot;] ,            [&quot;za&quot;,&quot;Zhuang&quot;] ,            [&quot;zu&quot;,&quot;Zulu&quot;]         ];
+
+            isPopulated = false;
+            isRecognized = false;
+
+            opsUrl = $(&quot;input[name=opsUrl]&quot;).val();
+            sUrl = $(&quot;input[name=sUrl]&quot;).val() + &apos;&amp;OPS=&apos; + opsUrl;
+            dataLanguage = $(&quot;input[name=dataLanguage]&quot;).val();
+            unsupportedLanguageMsg = $(&quot;input[name=unsupportedLanguageMsg]&quot;).val();
+            translateThisTextFeatureLinkHref = $(&quot;input[name=translateThisTextFeatureLinkHref]&quot;).val();
+            disabledEpBTranslationFlag = &apos;false&apos;;
+            disabledEpBTranslationMessage = $(&quot;input[name=disabledEpBTranslationMessage]&quot;).val();
+        }
+
+        if ($(&quot;input[name=LocalizedPublicationAbstractLanguage]&quot;).val()){
+            populateLanguageList($(&quot;input[name=LocalizedPublicationAbstractLanguage]&quot;).val());
+        }
+
+
+    }
+
+</script> </div> </div> </div> <div id="epoFooter"> <ul> <li> <a href="/?locale=en_EP&view=sitemap" target="_self">Sitemap</a> </li><li> <a href="//www.epo.org/footer/accessibility.html" target="_blank">Accessibility</a> </li><li> <a href="//www.epo.org/footer/legal-notice.html" target="_blank">Legal notice</a> </li><li> <a href="//www.epo.org/footer/terms.html" target="_blank">Terms of use</a> </li><li>Last updated: 09.03.2016</li> <li>Worldwide Database</li> <li>6.1.8; 92p</li> </ul> </div> </div> </body> </html>

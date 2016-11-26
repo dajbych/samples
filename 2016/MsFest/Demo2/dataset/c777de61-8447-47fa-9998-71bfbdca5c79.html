@@ -1,0 +1,952 @@
+ <html class="no-js"> <head> <meta charset="UTF-8" /> <meta name="google" content="notranslate" /> <meta http-equiv="Content-Language" content="fi" /> <meta name="viewport" content="user-scalable=no" /> <style type="text/css"> @font-face { font-family: &apos;SanomatSemibold&apos;; src: url(&apos;/webstatic/fonts/SanomatWeb-Semibold.eot&apos;); src: url(&apos;/webstatic/fonts/SanomatWeb-Semibold.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;), url(&apos;/webstatic/fonts/SanomatWeb-Semibold.svg#Sanomat Web&apos;) format(&apos;svg&apos;), url(&apos;/webstatic/fonts/SanomatWeb-Semibold.woff&apos;) format(&apos;woff&apos;), url(&apos;/webstatic/fonts/SanomatWeb-Semibold.ttf&apos;) format(&apos;truetype&apos;); font-weight: 600; font-style: normal; font-stretch: normal; } @font-face { font-family: &apos;SanomatRegular&apos;; src: url(&apos;/webstatic/fonts/SanomatWeb-Regular.eot&apos;); src: url(&apos;/webstatic/fonts/SanomatWeb-Regular.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;), url(&apos;/webstatic/fonts/SanomatWeb-Regular.svg#SanomatRegular&apos;) format(&apos;svg&apos;), url(&apos;/webstatic/fonts/SanomatWeb-Regular.woff&apos;) format(&apos;woff&apos;), url(&apos;/webstatic/fonts/SanomatWeb-Regular.ttf&apos;) format(&apos;truetype&apos;); font-weight: 400; font-style: normal; font-stretch: normal; } @font-face { font-family: &apos;HelsinginTextBold&apos;; src: url(&apos;/webstatic/fonts/HelsinginTextWeb-Bold.eot&apos;); src: url(&apos;/webstatic/fonts/HelsinginTextWeb-Bold.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;), url(&apos;/webstatic/fonts/HelsinginTextWeb-Bold.svg#Helsingin Text Web&apos;) format(&apos;svg&apos;), url(&apos;/webstatic/fonts/HelsinginTextWeb-Bold.woff&apos;) format(&apos;woff&apos;), url(&apos;/webstatic/fonts/HelsinginTextWeb-Bold.ttf&apos;) format(&apos;truetype&apos;); font-weight: 700; font-style: normal; font-stretch: normal; } @font-face { font-family: &apos;HelsinginTextRegular&apos;; src: url(&apos;/webstatic/fonts/HelsinginTextWeb-Regular.eot&apos;); src: url(&apos;/webstatic/fonts/HelsinginTextWeb-Regular.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;), url(&apos;/webstatic/fonts/HelsinginTextWeb-Regular.svg#Helsingin Text Web&apos;) format(&apos;svg&apos;), url(&apos;/webstatic/fonts/HelsinginTextWeb-Regular.woff&apos;) format(&apos;woff&apos;), url(&apos;/webstatic/fonts/HelsinginTextWeb-Regular.ttf&apos;) format(&apos;truetype&apos;); font-weight: 400; font-style: normal; font-stretch: normal; } @font-face { font-family: &apos;HelsinginDisplayLight&apos;; src: url(&apos;/webstatic/fonts/HelsinginWeb-Light.eot&apos;); src: url(&apos;/webstatic/fonts/HelsinginWeb-Light.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;), url(&apos;/webstatic/fonts/HelsinginWeb-Light.woff&apos;) format(&apos;woff&apos;), url(&apos;/webstatic/fonts/HelsinginWeb-Light.ttf&apos;) format(&apos;truetype&apos;), url(&apos;/webstatic/fonts/HelsinginWeb-Light.svg#Sanomat Web&apos;) format(&apos;svg&apos;); font-weight: 300; font-style: normal; font-stretch: normal; } @font-face { font-family: &quot;Helsingin Web&quot;; src: url(&apos;/webstatic/fonts/Helsingin Web-XBold.eot&apos;); src: url(&apos;/webstatic/fonts/Helsingin Web-XBold.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;), url(&apos;/webstatic/fonts/Helsingin Web-XBold.woff&apos;) format(&apos;woff&apos;), url(&apos;/webstatic/fonts/Helsingin Web-XBold.ttf&apos;) format(&apos;truetype&apos;), url(&apos;/webstatic/fonts/Helsingin Web-XBold.svg#Helsingin Web&apos;) format(&apos;svg&apos;); font-weight: 800; font-style: normal; font-stretch: normal; } @font-face { font-family: &quot;The Message&quot;; src: url(&apos;/webstatic/fonts/the_message-regular-webfont.eot&apos;); src: url(&apos;/webstatic/fonts/the_message-regular-webfont.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;), url(&apos;/webstatic/fonts/the_message-regular-webfont.woff&apos;) format(&apos;woff&apos;), url(&apos;/webstatic/fonts/the_message-regular-webfont.ttf&apos;) format(&apos;truetype&apos;), url(&apos;/webstatic/fonts/the_message-regular-webfont.svg#the_messageregular&apos;) format(&apos;svg&apos;); font-weight: 400; font-style: normal; font-stretch: normal; } @font-face { font-family: &quot;The Message DemiBold&quot;; src: url(&apos;/webstatic/fonts/the_message-demibold-webfont.eot&apos;); src: url(&apos;/webstatic/fonts/the_message-demibold-webfont.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;), url(&apos;/webstatic/fonts/the_message-demibold-webfont.woff&apos;) format(&apos;woff&apos;), url(&apos;/webstatic/fonts/the_message-demibold-webfont.ttf&apos;) format(&apos;truetype&apos;), url(&apos;/webstatic/fonts/the_message-demibold-webfont.svg#the_messagedemibold&apos;) format(&apos;svg&apos;); font-weight: 400; font-style: normal; font-stretch: normal; } @font-face { font-family: &quot;The Message Bold&quot;; src: url(&apos;/webstatic/fonts/the_message-bold-webfont.eot&apos;); src: url(&apos;/webstatic/fonts/the_message-bold-webfont.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;), url(&apos;/webstatic/fonts/the_message-bold-webfont.woff&apos;) format(&apos;woff&apos;), url(&apos;/webstatic/fonts/the_message-bold-webfont.ttf&apos;) format(&apos;truetype&apos;), url(&apos;/webstatic/fonts/the_message-bold-webfont.svg#the_messagebold&apos;) format(&apos;svg&apos;); font-weight: 400; font-style: normal; font-stretch: normal; } @font-face { font-family: &quot;HSicons&quot;; src: url(&apos;/webstatic/fonts/HSicons.eot&apos;); src: url(&apos;/webstatic/fonts/HSicons.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;), url(&apos;/webstatic/fonts/HSicons.woff2&apos;) format(&apos;woff2&apos;), url(&apos;/webstatic/fonts/HSicons.woff&apos;) format(&apos;woff&apos;), url(&apos;/webstatic/fonts/HSicons.ttf&apos;) format(&apos;truetype&apos;), url(&apos;/webstatic/fonts/HSicons.svg#HSicons&apos;) format(&apos;svg&apos;); font-weight: normal; font-style: normal; } </style> <script type="text/javascript">
+var hs = hs || {};
+(function(hs){
+
+    var mainSitePreferred = document.cookie.indexOf(&quot;preferredSite=main&quot;) != -1;
+    var mobileSitePreferred = document.cookie.indexOf(&quot;preferredSite=mobile&quot;) != -1;
+    var isMobileUrl = window.location.pathname == &quot;/m&quot; || window.location.pathname.indexOf(&quot;/m/&quot;) == 0;
+    var mainSiteUrl = &quot;http://nyt.fi/a1452836998034&quot;;
+    var mobileSiteUrl = &quot;http://nyt.fi&quot;;
+
+    hs.desktopUrl = mainSiteUrl;
+    hs.mobileUrl = mobileSiteUrl;
+    
+    mobileDeviceDetectionJS = function() {
+
+            var a = navigator.userAgent||navigator.vendor||window.opera;
+            if (/android.+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|meego.+mobile|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(di|rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) {
+                return true;                
+            } else {
+                // Windows Phone
+                if (/ZuneWP7/.test(a)) {
+                    return true;
+                }
+
+                // Nokia Asha 311
+                if (/Nokia311/.test(a)) {
+                    return true;
+                }
+            
+                return false;
+            }
+        };
+    
+    
+    
+
+
+
+
+})(hs);
+</script> <script type="text/javascript">
+
+        var hs = hs || {};
+        hs.pictureTypes = [];
+        
+        
+        hs.pictureTypes[&quot;taysi&quot;] = [
+            
+            960,
+            
+            100,
+            
+            145,
+            
+            150,
+            
+            175,
+            
+            228,
+            
+            250,
+            
+            300,
+            
+            306,
+            
+            350,
+            
+            360,
+            
+            450,
+            
+            466,
+            
+            560,
+            
+            630,
+            
+            700,
+            
+            1920
+            
+        ];
+        
+        hs.pictureTypes[&quot;kasvo&quot;] = [
+            
+            320
+            
+        ];
+        
+        hs.pictureTypes[&quot;pieni&quot;] = [
+            
+            65
+            
+        ];
+        
+        hs.pictureTypes[&quot;toimittaja&quot;] = [
+            
+            50,
+            
+            75
+            
+        ];
+        
+        hs.pictureTypes[&quot;mobiili&quot;] = [
+            
+            460,
+            
+            300,
+            
+            220,
+            
+            145
+            
+        ];
+        
+        hs.pictureTypes[&quot;nelio&quot;] = [
+            
+            130,
+            
+            260,
+            
+            650,
+            
+            75
+            
+        ];
+        
+        hs.pictureTypes[&quot;sarjis&quot;] = [
+            
+            560,
+            
+            940
+            
+        ];
+        
+        hs.pictureTypes[&quot;svg&quot;] = [
+            
+        ];
+        
+
+        (function() {
+	        if (&quot;-ms-user-select&quot; in document.documentElement.style &amp;&amp; navigator.userAgent.match(/IEMobile\/10\.0/)) {
+	            var msViewportStyle = document.createElement(&quot;style&quot;);
+	            msViewportStyle.appendChild(
+	                document.createTextNode(&quot;@-ms-viewport{width:auto!important}&quot;)
+	            );
+	            document.getElementsByTagName(&quot;head&quot;)[0].appendChild(msViewportStyle);
+	        }
+	    })();
+    </script> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <script type="text/javascript" src="/webstatic/js/lib/hs-plugins-update5.js" /> <script>
+        var articles = [];
+        // Resolves relative uri to full https uri
+        function withHttps(url) {
+            return Utils.httpsBaseUrl + url;
+        }
+        // Resolves relative uri to full http uri
+        function withHttp(url) {
+            return &quot;http://nyt.fi&quot; + url;
+        }
+
+        // Build url for static content
+        function buildStaticUrl(url) {
+            var txt = &quot;/webstatic/&quot; + url;
+            return txt;
+        }
+    </script> <link rel="canonical" href="http://nyt.fi/a1452836998034" /> <meta property="fb:page_id" content="7180412111" /> <meta property="fb:admins" content="521178030,530401838,808509127,731802674,655714785,100001891750932,690702391,660490134,691493711,748457830,696176888,703245834" /> <meta property="og:url" content="http://nyt.fi/a1452836998034?jako=ca9aea95277837f0f90836849bb956a3&ref=og-url" /> <meta property="og:title" content="Islantiin nousee pakanatemppeli, jonka esikuva on Temppeliaukion kirkko" /> <meta property="og:type" content="article" /> <meta property="og:description" content="Islantilainen Hilmar Örn Hilmarsson on skandinaavisiin mytologioihin perustuvan Ásatrúarfélagiðn ylipappi, muusikko ja elokuvasäveltäjä. Tällä hetkellä hän rakentaa Islantiin lähes 840 000 euroa maksavaa pakanatemppeliä." /> <meta property="og:site_name" content="Nyt.fi" /> <meta property="title" content="Islantiin nousee pakanatemppeli, jonka esikuva on Temppeliaukion kirkko" /> <meta property="description" content="Islantilainen Hilmar Örn Hilmarsson on skandinaavisiin mytologioihin perustuvan Ásatrúarfélagiðn ylipappi, muusikko ja elokuvasäveltäjä. Tällä hetkellä hän rakentaa Islantiin lähes 840 000 euroa maksavaa pakanatemppeliä." /> <meta name="twitter:card" content="summary_large_image" /> <meta name="twitter:site" content="@hsfi" /> <meta name="twitter:title" content="Islantiin nousee pakanatemppeli, jonka esikuva on Temppeliaukion kirkko" /> <meta name="twitter:description" content="Islantilainen Hilmar Örn Hilmarsson on skandinaavisiin mytologioihin perustuvan Ásatrúarfélagiðn ylipappi, muusikko ja elokuvasäveltäjä. Tällä hetkellä hän rakentaa Islantiin lähes 840 000 euroa maksavaa pakanatemppeliä." /> <meta name="robots" content="noarchive" /> <meta name="bi3dPubDate" content="2016-01-18 21:32:14" /> <meta name="bi3dArtId" content="1452836998034" /> <meta name="bi3dSection" content="nyt" /> <meta name="bi3dArtTitle" content="Islantiin nousee pakanatemppeli, jonka esikuva on Temppeliaukion kirkko" /> <link rel="image_src" type="image/jpeg" href="http://www.hs.fi/webkuva/taysi/1920/1452837003027?ts=363" /> <meta property="og:image" content="http://www.hs.fi/webkuva/taysi/1920/1452837003027?ts=363" /> <meta property="og:image:width" content="960" /> <meta property="og:image:height" content="512" /> <meta property="og:image:type" content="image/jpeg" /> <meta name="twitter:image" content="http://www.hs.fi/webkuva/taysi/1920/1452837003027?ts=363" /> <title>Islantiin nousee pakanatemppeli, jonka esikuva on Temppeliaukion kirkko - Ulkomaat - Nyt</title> <link rel="shortcut icon" href="/webstatic/images/nyt/favicon.ico" type="image/x-icon" /> <link rel="icon" href="/webstatic/images/nyt/favicon.ico" type="image/x-icon" /> <link rel="stylesheet" href="/webstatic/build-2cb930498a/desktop-nyt.css" /> <link rel="stylesheet" href="/webstatic/build-2cb930498a/desktop-print.css" media="print" /> <script type="text/javascript" src="/webstatic/build-2cb930498a/desktop-nyt.js" /> <meta name="description" content /> <meta name="msapplication-tooltip" content="HS.fi" /> <meta name="msapplication-starturl" content="/?ref=win7msie9" /> <meta name="msapplication-task" content="name=Etusivu;action-uri=/?ref=win7msie9;icon-uri=/webstatic/images/favicon.ico" /> <meta name="msapplication-task" content="name=Sää;action-uri=/saa/?ref=win7msie9;icon-uri=/webstatic/images/favicon.ico" /> <meta name="msapplication-task" content="name=Urheilu;action-uri=/urheilu/?ref=win7msie9;icon-uri=/webstatic/images/favicon.ico" /> <meta name="msapplication-task" content="name=Uutiset;action-uri=/uutiset/?ref=win7msie9;icon-uri=/webstatic/images/favicon.ico" /> <meta name="msapplication-task" content="name=Digilehti;action-uri=/paivanlehti/?ref=win7msie9;icon-uri=/webstatic/images/favicon.ico" /> <script type="text/javascript">
+        
+        var articleId = undefined;
+    </script> <meta property="fb:app_id" content="626273530771679" /> <script>
+        var facebookAppId = &apos;626273530771679&apos;;
+        hs.site.httpsUrl=&quot;http://nyt.fi&quot;;
+        hs.site.httpUrl=&quot;http://nyt.fi&quot;;
+        hs.site.baseUrl = &quot;/&quot;;
+        hs.site.name = &quot;nyt&quot;;
+    </script> <script type="text/javascript">
+    var scriptUrl;
+    var width = ($(window).width() &lt;= screen.width) ? $(window).width() : screen.width;
+    if (width &lt; 721) {
+        document.write(&apos;\x3Cscript type=&quot;text/javascript&quot; src=&quot;http://cts.sanoma.fi/service/js/nyt-fi_mobi/ros/&quot;&gt;\x3C/script&gt;&apos;);
+    } else {
+        document.write(&apos;\x3Cscript type=&quot;text/javascript&quot; src=&quot;http://cts.sanoma.fi/service/js/nyt-fi/artikkelit_uusi/&quot;&gt;\x3C/script&gt;&apos;);
+    }
+</script> <script type="text/javascript">
+    cts = new Tagging();
+</script> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;head&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat+islanti+kansanperinne+kirkot+kotimaa+helsinki+elokuvat+ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> <div class="last-module ad-container"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;head&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:true,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat+islanti+kansanperinne+kirkot+kotimaa+helsinki+elokuvat+ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> <link href="http://www.hs.fi/uutiset/osastoittain/rss/?osastot=nyt" title="Nyt.fi" type="application/rss+xml" rel="alternate" /> <meta property="fb:pages" content="226745661666" /> <style> .entry-top .reaktor-player-container a.r-logo-link { width: 51px; display: inline-block; } .desktop #header #navigation { padding-right:10px; } .desktop #header label{ display:none;} .desktop #header .customStyleSelectBoxInner { background: transparent url(&quot;/webstatic/images/nyt/icons.png&quot;) no-repeat right -110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-right: 25px; line-height: 20px; } .desktop #header label{ line-height:18px; } .nyt-sovellus-puffi{ background:#00a8b3 url(http://files.snstatic.fi/hs/img/nyt-bubble-stencil.png) left top no-repeat; padding: 15px 10px 12px 20px; margin: 0 0 10px -10px; color:#fff!important; font:normal 15px/20px HelsinginTextRegular,Helvetica,Arial,sans-serif; max-width:580px; } .nyt-sovellus-puffi span{ text-decoration:underline; } .desktop .hs-news-box-wrap .hs-news-box, .tablet .hs-news-box-wrap .hs-news-box{ margin-top:0; } .desktop #bottom-ads, .tablet #bottom-ads{ margin-bottom:10px; max-height:none; overflow:hidden; } .desktop #bottom-ads .nyt-ad, .tablet #bottom-ads .nyt-ad { width:610px; max-height:none; height:auto; } .desktop .ad-container div, .tablet .ad-container div { margin: 0 auto; } .type-article .comment-section { display: none; } .type-article .show-comments .comment-section { display: block; } .desktop .hs-news-box-wrap { overflow: hidden; } input#search-term { color: #ddd !important; } .desktop .mobile_version, .tablet .mobile_version { display: none; } .desktop .meta #social .tw, .tablet .meta #social .tw { display: none !important; } /* HS PROMO BOX QUICK FIX */ .desktop .hs-news-box-wrap .hs-news-box .hs-article, .tablet .hs-news-box-wrap .hs-news-box .hs-article { width:232px; margin-left:3px; } .desktop .hs-news-box-wrap .hs-news-box .second, .tablet .hs-news-box-wrap .hs-news-box .second { background: none repeat scroll 0 0 #ebebeb; } .desktop .hs-news-box-wrap .hs-news-box .fingerpori, .tablet .hs-news-box-wrap .hs-news-box .fingerpori { margin-left:3px; } /*CAMPAIGNS-start*/ .campaign-block.left{ background:#242424; } .campaign-block.left .img-wrapper { background:transparent!important; padding-top: 12px; } .campaign-block.left .caption { font-family: HelsinginTextBold,Helvetica,Arial,sans-serif!important; font-weight: normal!important; letter-spacing: 0; padding: 5px 0 0; position: relative!important; background:transparent!important; } .tablet .campaign-block.left .caption {font-size:14px!important;} .campaign-block.left &gt; a { text-decoration: none; } .campaign-block.left .img-wrapper &gt; img { width: 100%!important; } .campaign-block.right .img-wrapper &gt; img { width: 100%; } #front-content .campaign-block.right .caption { font-family: Helvetica,Arial,sans-serif; font-size: 20px; line-height:22px; font-weight: bold; letter-spacing: -1px; color:#fff!important; } .tablet #front-content .campaign-block.right{height:350px!important;border-color:#fff;background:transparent;} .tablet #front-content .campaign-block.right .img-wrapper {height: 350px;background:transparent;} .tablet #front-content .campaign-block.right .caption{font-weight:normal;} .desktop #front-content .campaign-block .tag, .tablet #front-content .campaign-block .tag, .mobile #front-content .campaign-block .tag { font-family: Helvetica,Arial,sans-serif; font-weight: normal; } /*CAMPAIGNS-end*/ #global_ad_id1, #global_ad_id2 { text-align: center; } #right-col .related-elements { display: none; } .desktop #front-content .latestComicElement, .tablet #front-content .latestComicElement { clear: right; } .desktop #front-content .latestComicElement h2 { margin-bottom: 1px; } .desktop #front-content .latestComicElement a { margin-bottom: 1px; } .tablet #front-content .latestComicElement h2 { margin-bottom: 9px; } .tablet #front-content .latestComicElement a { margin-bottom: 10px; } .desktop #front-content #radio-helsinki-item { border: medium none; height: 185px; width: 320px; } .desktop #front-content #radio-helsinki-item .img-wrapper { height: 185px; width: 320px; } .tablet #front-content #radio-helsinki-item { border: medium none; margin: -12px 10px 0; background: none; width: 300px; } .tablet #front-content #radio-helsinki-item .img-wrapper { background-color: transparent; margin-top: 1px; height: 165px; } .mobile #front-content #radio-helsinki-item { border: medium none; margin: auto; width: 100%; clear: both; } .mobile .survey { width: 250px; } .mobile .desktop-version { display: none; } .desktop .mobile-version, .tablet .mobile-version { display: none; } .desktop .last-module.ad-container { width: 980px; margin: 0 auto; } #front-content #static-comic-element a { margin-top: 9px; } #front-content #static-comic-element a img { width: 98px; } .tablet #front-content #static-comic-element a img { width: 93px; } #front-content #static-comic-element a .comic-title { font-family: HelsinginTextBold,Helvetica,Arial,sans-serif; font-size: 18px; font-weight: normal; height: 20px; letter-spacing: 0; line-height: 25px; color: #000000; top: 0; left: 110px; padding: 0; } .tablet #front-content #static-comic-element a .comic-title { left: 103px; } #front-content{ overflow: hidden!important; } .ad-hidden { display: none; } body.desktop { line-height:1.1; } .image-viewer, .photobox { display: none; } .korostus, .votsikko { font-weight: bold; } .allekirj, .tark { font-family: Arial,Helvetica,sans-serif; font-size: 13px; font-weight: bold; } .teos { font-style:italic; } .ingressi { font-family:HelsinginTextBold,Helvetica,Arial,sans-serif; letter-spacing:0; line-height:1.3; } a.nimilinkki, a.nimilinkki:visited { font-weight: bold; } .tablet #rolling-ad { display: block; margin-top:0; } .mobile #rolling-ad { margin: 0 auto; } .mobile .ad-between { margin: 10px auto; text-align: center; } .desktop #content-flow .img-wrapper img { max-width: 100%; } .tablet #content-flow .img-wrapper img { max-width: 100%; width: auto; } #beta-info, #info-message, #comic-info { background-color: #00A8B3; color: #ffffff; margin: 0 0 10px; padding: 30px 30px; font-size: 120%; } #beta-info a, #info-message a, #comic-info a { color: #ffffff; } .mobile #beta-info, .mobile #info-message, .mobile #comic-info { /*border-bottom:10px solid #ccc;*/ margin:0!important; } .desktop #info-message, .desktop #comic-info { margin: 0 0 30px 185px; width: 920px; } #top-areas, #fixed-header{background:#282828!important;} #header span.customStyleSelectBox, #header #frm-search input[type=&quot;text&quot;]{background:transparent!important;} .desktop .entry .meta, .desktop .category{height:18px;line-height:20px;} .desktop .meta .category { width: auto!important; min-width:100px; } .desktop .entry .meta{width:auto;} .desktop #next-teaser, .tablet #next-teaser, .mobile #next-teaser{background-color: rgba(40, 40, 40, 0.85);color: #32BBD0;} .desktop .article-tools-social .permalink, .tablet .article-tools-social .permalink, .mobile .article-tools-social .permalink{height: 18px;line-height: 18px;padding:0;top:0;display:inline-block;} .mobile .social-media-buttons {overflow: hidden;} .mobile .meta .permalink {display:none;} .mobile .article-tools-social .permalink{width: 100%;overflow: hidden;margin-top:15px;} .desktop .article-tools-social .permalink text, .tablet .article-tools-social .permalink text, .mobile .article-tools-social .permalink text {background-color: #F2F2F2;border-right: none;display: inline-block;line-height: 18px;padding:0 8px 0;} .social-media-buttons {margin: 10px 0;} .comic-tags .category {margin-bottom: 10px;} .text div#review-article-box { background: none repeat scroll 0 0 #F7F7F7; border-top: 16px solid #E5E5E5; float: left; font: 13px HelsinginTextRegular,Helvetica,Arial,sans-serif; margin: 5px 15px 0 0; padding: 0 8px; width: 159px; } .mobile .text div#review-article-box { font-size: 11px; width: 125px; } .desktop #full-comic .image img, .tablet #full-comic .image img, .mobile #full-comic .image img { width: auto; } .additional-images { display: none; } .desktop #social { top: 35px; } .desktop #social .faceb, .desktop #social .fb, .desktop #social .tw, .desktop #social .tw iframe { margin: 8px auto; width: 60px !important; } .desktop .comment-section #commenting .kommentit .header { padding: 0 0 0 8px; line-height:32px; } .desktop .comment-section #commenting .kommentit .header h3 .value { font-family: HelsinginTextRegular,Helvetica,Arial,sans-serif; } .desktop span.customStyleSelectBox{ font-family: HelsinginTextBold,Helvetica,Arial,sans-serif; } .desktop .comment-section #commenting .kommentit .form-send-comment .kommentoi-name-field .comment-btn { font-family: helsinginTextBold; font-size: 13px; } .mobile .entry .text { font-size: 16px; } .mobile #header span.customStyleSelectBox { line-height: 20px; } .mobile #header .customStyleSelectBoxInner{ line-height: 20px; padding-right: 35px; width: auto!important; } .mobile #header #frm-search, .mobile #header #navigation { border-left: 1px solid #656565; padding-left: 8px; height: 23px; padding-top:3px; } .mobile #header #logo-m .logo-m-back { border-right: 1px solid #656565; height:25px; background-position: 0 -149px !important; } .mobile #header #logo-m img { height: 25px; margin: 8px 0 0 10px; } .mobile #header #fixed-header{ height: 35px; } .mobile #footer-contact, .mobile #footer-links-1, .mobile #footer-links-2, .mobile #footer-search { height: auto; margin: 0; padding: 0 !important; } .mobile .footer-links { overflow: hidden; padding: 0 0 5px; } .mobile #corporate-footer a .corporate-footer { margin: 0; } .video-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; } .video-container iframe, .video-container object, .video-container embed, .video-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } #front-content .img-wrapper { background-color: #b3b3b3; overflow:hidden; } .mobile #front-content { background-color: #ccc; } .mobile #front-content .blocks-960 { margin-bottom: 3px; margin-top:-10px; } .mobile #front-content .blocks-960.articles-1 { margin-top: 0; } .mobile #front-content .blocks-960 .nr1 .caption { background: #19191e; position: relative; } .mobile #front-content .blocks-960 .nr1 .img-wrapper { height: auto !important; } .mobile #front-content .blocks-320 .article { border: none; margin: auto 0 3px; } .mobile .mobile-ad-container { margin: 10px auto; text-align: center; } .mobile #front-content .mobile-ad-container { width: auto; } .mobile #front-content .blocks-650 { background-color: #fff; } .mobile #front-content .blocks-650 .article { margin: 0; } .mobile #front-content .blocks-650 .article .img-wrapper { min-height: 0; } .mobile #front-content .blocks-320.articles-4{ background-color: #ccc; padding-bottom: 12px; } .mobile #front-content .themeRelatedArticles { margin: 12px 0 0; } .mobile #front-content .themeRelatedArticles ul li { height: 69px; } .mobile #front-content .blocks-320.articles-4 .article img { } .mobile #front-content .blocks-320.articles-4 .article .img-wrapper .caption { /*position: relative;*/ } .mobile #front-content h2 { font-size: 18px; line-height: 30px; padding: 0 10px; } #front-content .blocks-960 .nr1 .img-wrapper { height: auto !important; } .mobile #front-content .latestComicElement { background: #fff; } .desktop #front-content .ad-container { width:630px; height:auto; } .desktop #front-content .ad-container div, .tablet #front-content .ad-container div{ margin:0 auto; } .desktop #front-content .themeRelatedArticles h2, .desktop #front-content .latestComicElement h2 { font-size: 18px; line-height: 28px; padding: 2px 10px 0; margin-bottom: 5px; } .desktop #front-content .themeRelatedArticles ul li img, .desktop #front-content .latestComicElement ul li img { bottom: 0; top: auto; } .desktop #front-content .themeRelatedArticles ul li { height: 100px; padding: 12px 100px 5px 10px; } .desktop #front-content .themeRelatedArticles ul li h3, .desktop #front-content .latestComicElement ul li h3 { font-size: 18px; } .embedded-image{ margin-bottom: 0.8rem; } .text .embedded-image.small { margin: 0 15px 0 0; width: 175px; } .text .embedded-image.medium { margin: 0 15px 0 0; width: 240px; } .embedded-image .credit { background: none!important; bottom: -2px!important; margin: -15px 0 0 0!important; padding: 0!important; right: 0!important; position: relative!important; text-align: right; font-family: HelsinginTextRegular,Helvetica,Arial,sans-serif; color: #808080!important; min-height:15px; } .tablet .embedded-image .credit{ font-size:15px; } .embedded-image .credit:empty { visibility: hidden; } .text .left { clear: both; float: left; } .text .right { clear: both; float: right; } .mobile .text .embedded-image.small { width: 140px; } .mobile .additional-article #main-content { border-top: 5px solid #ccc; } .mobile .additional-article:first-of-type #main-content { border-top: medium none; } .mobile .additional-article .main-image-area .img-wrapper { padding-top: 0; } .tablet #front-content .themeRelatedArticles ul li { height: 106px; } /*EMBEDDED IMAGES*/ .text .caption { background: none repeat scroll 0 0 #000000; padding: 4px 6px; position: relative!important; } .caption { font-family: HelsinginTextRegular; font-size: 13px; } .tablet .caption { font-size: 15px; } .embedded-image.medium.right{ margin: 0 0 15px 15px; } .mobile .embedded-image.medium{ width:140px; } /*TABLET*/ body.tablet { font-size:15px; padding-top:45px; } .tablet .meta, .tablet .category { font-size: 15px !important; line-height: 21px; } .tablet .category { height: 20px; } .tablet .meta{ overflow:visible; height: 20px; } .tablet .meta #social { display: block; left: 0; position: absolute; top: 50px; width: 120px; } .tablet #social .faceb, .tablet #social .fb, .tablet #social .tw, .tablet #social .tw iframe { margin: 0 auto 16px; width: 60px !important; } .tablet .entry .text { width: 610px; font-size:20px; line-height:1.6; } .tablet .text div#review-article-box { background: none repeat scroll 0 0 #F7F7F7; border-top: 20px solid #E5E5E5; float: left; font: 15px HelsinginTextRegular,Helvetica,Arial,sans-serif; margin: 5px 15px 0 0; padding: 0 8px; width: 159px; } .tablet .entry .text, .tablet .comment-section, .tablet .article-tools-social, .tablet #bottom-ads { margin-left: 140px; } .tablet #next-teaser { right: 0; width:500px; max-width:500px; font-size:15px!important; padding: 15px 40px 15px 15px; } .tablet #next-teaser .arrow { font-size: 30px; width: 40px; line-height: 55px; } .tablet .additional-article #main-content { border-top: 13px solid #ccc; } .tablet .additional-article:first-of-type #main-content { border-top: none; } .tablet #front-content .ad-container { width:620px; height:auto; } .tablet #front-content .themeRelatedArticles{ margin-bottom:0; } .tablet #front-content .themeRelatedArticles h2{ margin:0 0 1px 0; } .tablet #front-content .themeRelatedArticles ul li img, .tablet #front-content .latestComicElement ul li img { bottom:0; top:auto; } .tablet #front-content .blocks-650 .article { margin: 0 10px 0 0; } /*TABLET COMMENTS*/ .tablet .comment-content .meta .posted, .tablet .comment-content .meta .author { font-size: 15px!important; line-height:15px; } .tablet .comment-content .comment-report { font-size: 15px!important; } .tablet .comment-content .comment-bottom-buttons { font-size: 15px!important; margin-top:15px!important; } .comment-text { line-height: 1.3rem; margin: 0.5rem 0 0 0; } /*COMMENTS GENERAL*/ .comment-content { margin-top: 0!important; } .desktop .comment-content .meta, .tablet .comment-content .meta{ height:30px!important; line-height:15px!important; } .mobile .comment-content .meta{ border: medium none !important; line-height: 12px !important; } .comment-content .meta .posted{ clear:left; } .comment-content .comment-text .quote p { color:#808080!important; } /* MOBILE */ .mobile #content { background-color: #ccc; } .mobile .entry .meta { border-bottom: 1px solid #ccc; border-top: 1px solid #ccc; height: 100%; overflow: hidden; padding: 0; } .mobile .meta .category, .mobile .meta .assistant, .mobile .meta time, .mobile .meta .article-source { height: auto; line-height: 19px!important; margin: 0 10px 0 0!important; padding: 0!important; } .mobile .category { margin-right: 10px; padding: 2px 10px 0; } .mobile .meta .category { background: none repeat scroll 0 0 rgba(0, 0, 0, 0); width: auto; } .mobile .meta .category a { color:#00A8B3!important; } .mobile .meta .assistant, .mobile .meta .article-source { border-top: 1px solid #ccc; width: 100%; } .mobile .main-image-area .caption { background: none repeat scroll 0 0 #000000; padding: 5px 10px; position: relative; } .desktop #search-main { margin-bottom: 30px; width: 940px; } #primary_video_player_wrapper { display: none; } .entry-content .text a { color: #00A8B3; } .entry-content .text a:hover { text-decoration: underline; } .desktop #front-content .articles-2, .desktop #front-content .articles-3 { float: none; } .desktop #front-content .articles-2 .article.nr2, .desktop #front-content .articles-3 .article.nr3 { margin-right: 0; } .desktop #front-content .themeRelatedArticles ul li h3, .tablet #front-content .themeRelatedArticles ul li h3 { font-size: 17px; max-height: 75px; overflow: hidden; line-height: 1.1; padding-bottom: 2px; } .tablet #advertorial-shown-article-element .articles-2 { float: none; } .tablet .campaign-block.right { margin-top: -185px; } .desktop .campaign-block.right { margin-top: -195px; } .campaign-block.left .content-producer { display: none; } .comment-section .comment-info-text { padding-bottom: 15px; } .mobile.webview #top-areas { display: none; } .nyt-mielipide-element { margin-bottom: 20px; } .nyt-mielipide-element img { float: left; margin: 4px 10px 20px 0; } .desktop .nyt-mielipide-element img { margin-top: 0; } .desktop .nyt-mielipide-element &gt; div, .tablet .nyt-mielipide-element &gt; div { font-size: 14px; width: 605px; } .nyt-mielipide-element a { font-weight: bold; } .ad-between &gt; div { margin: 0 auto; } .kirjnosto { margin-left: 8px; margin-bottom: 8px; border: #eb2a77 solid 4px; padding: 5px; } .kirjkuva { border-width: 4px; border-color: #eb2a77; border-style: solid; width 100%; } .desktop #front-content #article-element-minne-nyt .blocks-320 .article, .desktop #front-content #article-element-6 .blocks-320 .article { margin-right: 0; } /* Lidl-kampiksen muutokset */ .desktop #full-comic #bottom-ads, .tablet #full-comic #bottom-ads { margin-left: 0; padding-top: 10px; /* small gap to social buttons */ } .desktop #full-comic #bottom-ads .nyt-ad, .tablet #full-comic #bottom-ads .nyt-ad { width: 940px; } /* Lidl-kamppiksen muutokset */ </style> <script>
+$( document ).ready(function() {
+    setTimeout(function() {
+        $(&quot;#a1305899913273 .show-more-comments a&quot;).trigger(&quot;click&quot;);
+    }, 1000);
+
+
+    $(&quot;.comic-tags p a&quot;).each(function() {
+        if ($(this).html() == &quot;Keskustelu&quot;) {
+            $(this).parents(&quot;.entry-content&quot;).addClass(&quot;show-comments&quot;);
+        }
+    });
+
+});
+
+</script> <script>
+$(document).ready(function() {
+    $(&quot;.form-send-comment&quot;).prepend(&apos;&lt;div class=&quot;comment-info-text&quot;&gt;Kommentoi, kiitos! Mutta älä möyhää, se ei ole kivaa.&lt;/div&gt;&apos;);
+
+
+    $(&quot;.article-tools-social&quot;).append(&apos;&lt;a href=&quot;http://nyt.fi/a1456454901984&quot;&gt;&lt;div class=&quot;nyt-sovellus-puffi&quot;&gt; &lt;span&gt;Nytin sovelluksen käyttäjille tarjolla lippuja uuteen ARRIVAL-elokuvaan! Arvonta tapahtuu Nytin sovelluksessa 2.12. Lataa se huviksesi: siellä myös tarkemmat osallistumisohjeet arvontaan.&lt;/span&gt;&lt;/div&gt;&lt;/a&gt;&apos;);
+
+/*
+*/
+
+});
+
+</script> </head> <body class="article-page"> <script>
+	    setLayout();
+	    /* For analytics tagging */
+    	var isMobile = $(&quot;body&quot;).hasClass(&quot;mobile&quot;);
+	</script> <div id="next-teaser" class="dark-overlay"> <div class="inner" style="display:none"> Seuraavaksi: <a href> <h4 /> <span class="arrow">↓</span> </a> </div> </div> <script type="text/javascript">
+        var ignoreNavigatorCookieEnabled = false;
+    </script>  <script type="text/javascript">
+
+(function() {
+    var cookieEnabled = (navigator.cookieEnabled) ? true : false;
+    if (ignoreNavigatorCookieEnabled || (typeof navigator.cookieEnabled == &quot;undefined&quot; &amp;&amp; !cookieEnabled)) {
+        var expire = new Date();
+        expire.setTime(expire.getTime() + 3600000);
+        document.cookie = &quot;testcookie=value; expires=&quot; + expire.toGMTString() + &quot;; path=/&quot;;
+        cookieEnabled = (document.cookie.indexOf(&quot;testcookie=value&quot;) != -1);
+    }
+    document.getElementsByTagName(&quot;html&quot;)[0].className += cookieEnabled ? &quot; cookies&quot; : &quot; no-cookies&quot;;
+})();
+
+</script> <script type="text/javascript">
+(function() {
+    if (hs &amp;&amp; hs.paywall) {
+        $(&quot;html&quot;).removeClass(&quot;no-js&quot;);
+    } else {
+        $(&quot;html&quot;).addClass(&quot;no-js&quot;);
+    }
+}());
+</script> <style type="text/css"> html.no-cookies #digipaper { display: none; } #javascript-disabled-error { display: none; } html.no-js, html.no-cookies { overflow: hidden; } html.no-js .article-text-content { display: none; } html.no-js #javascript-disabled-error, html.no-cookies #javascript-disabled-error { display: block; z-index: 100000; background-color: white; position: fixed; height: 100%; width: 100%; top: 0; left: 0; text-align: center; } </style> <div id="javascript-disabled-error"> <p>Tarkista selaimen asetuksista, että JavaScript ja evästeet ovat käytössä.</p> <p>Mikäli JavaScript on käytössä, mutta jokin selainlaajennus estää sen lataamisen, poista selainlaajennus käytöstä.</p> </div> <div id="fb-root" /> <script type="text/javascript">
+    browserUA = navigator.userAgent.toLowerCase();
+    if (browserUA.search(&apos;windows phone os 7&apos;) &gt; -1) {
+       $(&quot;#next-teaser&quot;).hide();
+    }
+	</script>  <div id="head-banner" role="banner" class="header"> </div> <div id="top-areas"> <div id="header" class="area"> <div id="corporate-header"> <script type="text/javascript">
+var mobileAnalytics=false;
+if(isMobile==undefined) { var isMobile=false; }
+if(isMobile) mobileAnalytics=true;
+var sanoma_analytics_section=&apos;nyt&apos;;
+if(mobileAnalytics) sanoma_analytics_section=&apos;mobiili/&apos;+sanoma_analytics_section;
+</script>  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MDZZ4H" height="0" width="0" style="display:none;visibility:hidden" /></noscript> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({&apos;gtm.start&apos;:
+new Date().getTime(),event:&apos;gtm.js&apos;});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!=&apos;dataLayer&apos;?&apos;&amp;l=&apos;+l:&apos;&apos;;j.async=true;j.src=
+&apos;//www.googletagmanager.com/gtm.js?id=&apos;+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,&apos;script&apos;,&apos;dataLayer&apos;,&apos;GTM-MDZZ4H&apos;);</script>  <div class="link-item-list link-item-list-1"> <script>
+function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split(&apos;&amp;&apos;);
+    for (var i = 0; i &lt; sURLVariables.length; i++) {
+        var sParameterName = sURLVariables[i].split(&apos;=&apos;);
+        if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+        }
+    }
+}
+var webview = getUrlParameter(&quot;webview&quot;);
+if (webview == &quot;true&quot;) {
+    $(&quot;body.mobile&quot;).addClass(&quot;webview&quot;);
+}
+</script> <style> .module-box .module-hdr, .module-box .video-module-hdr { margin-bottom: 8px; } </style> <div id="top-extra-links">  <div class="link-item-list link-item-list-1">  <ul class="list cf"> <li class="first"><a href="http://www.hs.fi/">Helsingin Sanomat</a></li> <li><a href="http://www.hs.fi/kuukausiliite/">Kuukausiliite</a></li> <li><a href="http://www.hs.fi/nyt/">Nyt</a></li> <li><a href="http://www.iltapulu.fi/">TV-ohjelmat</a></li> <li><a href="http://tyopaikat.hs.fi/
+">Työpaikat</a></li> <li class="last"><a href="http://www.oikotie.fi/">Oikotie</a></li> <li class="last"><a href="http://metro.fi">Metro</a></li> <li class="last"><a href="http://www.huuto.net/">Huuto.net</a></li> <li class="last"><a href="http://hintaseuranta.fi/?utm_source=hs.fi&utm_medium=tf-desktop&utm_campaign=tf-hise&utm_content=ylanavi">Hintaseuranta</a></li> </ul> </div>  </div> </div> </div> <div id="fixed-header"> <span id="toggle-left-col" class="toggle-left-col" title="Näytä/piilota navigaatio"><i class="icon-menu" /></span> <div id="logo-m"> <a href="/"> <span class="logo-m-back" /> <img src="/webstatic/images/nyt/logo-m.png" height="30" /> </a> </div>  <form id="frm-search" action="/haku/"> <input id="search-term" class="placeholder" name="haku" placeholder="Hae nyt.fi:stä" type="text" /> <input value="Hae" type="submit" /> </form>  <div id="navigation"> <input id="nytPageUrl" value="/[artikkeli]" type="hidden" /> <label for="navigation-selection">Näytä:</label> <select id="navigation-selection" name="navigation-selection"> <option value="/suosituimmat">Suosituimmat</option> <option value="/uusimmat">Uusimmat</option> <option value="/">Etusivu</option> <option value="http://nyt.fi/aihe/anonyymitelaimet/">Anonyymit Eläimet</option> <option value="http://nyt.fi/aihe/fokit/">Fok_it</option> <option value="http://nyt.fi/aihe/wumo/">Wumo</option> <option value="http://nyt.fi/aihe/elokuvaarvostelut/">Elokuva-arvostelut</option> <option value="http://nyt.fi/aihe/levyarviot/">Levyarviot</option> <option value="http://nyt.fi/aihe/ravintolaarviot/">Ravintola-arviot</option> </select> </div> <script>
+
+(function($){
+    $.fn.extend({
+    customStyle : function(options) {
+        if(!$.browser.msie || ($.browser.msie&amp;&amp;$.browser.version&gt;6)) {
+            return this.each(function() {
+                var currentSelected = $(this).find(&apos;:selected&apos;);
+                $(this).after(&apos;&lt;span class=&quot;customStyleSelectBox&quot;&gt;&lt;span class=&quot;customStyleSelectBoxInner&quot;&gt;&apos;+currentSelected.text()+&apos;&lt;/span&gt;&lt;/span&gt;&apos;).css({position:&apos;absolute&apos;, opacity:0,fontSize:$(this).next().css(&apos;font-size&apos;)});
+                var selectBoxSpan = $(this).next();
+                var selectBoxWidth = parseInt($(this).width()) - parseInt(selectBoxSpan.css(&apos;padding-left&apos;)) -parseInt(selectBoxSpan.css(&apos;padding-right&apos;));            
+                var selectBoxSpanInner = selectBoxSpan.find(&apos;:first-child&apos;);
+                selectBoxSpan.css({display:&apos;inline-block&apos;});
+                selectBoxSpanInner.css({width:selectBoxWidth, display:&apos;inline-block&apos;});
+                var selectBoxHeight = parseInt(selectBoxSpan.height()) + parseInt(selectBoxSpan.css(&apos;padding-top&apos;)) + parseInt(selectBoxSpan.css(&apos;padding-bottom&apos;));
+                $(this).height(selectBoxHeight).change(function() {
+                    selectBoxSpanInner.text($(this).find(&apos;:selected&apos;).text()).parent().addClass(&apos;changed&apos;);
+                });
+         });
+        }
+    }
+    });
+})(jQuery);
+
+$(&apos;select#navigation-selection&apos;).customStyle();
+
+$(&quot;#navigation-selection&quot;).change(function() {
+	window.location.href=$(this).val();
+});
+</script> </div> </div> </div> <script>
+		fixElementPosition(&quot;top-areas&quot;, -30);
+	</script> <div class="container">  <div id="content" role="main"> <div class="area"> <div id="rolling-ad"> <div class="last-module ad-container"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;top&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat+islanti+kansanperinne+kirkot+kotimaa+helsinki+elokuvat+ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> </div> <div id="left-column"> <div id="left-logo"> <a href="/"><img alt="Nyt" src="/webstatic/images/nyt/logo.png" /></a> </div> <div id="message-to-editor"> <div id="etusivulle" class="toggle-left-col"> <span>Sulje</span> </div> <div id="shoutbox"> <div id="contributor-message-container"> <div class="contributor-message-container-header right"> <text>Lähetä viesti toimitukselle</text> <div class="close contact-box-call" /> </div> <div class="result-wrapper"> <label class="success-message">Viesti lähetetty</label> </div> <form id="messageEditorForm" action="/nyt/a1479787272458" method="POST" enctype="multipart/form-data"> <input type="hidden" name="csrfToken" value /> <div> <textarea id="messageText" name="messageText" class="right placeholder" model="fi.sanoma.hs.frontend.controller.nyt.NytMessageToEditorController$MessageEditorForm@2d3c2e3d" placeholder="Kirjoita viesti tähän" /> </div> <div class="right"> <input id="writerName" name="writerName" class="error placeholder" model="fi.sanoma.hs.frontend.controller.nyt.NytMessageToEditorController$MessageEditorForm@2d3c2e3d" placeholder="Nimimerkki tai sähköposti" type="text" value /> <input type="submit" class="submit-button" value="Lähetä" /> </div> </form> </div> <div id="bubble" class="contact-box-call"><i class="icon-comment" />Päivystämme, huuda meille</div> <div id="contributor-photo"> <div id="contributor-photo-overlay" class="contact-box-call"> <a class="click">Lähetä viesti</a> </div> <img alt height="134" id="img-1305755339390" src="http://www.hs.fi/webkuva/taysi/100/1305755339390?ts=592" /> </div> Nytin toimitus </div> <div id="sosmed"> <a href="http://www.facebook.com/nytliite" title="Nyt-liite Facebookissa" target="_blank"><i class="icon-facebook-squared" /></a> <a href="https://twitter.com/nytliite" title="Nyt-liite Twitterissä" target="_blank"><i class="icon-twitter" /></a> </div> </div> <div id="recommended-articles"> <h2>Toimituksen valinnat</h2> <ul> <li> <a href="http://nyt.fi/a1480041506734"> <img alt="Esimerkkejä puhelimessa puhuessa piirretyistä kuvista eli doodleista: vasemmalla aivotutkija Minna Huotilaisen piirros, oikealla Nyt.fi:in toimituksen doodleja." id="img-1480041506734" src="http://www.hs.fi/webkuva/taysi/175/1480041511898?ts=86" title="Esimerkkejä puhelimessa puhuessa piirretyistä kuvista eli doodleista: vasemmalla aivotutkija Minna Huotilaisen piirros, oikealla Nyt.fi:in toimituksen doodleja." /> <h3>Piirteletkö paperille puhelimessa puhuessasi tai luennolla? Erittäin hyvä, sillä se parantaa keskittymistä, sanoo aivotutkija</h3> </a> </li> <li> <a href="http://nyt.fi/a1480044428559"> <img alt id="img-1480044428559" src="http://www.hs.fi/webkuva/taysi/175/1480044435043?ts=247" /> <h3>Helsingissä järjestetään ilmainen treffitapahtuma ihmisille, joilla on lapsia – järjestäjä kertoo, mistä on kyse</h3> </a> </li> <li> <a href="http://nyt.fi/a1479956856190"> <img alt="Gilmoren tytöt: Rory (Alexis Bledel) ja Lorelai (Lauren Graham)." id="img-1479956856190" src="http://www.hs.fi/webkuva/taysi/175/1479956861398?ts=924" title="Gilmoren tytöt: Rory (Alexis Bledel) ja Lorelai (Lauren Graham)." /> <h3>Gilmoren tyttöjen uudet jaksot julkaistiin tänään – katsoimme 153 jaksoa alkuperäistä sarjaa, nämä asiat ihastuttivat ja raivostuttivat</h3> </a> </li> <li> <a href="http://nyt.fi/a1480044276308"> <img alt="”Japanilaiset kysyivät, että tunnetko Olli Hermanin. Heitä ihmetytti, kun sanoin, että hän asuu naapurissani”, Marko Annala sanoo." id="img-1480044276308" src="http://www.hs.fi/webkuva/taysi/175/1480044281482?ts=441" title="”Japanilaiset kysyivät, että tunnetko Olli Hermanin. Heitä ihmetytti, kun sanoin, että hän asuu naapurissani”, Marko Annala sanoo." /> <h3>Näin 20 vuotta vanhasta suomimetallibändistä tuli superhitti Japanissa: ”Naispuoliset fanit laulavat mukana suomeksi”</h3> </a> </li> </ul> </div> <div id="content-flow-navigation"> <script>
+var addItemAmount = 2;
+var itemAmount = 2;
+var lastIndex = itemAmount + addItemAmount;
+
+
+    articles.push(&quot;a1452836998034&quot;);
+
+    articles.push(&quot;a1480044276308&quot;);
+
+    articles.push(&quot;a1480041506734&quot;);
+
+    articles.push(&quot;a1479787272458&quot;);
+
+    articles.push(&quot;a1479956856190&quot;);
+
+    articles.push(&quot;a1480047729095&quot;);
+
+    articles.push(&quot;a1480045257018&quot;);
+
+    articles.push(&quot;a1480045206022&quot;);
+
+    articles.push(&quot;a1480045021731&quot;);
+
+    articles.push(&quot;a1480044428559&quot;);
+
+    articles.push(&quot;a1480041908415&quot;);
+
+    articles.push(&quot;a1479872360235&quot;);
+
+    articles.push(&quot;a1479959491185&quot;);
+
+    articles.push(&quot;a1479959520053&quot;);
+
+    articles.push(&quot;a1479871608145&quot;);
+
+    articles.push(&quot;a1479966682064&quot;);
+
+    articles.push(&quot;a1479956214109&quot;);
+
+    articles.push(&quot;a1479961025884&quot;);
+
+    articles.push(&quot;a1479956688401&quot;);
+
+    articles.push(&quot;a1479958086666&quot;);
+
+</script> <div id="cfn-sticky"> <select id="cfn-selection" name="cfn-selection" onchange="nyt.changeNav(this.value)"> <option value="/ajax/contentFlowNavNyt/1303249805746?sortBy=popularity" selected="selected">Suosituimmat</option> <option value="/ajax/contentFlowNavNyt/1303249805746?sortBy=latest">Uusimmat</option> </select> <ul> <li class="a1452836998034 "> <a href="http://nyt.fi/a1452836998034"><h3> Islantiin nousee pakanatemppeli, jonka esikuva on Temppeliaukion kirkko </h3> </a> </li> <li class="a1480044276308 "> <a href="http://nyt.fi/a1480044276308"><h3> Näin 20 vuotta vanhasta suomimetallibändistä tuli superhitti Japanissa: ”Naispuoliset fanit laulavat mukana suomeksi” </h3> </a> </li> <li class="a1480041506734 "> <a href="http://nyt.fi/a1480041506734"><h3> Piirteletkö paperille puhelimessa puhuessasi tai luennolla? Erittäin hyvä, sillä se parantaa keskittymistä, sanoo aivotutkija </h3> </a> </li> <li class="a1479787272458 "> <a href="http://nyt.fi/a1479787272458"><h3> Tissiviikko on käynnissä somessa – kysyimme kampanjan ideoijalta, mistä on kyse </h3> </a> </li> <li class="a1479956856190 "> <a href="http://nyt.fi/a1479956856190"><h3> Gilmoren tyttöjen uudet jaksot julkaistiin tänään – katsoimme 153 jaksoa alkuperäistä sarjaa, nämä asiat ihastuttivat ja raivostuttivat </h3> </a> </li> <li class="a1480047729095 "> <a href="http://nyt.fi/a1480047729095"><h3> Anna Inginmaan laulu teki Pastiksen illallisesta sadan euron arvoisen – uudet biisit tulivat suoraan sydämestä </h3> </a> </li> <li class="a1480045257018 "> <a href="http://nyt.fi/a1480045257018"><h3> Apple pelastaa pikkutuhmien emojien klassikon: takamukselta näyttävä persikka jää sittenkin ennalleen </h3> </a> </li> <li class="a1480045206022 "> <a href="http://nyt.fi/a1480045206022"><h3> Pikatestasimme Kampin jalkapallopubi Albertin pöllön, jossa ehtii vielä käydä: paikka jatkaa nykyisellään vain joulukuun </h3> </a> </li> <li class="a1480045021731 "> <a href="http://nyt.fi/a1480045021731"><h3> Ravintola-arviossa Kanavarannan Shelter, jossa parasta ovat yksinkertaiset annokset, viinit ja itse leivottu leipä </h3> </a> </li> <li class="a1480044428559 "> <a href="http://nyt.fi/a1480044428559"><h3> Helsingissä järjestetään ilmainen treffitapahtuma ihmisille, joilla on lapsia – järjestäjä kertoo, mistä on kyse </h3> </a> </li> <li class="a1480041908415 hide"> <a href="http://nyt.fi/a1480041908415"><h3> Cheek ja Elastinen konsertoivat yhdessä ensi keväänä </h3> </a> </li> <li class="a1479872360235 hide"> <a href="http://nyt.fi/a1479872360235"><h3> Saksalaisversio ruotsalaisklassikko Viirusta ja Pesosesta virittää pikkuväen joulutunnelman </h3> </a> </li> <li class="a1479959491185 hide"> <a href="http://nyt.fi/a1479959491185"><h3> Veteraaniohjaajan sotaromanssi tavoittelee suuria, mutta jää kopioksi </h3> </a> </li> <li class="a1479959520053 hide"> <a href="http://nyt.fi/a1479959520053"><h3> Suosikkikomedian jatko-osaa voi suositella joulunvihaajille </h3> </a> </li> <li class="a1479871608145 hide"> <a href="http://nyt.fi/a1479871608145"><h3> Nuoret Suomen johtoon vanhojen tilalle, sanoo jättiyrityksen johtaja – ja tekee sen emojeilla, twiiteillä ja Periscopella </h3> </a> </li> <li class="a1479966682064 hide"> <a href="http://nyt.fi/a1479966682064"><h3> Tissiviikko jatkuu somessa: Eva Wahlström kannustaa pienirintaisia </h3> </a> </li> <li class="a1479956214109 hide"> <a href="http://nyt.fi/a1479956214109"><h3> Disney vaihtoi uutuusleffansa nimeä Italiassa: Moana toi liian monelle mieleen pornotähden </h3> </a> </li> <li class="a1479961025884 hide"> <a href="http://nyt.fi/a1479961025884"><h3> Suomen suosituimpiin kuuluva tubettaja sairastui burnoutiin ja kertoo siitä nyt kaikille, jotta ihmiset muistaisivat levätä </h3> </a> </li> <li class="a1479956688401 hide"> <a href="http://nyt.fi/a1479956688401"><h3> Morrissey vetoaa General Motorsiin: ”Vegaanisesta nahasta” tehdyt penkit autoihin </h3> </a> </li> <li class="a1479958086666 hide"> <a href="http://nyt.fi/a1479958086666"><h3> Redditin johtaja tunnusti editoineensa itseensä kohdistuvia haukkuja keskustelupalstallaan – joutui arvostelumyrskyn silmään </h3> </a> </li> </ul> <div class="loading dark-overlay" style="display:none;" /> </div> <div id="cf-hidden" style="display:none;"> </div> <script>
+	if (!$(&apos;select#cfn-selection&apos;).parent().find(&apos;.customStyleSelectBox&apos;).length){
+		$(&apos;select#cfn-selection&apos;).customStyle();
+	}
+	var nytAssetId = 1296932712413;
+	$(&apos;#content-flow-navigation li&apos;).each(function() {
+	    if (($(this).position().top + $(this).height()) &gt; ($(window).height() - 116)) {
+	        $(this).addClass(&quot;hide&quot;);
+	    }
+	});
+	var cfnVisibleElements = $(&quot;#content-flow-navigation li&quot;).not(&quot;.hide&quot;).length;
+</script> </div> </div> <div class="block first-block block-640"> <div class="mobile-ad-container"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;top&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:true,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat+islanti+kansanperinne+kirkot+kotimaa+helsinki+elokuvat+ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> <div id="content-flow" class="module"> <span id="ta1452836998034" /> <div class="additional-article hidden type-article"> <div id="main-content" class="module"> <div id="a1452836998034" class="entry article"> <div class="entry-top"> <p>  <div class="main-image-area image"> <div class="img-wrapper"> <img alt="Hilmar Örn Hilmarssonin (vas.) johtama Ásatrúarfélagið-järjestö rakentaa Islantiin pakanatemppeliä, jonka esikuva on Helsingin Temppeliaukion kirkko (oik.)." class="p_1452837003027_960_taysi" lazy-src="http://www.hs.fi/webkuva/taysi/960/1452837003027?ts=363" src="/webstatic/images/clear1x1.gif" title="Hilmar Örn Hilmarssonin (vas.) johtama Ásatrúarfélagið-järjestö rakentaa Islantiin pakanatemppeliä, jonka esikuva on Helsingin Temppeliaukion kirkko (oik.)." /><script type="text/javascript">hs.m.image.loadMobileImage(&quot;img.p_1452837003027_960_taysi[lazy-src]&quot;);</script> <div class="caption dark-overlay"> Hilmar Örn Hilmarssonin (vas.) johtama Ásatrúarfélagið-järjestö rakentaa Islantiin pakanatemppeliä, jonka esikuva on Helsingin Temppeliaukion kirkko (oik.). <span class="photographer"><i class="icon-camera" /> Silke Schurack / Reuters, Sabrina Bqain</span> </div> </div> </div> <div style="clear: left;"> </div> </p> </div> <div class="entry-content"> <script type="text/javascript">
+        if (typeof jsTrackingUrl == &apos;undefined&apos;) {            
+            var jsTrackingUrl = &quot;/tilasto/artikkeli/1305824656028/1303137378958/1452836998034.gif&quot;;
+            document.write(&quot;&lt;div style=\&quot;height: 0px; width: 0px; position: absolute; overflow: hidden\&quot;&gt;&lt;img src=\&quot;&quot;+jsTrackingUrl+&quot;\&quot; /&gt;&lt;/div&gt;&quot;);
+        }
+        </script> <script type="text/javascript">
+        if (typeof themetags == &apos;undefined&apos;) {            
+               var themetags = &quot;Islanti/kansanperinne/Kirkot/Kotimaa/Helsinki/Elokuvat&quot;;
+        }
+        </script> <h2><a href="http://nyt.fi/a1452836998034">Islantiin nousee pakanatemppeli, jonka esikuva on Temppeliaukion kirkko</a></h2> <div class="meta"> <div class="social original-placeholder"> <ul class="article-social-media load-share-count"> <li> <a class="article-facebook-share" data-article-id="1452836998034" data-track-article-event="Nyt-FBShare" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fnyt.fi%2Fa1452836998034%3Fref%3Dfb-share" target="_blank"> <span class="fb-share-count social-media-count" data-minimum-count="10" data-share-url="http://nyt.fi/a1452836998034" /> </a> </li> <li> <a class="article-tweet" data-article-id="1452836998034" data-track-article-event="Nyt-TwitterShare" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fnyt.fi%2Fa1452836998034%3Fref%3Dtw-share&text=Islantiin+nousee+pakanatemppeli%2C+jonka+esikuva+on+Temppeliaukion+kirkko" target="_blank"> <span class="twitter-share-count social-media-count" data-minimum-count="10" data-share-url="http://nyt.fi/a1452836998034" /> </a> </li> </ul> </div> <p class="category"><a href="http://nyt.fi/aihe/ulkomaat/">Ulkomaat</a></p> <time datetime="2016-01-16T09:37:00+02:00"> <span class="value">16.1.2016 @ 9:37</span> </time> <span class="sp"> | </span> <time datetime="2016-01-18T21:32:14+02:00"> <span>Päivitetty </span><span class="value">18.1.2016 @ 21:32</span> </time> <span class="assistant"><i class="icon-pencil" /> Juho Typpö </span> <span class="permalink">&lt;URL&gt; <a href="http://nyt.fi/a1452836998034">nyt.fi/a1452836998034</a></span> </div>  <div class="text"> <p>Islannissa toimii muinaisiin skandinaavisiin mytologioihin pohjaava Ásatrúarfélagið-kirkko.</p><p>Kysyimme äskettäin tämän oikean &quot;Odinin kirkon&quot; ylipapin <a href="/haku/?haku=Hilmar+%C3%96rn+Hilmarssonin&lahde=nimilinkki" class="nimilinkki"> Hilmar Örn Hilmarssonin</a> mielipidettä Suomen Soldiers of Odin -katupartioista. <a href="http://nyt.fi/a1305916909471">Ásatrúarfélagið puhuu avoimesti rasismia ja syrjintää vastaan, joten Hilmarssonin tuomio oli jyrkkä.</a></p><p>Ásatrúarfélagið on Islannissa rekisteröity uskonnollinen järjestö, jolla on tällä hetkellä jo yli 3 000 jäsentä. <a href="http://nyt.fi/a1305916909471">Uutisoimme vuosi sitten</a> järjestön aikomuksesta rakentaa Islantiin uuspakanalliselle aasainuskolle eli ásatrúlle pyhitetty temppeli.</p><p><span class="korostus">Noin 250 ihmistä vetävään ja arviolta 130 miljoonaa Islannin kruunua (840 000 euroa) maksavan pakanatemppelin rakentaminen on käynnissä ja etenee suunnitelmien mukaan, sanoo ylipappi Hilmarsson nyt.</span></p><p>”Perustukset on saatu enemmän tai vähemmän valmiiksi. Siinä on mennyt aikaa, sillä temppeli louhitaan kallioon neljän metrin syvyyteen”, Hilmarsson kertoo.</p><p>Betonirakentaminen aloitetaan myöhemmin tammikuussa. Temppeliä rakennetaan hiljalleen, ja Hilmarsson arvelee, että kaikki voisi olla valmista maaliskuussa 2017.</p><p>Hilmarssonin mukaan Reykjavikin lähelle Öskuhlíðiin rakennettava pyhättö on ensimmäinen pohjoismainen pakanatemppeli tuhanteen vuoteen. Temppelissä tullaan järjestämään muun muassa häitä –<a href="http://grapevine.is/news/2015/05/15/old-norse-weddings-becoming-more-popular-for-same-sex-couples/">seksuaalivähemmistöjä kunnioittava Ásatrúarfélagið on vihkinyt samansukupuolisia avioon jo yli kymmenen vuotta</a>– ja hautajaisia. Temppeliin tulee myös konserttitila.</p><p><span class="korostus">Kallioon louhitussa temppelissä on jotain tuttua.</span> Hilmarsson sanookin, että yksi tulevan pakanatemppelin esikuva löytyy Helsingistä.</p><p>Se on tietysti Temppeliaukion kirkko Töölössä.</p><p>”Olin todella vaikuttunut, kun näin tuon kirkon ensimmäisen kerran. Se tuntui valtavan pyhältä paikalta.”</p><p>Hilmarsson on vieraillut Suomessa useasti. Hän on tehnyt Suomeen töitäkin: suomalaisten <span class="teos">Pelon maantiede </span>(1997)- ja <span class="teos">Mielensäpahoittaja</span> (2014) -elokuvien musiikki on hänen käsialaansa.</p><p>Hilmarsson, 58, on paitsi ásatrún ylipappi, myös veteraanimuusikko ja elokuvasäveltäjä, jonka ansioluettelosta löytyy mainittujen Suomi-leffojen lisäksi Hollywood-jännäri <span class="teos">In the Cut</span> (2003). Elektronisen musiikin pioneeri Hilmarsson on lisäksi työskennellyt esimerkiksi <span class="korostus">Current 93</span>- ja <span class="korostus">Sigur Rós</span> -yhtyeiden kanssa.</p><p><span class="korostus">Hilmarsson kertoo rakastavansa suomalaista taidetta ja kulttuuria:</span> musiikkia, kirjallisuutta ja elokuvaa.</p><p>Hän on hyvin kiinnostunyt myös saamelaiskulttuurista, ja näkee siinä paljon yhtäläisyyksia Islannin kansanperinteeseen.</p><p>”Ja erityisesti arvostan suomalaista huumorintajua. Se on hyvin samanlainen kuin meillä islantilaisilla”, hän sanoo.</p> </div>   <div id="right-col"> <div id="right-ad"> <div class="ad-container"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;side01&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> </div> </div> <div class="article-tools-social"> <div class="social-media-buttons"> <div class="wa"> <a href="whatsapp://send" data-text="Islantiin nousee pakanatemppeli, jonka esikuva on Temppeliaukion kirkko" data-href="http://nyt.fi/a1452836998034?ref=wa-share" class="wa_btn wa_btn_s" style="display:none">Jaa</a> </div> </div> <span class="permalink"><text>Suora linkki</text><a href="http://nyt.fi/a1452836998034">nyt.fi/a1452836998034</a></span> <div class="comic-tags"> <p class="category"><a href="http://nyt.fi/aihe/ulkomaat/">Ulkomaat</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/islanti/">Islanti</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/kansanperinne/">kansanperinne</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/kirkot/">Kirkot</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/kotimaa/">Kotimaa</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/helsinki/">Helsinki</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/elokuvat/">Elokuvat</a></p> </div> </div> <div id="bottom-ads"> <div class="nyt-ad"> <div class="ad-container"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;rectangle1-1&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> </div> </div> <div class="comment-section"> <div id="commenting" class="module"> <div class="kommentit"> <div class="decor" /> <div class="header"> <h3>Kommentit <span class="value">(0)</span></h3> </div> <form class="form-send-comment" action="/ajax/kommentti/nyt/tallenna/" method="post"> <input type="hidden" name="refererElement" value="1303246170583" autocomplete="off" /> <input type="hidden" name="articleId" value="1452836998034" autocomplete="off" /> <input type="hidden" name="comicId" value autocomplete="off" /> <input type="hidden" name="replyToMessageId" value autocomplete="off" /> <input type="hidden" name="csrfToken" value autocomplete="off" /> <div class="kommentoi-nav"> <img class="kommentoi-image-avatar" src="/webstatic/images/userThumbNotReg.gif" /> </div> <div class="kommentoi-message-bubble"> <textarea class="message" id="send-comment-message" name="message" rows="5" cols="20" placeholder="Kommentti" /> <span class="repliedUserText" /> </div> <div class="kommentoi-name-field"> <input class="name-field" name="username" type="text" placeholder="Nimimerkki" /> <input type="submit" class="comment-btn" name="post" value="Lähetä" /> </div> <div class="kommentoi-message-info"> <div class="max-info" style="display:none;"><p>Maksimi merkkimäärä on 2000</p></div> <div class="comment-sent-message" class="message hidden" /> <div style="clear:both;" /> </div> </form> <div id="reportAbusiveCommentContainer"> <form id="frm-report-abusive-comment" method="post" action="/ajax/nyt/keskustelut/ilmoita"> <p class="report-message"><span class="report-info-message">Oletko varma, että haluat ilmoittaa viestin asiattomaksi?</span></p> <input type="hidden" name="csrfToken" value /> <input type="hidden" name="commentId" value /> <textarea cols="60" rows="3" name="text" class="required placeholder" placeholder="Kuvaile tähän miksi viesti on asiaton" /> <div class="buttons"> <input type="submit" class="report-btn" value="Lähetä" /> <input type="submit" class="report-btn cancel" value="Peruuta" /> </div> </form> <div id="abuse-report-sent-message" class="message" /> </div> <ul class="comment-list-fake" has-more="false" last-index="0" start-index="0" class="comment-list" style="display: none;"> <script class="fakeCommentTemplate" type="text/x-jquery-tmpl">
+&lt;li&gt;
+    &lt;div id=&quot;comment-layer-info&quot;&gt;
+        &lt;div class=&quot;comment-layer-text&quot;&gt;
+            &lt;p&gt;Kommenttisi on moderoitavana. &lt;span&gt;Viestejä julkaistaan sitä mukaa, kun toimitus ehtii niitä tarkistaa.&lt;br&gt;Viestejä tarkistetaan kello 7&amp;ndash;24 (viikonloppuisin 9&amp;ndash;24 ja juhlapyhinä 12&amp;ndash;22). &lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;comment-ftr cf&quot;&gt;
+          &lt;div class=&quot;icon-unknown&quot;&gt;&lt;/div&gt;
+          &lt;div id=&quot;comment-meta000000&quot; class=&quot;meta&quot;&gt;
+              &lt;a href=&quot;#&quot; class=&quot;author fakelink&quot;&gt;${who}&lt;/a&gt;
+              &lt;span class=&quot;posted&quot;&gt; ${when}&lt;/span&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;comment-text&quot;&gt;
+          
+            &lt;p id=&quot;comment-body000000&quot;&gt;{{html what}}&lt;/p&gt;
+          &lt;div class=&quot;comment-text-links&quot;&gt;
+              &lt;ul&gt;
+                  &lt;li class=&quot;comment-reply&quot;&gt;&lt;a class=&quot;fakelink&quot; href=&quot;#commenting&quot; comment-id=&quot;000000&quot;&gt;Vastaa&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class=&quot;comment-recommend&quot;&gt;&lt;a class=&quot;fakelink&quot; href=&quot;#&quot; id=&quot;recommendButton000000&quot; aid=&quot;1303159095376&quot; mid=&quot;000000&quot;&gt;Suosittele (0)&lt;/a&gt;&lt;/li&gt; 
+                  &lt;li class=&quot;comment-report&quot;&gt;&lt;a class=&quot;fakelink&quot; href=&quot;#&quot; comment-id=&quot;000000&quot; title=&quot;Vain kirjautuneille käyttäjille&quot; class=&quot;disabled&quot;&gt;Ilmoita asiaton viesti&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+&lt;/li&gt;
+</script> </ul> <script class="replyToMessageTmpl" type="text/x-jquery-tmpl">
+    Olet vastaamassa käyttäjän &lt;span&gt;{{html nickname}}&lt;/span&gt;  &amp;nbsp;viestiin
+</script> <script>
+$(function() {
+	
+	nyt.commenting.maxCharAmount = 2000;
+    nyt.commenting.commentSentText = &quot;&lt;p&gt;Kommenttisi on moderoitavana. &lt;span&gt;Viestejä julkaistaan sitä mukaa, kun toimitus ehtii niitä tarkistaa.&lt;br&gt;Viestejä tarkistetaan kello 7&amp;ndash;24 (viikonloppuisin 9&amp;ndash;24 ja juhlapyhinä 12&amp;ndash;22). &lt;/span&gt;&lt;/p&gt;&quot;;
+    nyt.commenting.reportSentText = &quot;Viesti lähetetty, kiitos ilmoituksesta.&quot;;
+	
+	if (&quot;HSArticle{name=&apos;Islantiin nousee pakanatemppeli jonka esikuva on Temppeliaukion &apos;, description=&apos;Islantiin nousee pakanatemppeli jon...&apos;, assetId=&apos;HS_Article:1452836998034, status=&apos;ED&apos;, createdBy=&apos;hsccirest&apos;, updatedBy=&apos;jpull&apos;, createdDate=&apos;Fri Jan 15 17:16:31 EET 2016, updatedDate=&apos;Mon Jan 18 21:32:17 EET 2016, startDate=&apos;Sat Jan 16 09:37:00 EET 2016, endDate=&apos;null}&quot; != &quot;&quot;) {
+        nyt.commenting.initializeCommentSection(&quot;1303246170583&quot;, &quot;1452836998034&quot;, &quot;HS_Article&quot;);
+	} else if (&quot;&quot; != &quot;&quot;) {
+        nyt.commenting.initializeCommentSection(&quot;1303246170583&quot;, &quot;&quot;, &quot;&quot;);
+	}		
+});
+</script> <div class="discussions-list a1452836998034"> <script>
+                        $.get(&quot;/ajax/nyt/keskustelut/1303246170583/a1452836998034&quot;)
+                         .done(function(comments) {
+                            $(&apos;.discussions-list.a1452836998034&apos;).append(comments);
+                         });
+                   </script> </div> </div> </div> </div> </div> </div> </div> <div class="hs-news-box-wrap"> <div class="hs-news-box"> <a href="http://www.hs.fi?ref=tf_iHSnytboksi" title="HS.fi" target="_blank" class="hs-logo"><img src="/webstatic/images/nyt/nyt-hs-box-logo.png" alt="Etusivu" width="48" height="48" /></a> <a href="http://www.hs.fi/kaupunki/a1480056261714?jako=c3353225dee7964710f1694fa673dd79&ref=tf_iHSnytboksi" target="_blank" class="multiline first hs-article"><span> Bussista jätettyä 9-vuotiasta auttanut mies löytyi – ”En minä niin siitä sankarista tiedä”</span></a> <a href="http://www.hs.fi/kaupunki/a1480043808480?jako=17fce3911ef643fd46ca955cdd86a663&ref=tf_iHSnytboksi" target="_blank" class="multiline second hs-article"><span> Asuntosijoittaja saa verokikalla valtiolta puhdasta rahaa – laskelma näyttää, miten yksiön ostolla voi tienata 40 000 euroa</span></a> <a href="http://www.hs.fi/fingerpori/?ref=tf_iHSnytboksi" target="_blank" class="fingerpori"><img alt="Fingerpori" src="/webstatic/images/nyt/nyt-hs-box-comic.png" width="48" height="48" /></a> </div> </div> </div> <div class="advertorial additional-article hidden" data-url="/nyt/mainos/advertoriaali/sol-fine-and-dandy"> <div> <style type="text/css"> /*advertorial article css*/ .campaign-item {background:#f0f1f2;} .desktop .campaign-item, .tablet .campaign-item {margin:20px;padding: 0 180px 0 140px;} .mobile .campaign-item{padding:10px;} .campaign-header &gt; h3 { background: none repeat scroll 0 0 #111111; color: #b2b2b2; margin: 0 0 24px 0; padding: 6px 10px; font-size: 20px; font-weight: normal; } .mobile .campaign-header &gt; h3 { font-size: 16px; } .campaign-header &gt; h3 span {font-weight:bold;text-transform:uppercase;} .desktop .campaign-header &gt; h3, .tablet .campaign-header &gt; h3{ width: auto !important; display: inline-block; } .mobile .campaign-header &gt; h3 { display:block; } .campaign-item h2, .campaign-item h4, .campaign-item p, .campaign-item ul { font-family: Helvetica !important; line-height: 1.5; font-size: 15px; } .campaign-item h2, campaign-item h4 { font-weight:bold!important; } .campaign-item .embedded-img-wrapper img{width:100%;height:auto;} .campaign-item .embedded-image .caption { position: relative; font-family: Arial; color: #000; padding: 10px 0; font-size: 12px; } .mobile .campaign-item .main-image-area .caption { background-color: transparent; padding: 5px 0; } .campaign-item .article-tools-social { overflow: hidden; margin:0; } .campaign-item .social-button{padding:5px 10px;border-radius:4px;color:#fff!important;} .campaign-item .facebook-with-label{background:#3b5998;} .campaign-item .twitter-with-label{background:#55acee;} .campaign-item .social-button:before{margin-right:5px;} .campaign-item .social-button.facebook-with-label:before { content: &quot;&quot;; font-family: fontawesome; } .campaign-item .social-button.twitter-with-label:before { content: &quot;&quot;; font-family: fontawesome; } .campaign-item .social-button.linkedin-with-label, .campaign-item .social-button.gplus-with-label{display:none;} .desktop .campaign-item p, .tablet .campaign-item p { font-size: 16px; line-height: 1.4; } .desktop .campaign-item ul, .tablet .campaign-item ul { font-size: 14px; line-height: 1.4; } .left-picture { float: left; margin: 5px 15px 5px 0; } .right-picture { float: right; margin: 5px 0 5px 15px; } .mid-picture { float: left; margin: 5px 0; } .left-picture .embedded-img-wrapper { background-color: #FFFFFF; } .right-picture .embedded-img-wrapper { background-color: #FFFFFF; } .small-picture, .small-picture img { width: 250px; } .mini-picture, .mini-picture img { width: 175px; } .mobile .small-picture, .mobile .small-picture img { width: 175px; } .campaign-item::after { color: #4c4c4c; content: &quot;MAINOS. Tämä artikkeli on mainostajan tuottamaa sisältöä.&quot;; display: block; font-weight: bold; margin-top: 30px; padding: 15px 0; text-transform: none; font-family: Helvetica,Arial; font-size: 16px; } .desktop #advertorial.preview .campaign-item::after { margin-left: -140px; } </style>  <div class="entry article"> <div class="campaign-item"> <div class="campaign-header"> <h3><span>MAINOS:</span> Sol</h3> <h2>Korttelin kuplivin kohtaamispaikka</h2> <h4 /> </div> <p><span class="korostus"><span style="font-style: italic;" /></span></p><p /><p><span class="korostus"><span style="font-style: italic;" /></span></p> <div id="player-placeholder-2818821" style="background: red;" /> <script src="http://gatling.nelonenmedia.fi/files/ruutuplayer/v2/stable/ruutu-player-loader.js" /> <script type="text/javascript">
+var params = {
+  containerId: &apos;player-placeholder-2818821&apos;,
+  mxmlcUri: &apos;http://gatling.nelonenmedia.fi/media-xml-cache?id= 2818821&apos;,
+  autoplay: false,
+  loop: false,
+  responsive: true,
+  vsite: &apos;HS&apos;,
+}
+window.playerAPI = window.RP.embedPlayer(params)
+</script> <p /><p><img src="http://mainos.hs.fi/2015/Sol/sol_logo.png" width="100px" style="float: left" alt /></p><p><span class="korostus"><span style="font-style: italic;">MAINOS Sisarukset Sumi ja Urito Moreno perustivat Vaasankadulle täyden palvelun Fine &amp; Dandyn, josta on tullut värikäs olohuone koko kaupunginosalle.</span></span><span style="font-style: italic;"><span style="letter-spacing: 0px; line-height: 1.3;"> </span></span><span class="kursiivi"><span style="letter-spacing: 0px; line-height: 1.3;"> </span></span></p><p /><p /><p>Helsingin Harjussa riittää säpinää. Juuri siitä syystä kaupunginosa oli luonteva kotipesä myös Fine &amp; Dandylle. ”Täällä on kampaamo Dandy sekä Cafe Pequeño, eli espanjaksi pieni kahvila. Lisäksi saman katon alla toimii kauneushoitola Alma, jota pyörittää Uriton vaimo, Jenni”, kertoo Sumi.</p> <div class="main-image-area image embedded-image default" style="max-width: 620px"> <div class="credit" /> <div class="img-wrapper"> <img id="mainpic_1306091962555" src="http://www.hs.fi/webkuva/taysi/630/1306091962555?ts=87" title alt onclick="dispatch('IMAGE_CLICKED', 'mainpic_1306091962555')" /> </div> </div><p /><p /><p>Toimeliaiden Morenon sisarusten työhistoria on yhtä värikäs kuin heidän juurensakin. Puoliksi argentiinalainen ja puoliksi espanjalainen Urito, 34, on pyörittänyt lippakioskia, tehnyt kuvauscateringia ja myynyt kahvia polkupyörän päältä. Meksikolais-argentiinalainen Sumi, 40, ehti luotsata kampaamoa seitsemän vuotta ja tehdä sen ohessa muun muassa elokuva- ja mainoskuvauksia.</p><p>Sisarukset päättivät lyödä hynttyyt yhteen saadakseen riittävän ison toimitilan ja tarjotakseen asiakkailleen kokonaisvaltaisen elämyksen. Syntyi olohuone, jossa pääsee hetkeksi arkea pakoon ja voi taas jatkaa matkaa virkistyneenä. Fine &amp; Dandy on tuonut suomalaiseen kahvilakulttuuriin myös ripauksen kaivattua latinomeininkiä. ”Koskaan ei oo turhaa syytä pitää juhlat!”, Urito nauraa. Kuplivan tunnelman lisäksi paikan vetonauloja ovat herkulliset pasteijat, empanadat.</p><p>Projekti on vaatinut aikaa, rahaa ja voimia. Välillä säädösviidakossa kahlaaminen on tuntunut niin turhauttavalta, että on tehnyt mieli lyödä hanskat tiskiin. ”Kyl täs on ollu haasteita. On laitettu likoon kaikki, mitä on ollu ja kaikki, mitä ei oo ollu”, summaa Urito yrityksen alkutaipaleen. Fine &amp; Dandyn myötä perheen merkitys on kirkastunut Sumille ja Uritolle entisestään. Vanhemmat, sisarukset ja ystävät ovat olleet korvaamaton apu sekä toimitilan remontoinnissa että lastenhoidossa. ”Mä näen mun äitii ja isää melkein joka päivä”, Urito kertoo. ”Hauska juttu, et vaikka on enemmän töitä ku ikinä, niin samalla on enemmän aikaa ku koskaan.”</p><p>Vuoden uurastus on palkittu ja työn hedelmistäkin pääsee jo nauttimaan. ”On ihanaa avata aamulla ovet ylpeänä, et tää on meijän paikka”, Sumi huokaa. ”Jos huomenna kuolen, niin on ainakin ollu hauskaa tänään!”</p><p /><p><span style="font-style: italic;"><a href="http://www.sol.com/fi/Localheroes" target="_blank">Sol Local Heroes</a> -juttusarja kertoo ihmisistä, jotka ovat tehneet elämässään rohkeita valintoja: he ovat löytäneet intohimonsa ja laittavat itsensä täysillä likoon kelloon katselematta. He edustavat Sol-brändille ominaista espíritu libre -henkeä. He ovat vapaita sieluja, jotka seuraavat sydäntään ja inspiroivat muita tekemään samoin. Ja heillä kaikilla on tarina kerrottavanaan.</span></p><p><span style="font-style: italic;" /><span class="korostus"><span style="font-style: italic;">Lisää tarinoita <a href="https://goo.gl/AVcBGB" target="_blank">www.localheroes.fi</a> #sollocalheroes</span></span></p> <div class="main-image-area image embedded-image default" style="max-width: 620px"> <div class="credit" /> <div class="img-wrapper"> <img id="mainpic_1306091963483" src="http://www.hs.fi/webkuva/taysi/630/1306091963483?ts=491" title alt onclick="dispatch('IMAGE_CLICKED', 'mainpic_1306091963483')" /> </div> </div><p><span class="korostus"><span style="font-style: italic;" /></span></p><p /><p /><p><style type="text/css">blockquote {font-family: Georgia, serif;font-size: 26px;font-style: italic;width: 80%;margin: 2em 0;padding: 0.25em 40px;line-height: 1.45;position: relative;color: #383838;} blockquote:before {display: block;content: &quot;\201C&quot;;font-size: 98px;position: absolute;left: -20px;top: -20px;color: #7a7a7a;}</style></p> </div> </div> </div> </div> <span id="ta1480044276308" /> <div class="additional-article hidden type-article"> <div class="ad-between"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;middlebanner02&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat+islanti+kansanperinne+kirkot+kotimaa+helsinki+elokuvat+ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> <div class="ad-between"> <div class="mobile-ad-container"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;middle01&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:true,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat+islanti+kansanperinne+kirkot+kotimaa+helsinki+elokuvat+ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> </div> <div id="main-content" class="module"> <div id="a1480044276308" class="entry article"> <div class="entry-top"> <p>  <div class="main-image-area image"> <div class="img-wrapper"> <img alt="”Japanilaiset kysyivät, että tunnetko Olli Hermanin. Heitä ihmetytti, kun sanoin, että hän asuu naapurissani”, Marko Annala sanoo." class="p_1480044281482_960_taysi" lazy-src="http://www.hs.fi/webkuva/taysi/960/1480044281482?ts=441" src="/webstatic/images/clear1x1.gif" title="”Japanilaiset kysyivät, että tunnetko Olli Hermanin. Heitä ihmetytti, kun sanoin, että hän asuu naapurissani”, Marko Annala sanoo." /><script type="text/javascript">hs.m.image.loadMobileImage(&quot;img.p_1480044281482_960_taysi[lazy-src]&quot;);</script> <div class="caption dark-overlay"> ”Japanilaiset kysyivät, että tunnetko Olli Hermanin. Heitä ihmetytti, kun sanoin, että hän asuu naapurissani”, Marko Annala sanoo. <span class="photographer"><i class="icon-camera" /> Pete Aarre-Ahtio</span> </div> </div> </div> <div style="clear: left;"> </div> </p> </div> <div class="entry-content"> <h2><a href="http://nyt.fi/a1480044276308">Näin 20 vuotta vanhasta suomimetallibändistä tuli superhitti Japanissa: ”Naispuoliset fanit laulavat mukana suomeksi”</a></h2> <div class="meta"> <div class="social original-placeholder"> <ul class="article-social-media load-share-count"> <li> <a class="article-facebook-share" data-article-id="1480044276308" data-track-article-event="Nyt-FBShare" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fnyt.fi%2Fa1480044276308%3Fref%3Dfb-share" target="_blank"> <span class="fb-share-count social-media-count" data-minimum-count="10" data-share-url="http://nyt.fi/a1480044276308" /> </a> </li> <li> <a class="article-tweet" data-article-id="1480044276308" data-track-article-event="Nyt-TwitterShare" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fnyt.fi%2Fa1480044276308%3Fref%3Dtw-share&text=N%C3%A4in+20+vuotta+vanhasta+suomimetallib%C3%A4ndist%C3%A4+tuli+superhitti+Japanissa%3A+%E2%80%9DNaispuoliset+fanit+laulavat+mukana+suomeksi%E2%80%9D" target="_blank"> <span class="twitter-share-count social-media-count" data-minimum-count="10" data-share-url="http://nyt.fi/a1480044276308" /> </a> </li> </ul> </div> <p class="category"><a href="http://nyt.fi/aihe/musiikki/">Musiikki</a></p> <time datetime="2016-11-25T12:33:00+02:00"> <span class="value">25.11.2016 @ 12:33</span> </time> <span class="assistant"><i class="icon-pencil" /> Ilkka Mattila </span> <span class="permalink">&lt;URL&gt; <a href="http://nyt.fi/a1480044276308">nyt.fi/a1480044276308</a></span> </div>  <div class="text"> <p>Ei ole aivan jokapäiväistä, että 20 vuotta toiminut suomenkielinen rockyhtye löytää yhtäkkiä uutta yleisöä Japanista. Metalliyhtye Mokomalle näin on käynyt.</p><p>”Ihmetyttää se itseäkin”, vasta Japanista palanneen Mokoman laulaja <a href="/haku/?haku=Marko+Annala&lahde=nimilinkki" class="nimilinkki"> Marko Annala</a> sanoo. ”Ilmeisesti siellä on niin, että jos ei laula japaniksi, on aika sama, millä kielellä laulaa.”</p><p><span class="votsikko">Nyt jo kolmatta kertaa Japanissa käyneen Mokoman keikalla eturivi oli täynnä nuoria, enimmäkseen naispuolisia faneja, jotka lauloivat mukana Annalan suomenkielisiä tekstejä.</span></p><p>”Olivat opetelleet ne onomatopoeettisesti.”</p><p>Mokoma päätyi ensi kertaa keikoille Japaniin kolme vuotta sitten, kun Tuska-festivaalilla vieraillut japanilainen promoottori oli ihastunut yhtyeen esitykseen. Annala piti keikkakutsua ensin vitsinä.</p><p>”Japanilaisessa kulttuurissa ei vitsailla, joten sinne päädyttiin.”</p><p><span class="votsikko">Annala muistuttaa, että rock ja varsinkin vieraskielinen metalli ovat Japanissa marginaalimusiikkia,</span> mutta suuressa maassa marginaaliin mahtuu enemmän väkeä kuin Suomessa.</p><p>Kotimaassa Mokoma tekee loppuvuodesta kokonaan toisenlaisia keikkoja teattereissa ja konserttisaleissa: työkaluina ovat akustiset soittimet, ja ohjelmisto on sovitettu uudelleen sen mukaan.</p><p>”Ideana ei siis ole vain soittaa alkuperäisversioita 40 prosenttia hiljempaa”, Annala tähdentää.</p><p><span class="tark">Mokoma Sellosalissa (Soittoniekanaukio 1 A, Espoo) pe 25.11. klo 19. Liput 20 e.</span></p> </div>   <div id="right-col"> <div id="right-ad"> <div class="ad-container"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;side01&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> </div> </div> <div class="article-tools-social"> <div class="social-media-buttons"> <div class="wa"> <a href="whatsapp://send" data-text="Näin 20 vuotta vanhasta suomimetallibändistä tuli superhitti Japanissa: ”Naispuoliset fanit laulavat mukana suomeksi”" data-href="http://nyt.fi/a1480044276308?ref=wa-share" class="wa_btn wa_btn_s" style="display:none">Jaa</a> </div> </div> <span class="permalink"><text>Suora linkki</text><a href="http://nyt.fi/a1480044276308">nyt.fi/a1480044276308</a></span> <div class="comic-tags"> <p class="category"><a href="http://nyt.fi/aihe/musiikki/">Musiikki</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/metallimusiikki/">metallimusiikki</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/keikka/">Keikka</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/japani/">Japani</a></p> </div> </div> <div id="bottom-ads"> <div class="nyt-ad"> <div class="ad-container"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;rectangle1-1&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> </div> </div> <div class="comment-section"> <div id="commenting" class="module"> <div class="kommentit"> <div class="decor" /> <div class="header"> <h3>Kommentit <span class="value">(0)</span></h3> </div> <form class="form-send-comment" action="/ajax/kommentti/nyt/tallenna/" method="post"> <input type="hidden" name="refererElement" value="1303246170583" autocomplete="off" /> <input type="hidden" name="articleId" value="1480044276308" autocomplete="off" /> <input type="hidden" name="comicId" value autocomplete="off" /> <input type="hidden" name="replyToMessageId" value autocomplete="off" /> <input type="hidden" name="csrfToken" value autocomplete="off" /> <div class="kommentoi-nav"> <img class="kommentoi-image-avatar" src="/webstatic/images/userThumbNotReg.gif" /> </div> <div class="kommentoi-message-bubble"> <textarea class="message" id="send-comment-message" name="message" rows="5" cols="20" placeholder="Kommentti" /> <span class="repliedUserText" /> </div> <div class="kommentoi-name-field"> <input class="name-field" name="username" type="text" placeholder="Nimimerkki" /> <input type="submit" class="comment-btn" name="post" value="Lähetä" /> </div> <div class="kommentoi-message-info"> <div class="max-info" style="display:none;"><p>Maksimi merkkimäärä on 2000</p></div> <div class="comment-sent-message" class="message hidden" /> <div style="clear:both;" /> </div> </form> <div id="reportAbusiveCommentContainer"> <form id="frm-report-abusive-comment" method="post" action="/ajax/nyt/keskustelut/ilmoita"> <p class="report-message"><span class="report-info-message">Oletko varma, että haluat ilmoittaa viestin asiattomaksi?</span></p> <input type="hidden" name="csrfToken" value /> <input type="hidden" name="commentId" value /> <textarea cols="60" rows="3" name="text" class="required placeholder" placeholder="Kuvaile tähän miksi viesti on asiaton" /> <div class="buttons"> <input type="submit" class="report-btn" value="Lähetä" /> <input type="submit" class="report-btn cancel" value="Peruuta" /> </div> </form> <div id="abuse-report-sent-message" class="message" /> </div> <ul class="comment-list-fake" has-more="false" last-index="0" start-index="0" class="comment-list" style="display: none;"> <script class="fakeCommentTemplate" type="text/x-jquery-tmpl">
+&lt;li&gt;
+    &lt;div id=&quot;comment-layer-info&quot;&gt;
+        &lt;div class=&quot;comment-layer-text&quot;&gt;
+            &lt;p&gt;Kommenttisi on moderoitavana. &lt;span&gt;Viestejä julkaistaan sitä mukaa, kun toimitus ehtii niitä tarkistaa.&lt;br&gt;Viestejä tarkistetaan kello 7&amp;ndash;24 (viikonloppuisin 9&amp;ndash;24 ja juhlapyhinä 12&amp;ndash;22). &lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;comment-ftr cf&quot;&gt;
+          &lt;div class=&quot;icon-unknown&quot;&gt;&lt;/div&gt;
+          &lt;div id=&quot;comment-meta000000&quot; class=&quot;meta&quot;&gt;
+              &lt;a href=&quot;#&quot; class=&quot;author fakelink&quot;&gt;${who}&lt;/a&gt;
+              &lt;span class=&quot;posted&quot;&gt; ${when}&lt;/span&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;comment-text&quot;&gt;
+          
+            &lt;p id=&quot;comment-body000000&quot;&gt;{{html what}}&lt;/p&gt;
+          &lt;div class=&quot;comment-text-links&quot;&gt;
+              &lt;ul&gt;
+                  &lt;li class=&quot;comment-reply&quot;&gt;&lt;a class=&quot;fakelink&quot; href=&quot;#commenting&quot; comment-id=&quot;000000&quot;&gt;Vastaa&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class=&quot;comment-recommend&quot;&gt;&lt;a class=&quot;fakelink&quot; href=&quot;#&quot; id=&quot;recommendButton000000&quot; aid=&quot;1303159095376&quot; mid=&quot;000000&quot;&gt;Suosittele (0)&lt;/a&gt;&lt;/li&gt; 
+                  &lt;li class=&quot;comment-report&quot;&gt;&lt;a class=&quot;fakelink&quot; href=&quot;#&quot; comment-id=&quot;000000&quot; title=&quot;Vain kirjautuneille käyttäjille&quot; class=&quot;disabled&quot;&gt;Ilmoita asiaton viesti&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+&lt;/li&gt;
+</script> </ul> <script class="replyToMessageTmpl" type="text/x-jquery-tmpl">
+    Olet vastaamassa käyttäjän &lt;span&gt;{{html nickname}}&lt;/span&gt;  &amp;nbsp;viestiin
+</script> <script>
+$(function() {
+	
+	nyt.commenting.maxCharAmount = 2000;
+    nyt.commenting.commentSentText = &quot;&lt;p&gt;Kommenttisi on moderoitavana. &lt;span&gt;Viestejä julkaistaan sitä mukaa, kun toimitus ehtii niitä tarkistaa.&lt;br&gt;Viestejä tarkistetaan kello 7&amp;ndash;24 (viikonloppuisin 9&amp;ndash;24 ja juhlapyhinä 12&amp;ndash;22). &lt;/span&gt;&lt;/p&gt;&quot;;
+    nyt.commenting.reportSentText = &quot;Viesti lähetetty, kiitos ilmoituksesta.&quot;;
+	
+	if (&quot;HSArticle{name=&apos;Nain 20 vuotta vanhasta suomimetallibandista tuli superhitti Jap&apos;, description=&apos;Nain 20 vuotta vanhasta suomimetallibandista tuli superhitti Jap&apos;, assetId=&apos;HS_Article:1480044276308, status=&apos;ED&apos;, createdBy=&apos;hsccirest&apos;, updatedBy=&apos;hsccirest&apos;, createdDate=&apos;Fri Nov 25 12:34:56 EET 2016, updatedDate=&apos;Fri Nov 25 12:37:39 EET 2016, startDate=&apos;Fri Nov 25 12:33:00 EET 2016, endDate=&apos;null}&quot; != &quot;&quot;) {
+        nyt.commenting.initializeCommentSection(&quot;1303246170583&quot;, &quot;1480044276308&quot;, &quot;HS_Article&quot;);
+	} else if (&quot;&quot; != &quot;&quot;) {
+        nyt.commenting.initializeCommentSection(&quot;1303246170583&quot;, &quot;&quot;, &quot;&quot;);
+	}		
+});
+</script> <div class="discussions-list a1480044276308"> <script>
+                        $.get(&quot;/ajax/nyt/keskustelut/1303246170583/a1480044276308&quot;)
+                         .done(function(comments) {
+                            $(&apos;.discussions-list.a1480044276308&apos;).append(comments);
+                         });
+                   </script> </div> </div> </div> </div> </div> </div> </div> <div class="hs-news-box-wrap"> <div class="hs-news-box"> <a href="http://www.hs.fi?ref=tf_iHSnytboksi" title="HS.fi" target="_blank" class="hs-logo"><img src="/webstatic/images/nyt/nyt-hs-box-logo.png" alt="Etusivu" width="48" height="48" /></a> <a href="http://www.hs.fi/kotimaa/a1480054070543?jako=b04769f615cccb257ea6cbf925627b9d&ref=tf_iHSnytboksi" target="_blank" class="multiline first hs-article"><span> Juoko kukaan enää Sinisiä enkeleitä tai Kuulalaakereita? Tältä näyttivät suomalaisten pikkujoulut entisaikaan</span></a> <a href="http://www.hs.fi/kaupunki/a1480046064411?jako=76a7d627457d3ab43092add07784ccfa&ref=tf_iHSnytboksi" target="_blank" class="multiline second hs-article"><span> Perhe syyttää: bussikuski jätti 9-vuotiaan tytön pimeälle Kehä I:lle ilman rahaa ja puhelinta</span></a> <a href="http://www.hs.fi/fingerpori/?ref=tf_iHSnytboksi" target="_blank" class="fingerpori"><img alt="Fingerpori" src="/webstatic/images/nyt/nyt-hs-box-comic.png" width="48" height="48" /></a> </div> </div> </div> <span id="ta1480041506734" /> <div class="additional-article hidden type-article"> <div class="ad-between"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;middlebanner02&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat+islanti+kansanperinne+kirkot+kotimaa+helsinki+elokuvat+ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> <div id="main-content" class="module"> <div id="a1480041506734" class="entry article"> <div class="entry-top"> <p>  <div class="main-image-area image"> <div class="img-wrapper"> <img alt="Esimerkkejä puhelimessa puhuessa piirretyistä kuvista eli doodleista: vasemmalla aivotutkija Minna Huotilaisen piirros, oikealla Nyt.fi:in toimituksen doodleja." class="p_1480041511898_960_taysi" lazy-src="http://www.hs.fi/webkuva/taysi/960/1480041511898?ts=86" src="/webstatic/images/clear1x1.gif" title="Esimerkkejä puhelimessa puhuessa piirretyistä kuvista eli doodleista: vasemmalla aivotutkija Minna Huotilaisen piirros, oikealla Nyt.fi:in toimituksen doodleja." /><script type="text/javascript">hs.m.image.loadMobileImage(&quot;img.p_1480041511898_960_taysi[lazy-src]&quot;);</script> <div class="caption dark-overlay"> Esimerkkejä puhelimessa puhuessa piirretyistä kuvista eli doodleista: vasemmalla aivotutkija Minna Huotilaisen piirros, oikealla Nyt.fi:in toimituksen doodleja. </div> </div> </div> <div style="clear: left;"> </div> </p> </div> <div class="entry-content"> <h2><a href="http://nyt.fi/a1480041506734">Piirteletkö paperille puhelimessa puhuessasi tai luennolla? Erittäin hyvä, sillä se parantaa keskittymistä, sanoo aivotutkija</a></h2> <div class="meta"> <div class="social original-placeholder"> <ul class="article-social-media load-share-count"> <li> <a class="article-facebook-share" data-article-id="1480041506734" data-track-article-event="Nyt-FBShare" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fnyt.fi%2Fa1480041506734%3Fref%3Dfb-share" target="_blank"> <span class="fb-share-count social-media-count" data-minimum-count="10" data-share-url="http://nyt.fi/a1480041506734" /> </a> </li> <li> <a class="article-tweet" data-article-id="1480041506734" data-track-article-event="Nyt-TwitterShare" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fnyt.fi%2Fa1480041506734%3Fref%3Dtw-share&text=Piirteletk%C3%B6+paperille+puhelimessa+puhuessasi+tai+luennolla%3F+Eritt%C3%A4in+hyv%C3%A4%2C+sill%C3%A4+se+parantaa+keskittymist%C3%A4%2C+sanoo+aivotutkija" target="_blank"> <span class="twitter-share-count social-media-count" data-minimum-count="10" data-share-url="http://nyt.fi/a1480041506734" /> </a> </li> </ul> </div> <p class="category"><a href="http://nyt.fi/aihe/mieli/">Mieli</a></p> <time datetime="2016-11-25T09:29:35+02:00"> <span class="value">25.11.2016 @ 9:29</span> </time> <span class="sp"> | </span> <time datetime="2016-11-25T16:29:14+02:00"> <span>Päivitetty </span><span class="value">25.11.2016 @ 16:29</span> </time> <span class="assistant"><i class="icon-pencil" /> Juho Typpö </span> <span class="permalink">&lt;URL&gt; <a href="http://nyt.fi/a1480041506734">nyt.fi/a1480041506734</a></span> </div>  <div class="text"> <p><a href="http://nyt.fi/a1479177030226"><span class="korostus">Kirjoitimme aiemmin rikossarja Sorjosen päähenkilön käyttämästä muistitekniikasta.</span></a><span class="korostus"> Se sai meidät kiinnittämään huomiota toiseen muistia kehittävään, huomattavasti arkisempaan tapaan.</span></p><p>Piirteletkö puhelimessa puhuessasi tai luennolla istuessasi aina paperille jotakin, asiaa kummemmin ajattelematta?</p><p>Nopeita, merkityksettömiä suttuja, ruutupaperin ruutuja seuraavia kuvioita, kukkia, eläimiä, ties mitä?</p><p>Siis vaikka tällaisia:</p> <div class="main-image-area image embedded-image default" style="max-width: 630px"> <div class="credit" /> <div class="img-wrapper"> <img id="mainpic_1480041516614" src="http://www.hs.fi/webkuva/taysi/630/1480041516614?ts=1086" title alt onclick="dispatch('IMAGE_CLICKED', 'mainpic_1480041516614')" /> </div> </div><p><span class="votsikko">Jos piirtelet, hyvä! </span></p><p>Se ei nimittäin ole merkki siitä, ettet kiinnittäisi huomiota, mitä sinulle puhutaan. </p><p>Päinvastoin: tutkimuksissa on todettu, että kuunnellessa samaan aikaan piirtely auttaa keskittymistä ja parantaa muistia.</p><p>Samaa sanoo Helsingin ja Uppsalan yliopistoissa työskentelevä aivotutkija <a href="/haku/?haku=Minna+Huotilainen&lahde=nimilinkki" class="nimilinkki"> Minna Huotilainen</a>.</p><p>”Erittäin suositeltava ja tutkitusti hyödyllinen tapa”, hän sanoo.</p><p><span class="votsikko">Englannin kielessä</span> tällaisista piirroksista käytetään sanaa <span class="teos">doodle</span>. Verbi on <span class="teos">doodling</span>. Suomeksi niille ei ole keksitty omaa termiä. Käytämme tässä jutussa doodle- ja doodlailu-sanoja kielioppisääntöjen uhallakin.</p><p>Doodlailu on kaikessa arkisuudessaan ja huomaamattomuudessaan kiehtova tapa. Eri ihmisten töherryksissä toistuvat usein samat elementit, kuten toisteiset kuviot, vahvistetut ääriviivat ja vastaavat.</p><p><span class="votsikko">Monien kuuluisien taiteilijoiden ja merkkihenkilöiden</span> tiedetään doodlailleen, ja jälkipolville säilyneitä tuherruksia esitellään silloin tällöin näyttelyissä ja artikkeleissa. <a href="http://flavorwire.com/147177/idle-doodles-by-famous-authors">Tähän artikkeliin</a> on listattu esimerkiksi <a href="/haku/?haku=Sylvia+Plathin&lahde=nimilinkki" class="nimilinkki"> Sylvia Plathin</a>, <a href="/haku/?haku=David+Foster+Wallacen&lahde=nimilinkki" class="nimilinkki"> David Foster Wallacen</a> ja <a href="/haku/?haku=Mark+Twainin&lahde=nimilinkki" class="nimilinkki"> Mark Twainin</a> muistiinpanopiirroksia. Yhdysvaltain presidenttien doodleista on koostettu kokonainen <a href="https://www.amazon.com/Presidential-Doodles-Centuries-Scribbles-Scratches/dp/0465032664">kirjakin.</a></p><p>Hakukonejätti Googlella on ollut vuosia tapana julkaista omia ”doodlejaan” eri merkkipäiviin liittyen.</p><p>Myös doodlailua tapana on alettu viime vuosina tutkia ihan vakavasti. Esimerkiksi vuonna 2009 tiedejulkaisu Applied Cognitive Psychologyssa julkaistiin brittiläisen Plymouthin yliopiston <a href="http://content.time.com/time/health/article/0,8599,1882127,00.html">tutkimus,</a> jossa oli selvitetty luennolla piirtelyn hyötyjä muistitestin avulla. </p><p>Psykologi <a href="/haku/?haku=Jackie+Andraden&lahde=nimilinkki" class="nimilinkki"> Jackie Andraden</a> johtamassa testissä joukko ihmisiä laitettiin kuuntelemaan nauhalta kerrottua tarinaa. Puolet ryhmästä sai piirrellä kuuntelemisen aikana, puolet ei. Varsinaisia muistiinpanoja ei saanut tehdä.</p><p>Ne, jotka olivat kuunnellessaan piirrelleet, muistivat tarinan yksityiskohdat huomattavasti paremmin.</p><p>”Silloin kun ollaan pelkän kuuntelun varassa, piirtely todella auttaa muistamaan kuultuja asioita”, Minna Huotilainen sanoo.</p><p><span class="votsikko">Salaisuus on siinä, että kuunnellessa jokin pieni, sinänsä merkityksetön liike – kuten doodlailu – auttaa pitämään yllä juuri sopivaa vireystilaa.</span></p><p>”Tutkimuksissa on myös havaittu, että seisten tai kävellen kuunnellessa opitaan paremmin kuin istuessa. Sekin tukee tätä havaintoa”, Huotilainen toteaa.</p><p>Muitakin kuunteluvireyttä parantavia puuhia on. Joillain saattaa olla tapana vaikka kutoa luennoilla istuessaan. Se toimiikin samaan tapaan kuin simppeli doodlailu: pientä, toistuvaa liikettä. </p><p>Myös jokin aika sitten muodissa olleet aikuisten värityskirjat ovat hyvä apu keskittymiseen. Työterveyslaitos, Huotilaisen aiempi työpaikka, julkaisi viime vuonna <a href="http://www.ttl.fi/fi/15_minuuttia/minna_huotilainen/sivut/default.aspx">oman värityskirjan</a> nimenomaan tähän tarkoitukseen.</p><p><span class="votsikko">Pääasia on se, että kutominen, piirtely tai muu aktiviteetti hoituu ”automaatiolla.” Se ei saa viedä huomiota pääasialta, kuuntelemiselta.</span> Siksi esimerkiksi netissä surffailu älypuhelimella ei aja samaa asiaa, vaan heikentää keskittymistä.</p> <div class="main-image-area image embedded-image medium right" style="max-width: 250px"> <div class="credit">Kari Hautala</div> <div class="img-wrapper"> <img id="mainpic_1480041521530" src="http://www.hs.fi/webkuva/taysi/250/1480041521530?ts=989" title="Minna Huotilainen." alt="Minna Huotilainen." onclick="dispatch('IMAGE_CLICKED', 'mainpic_1480041521530')" /> </div> <div class="caption">Minna Huotilainen.</div> </div><p>Huotilainen nostaa esiin vielä toisenkin doodlailun hyödyn: se poistaa esimerkiksi koulujen kuuntelukokeisiin liittyvää turhaa stressaamista ja jännittämistä.</p><p>”Doodlailu on myös vähän sellaista hassua ja hauskaa. Sillä voi saada kuuntelukokeeseen mukaan jonkin rennomman elementin”, hän sanoo.</p><p><span class="votsikko">Entä voiko doodlauksesta päätellä jotain esimerkiksi ihmisen luonteenpiirteistä?</span> Huotilaisen tietojen mukaan ei. Myös brittiläisessä lääketieteen aikakauslehti The Lancetissa julkaistiin viitisen vuotta sitten <a href="http://www.thelancet.com/journals/lancet/article/PIIS0140-6736(11)61496-7/fulltext?rss=yes">artikkeli</a> <span class="teos">Doodling and the default network of the brain</span>, jossa tultiin samanlaiseen johtopäätökseen.</p><p>”Sinänsä doodlailuun taipuva ihminen voi olla luonnostaan hyvin keskittyvä. Mutta doodlailua voi kuka tahansa kokeilla, koska se ei taiteellista lahjakkuuttakaan vaadi.”</p><p>Ja kannattaakin kokeilla, Huotilainen kannustaa.</p><p>Omilla luennoillaan hän antaa jopa erikseen positiivista huomiota doodlaileville tai kutoville kuuntelijoille.</p><p>”Sanon heille aina, että ’nyt tuli pisteitä!’”</p><p><span class="votsikko">Ja hei! </span>Kaikille luennoilla aktiivisesti istuville tiedoksi, että on olemassa vielä eräs kehittyneempi doodlailun muoto.</p><p>Se yhdistää muistiinpanot ja doodlailun: ensin kirjoitetaan ylös muutamia esityksen avainsanoja ja sitten aletaan ”vahvistaa” niitä piirtelemällä.</p><p>”Avainsanojen ja pääkohtien poimiminen on jo sinänsä erittäin hyvää muistiinpanojen tekoa, verrattuna siihen että yrittäisi kirjoittaa kaiken ylös. Mutta kun tähän työhön vielä doodlaillaan lisäksi, tekijälle tulee hyvin henkilökohtaiset, oman näköiset muistiinpanot ja näkömuisti tehostaa mieleenpainumista entisestään.”</p><p>”Tällainen on superhyvää tiedonkäsittelyä. Sitä voisi kutsua jo superdoodlailuksi”, Huotilainen keksii.</p> <div class="main-image-area image embedded-image default" style="max-width: 630px"> <div class="credit">Arla Kanerva</div> <div class="img-wrapper"> <img id="mainpic_1480041526246" src="http://www.hs.fi/webkuva/taysi/630/1480041526246?ts=892" title="Arla Kanervan Suomen kulttuurirahaston kurssilla piirtämiä muistiinpanoja." alt="Arla Kanervan Suomen kulttuurirahaston kurssilla piirtämiä muistiinpanoja." onclick="dispatch('IMAGE_CLICKED', 'mainpic_1480041526246')" /> </div> <div class="caption">Arla Kanervan Suomen kulttuurirahaston kurssilla piirtämiä muistiinpanoja.</div> </div> </div>   <div id="right-col"> <div id="right-ad"> <div class="ad-container"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;side01&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> </div> </div> <div class="article-tools-social"> <div class="social-media-buttons"> <div class="wa"> <a href="whatsapp://send" data-text="Piirteletkö paperille puhelimessa puhuessasi tai luennolla? Erittäin hyvä, sillä se parantaa keskittymistä, sanoo aivotutkija" data-href="http://nyt.fi/a1480041506734?ref=wa-share" class="wa_btn wa_btn_s" style="display:none">Jaa</a> </div> </div> <span class="permalink"><text>Suora linkki</text><a href="http://nyt.fi/a1480041506734">nyt.fi/a1480041506734</a></span> <div class="comic-tags"> <p class="category"><a href="http://nyt.fi/aihe/mieli/">Mieli</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/tavat/">Tavat</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/taide/">Taide</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/keskittymiskyky/">Keskittymiskyky</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/kotimaa/">Kotimaa</a></p> </div> </div> <div id="bottom-ads"> <div class="nyt-ad"> <div class="ad-container"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;rectangle1-1&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> </div> </div> <div class="comment-section"> <div id="commenting" class="module"> <div class="kommentit"> <div class="decor" /> <div class="header"> <h3>Kommentit <span class="value">(0)</span></h3> </div> <form class="form-send-comment" action="/ajax/kommentti/nyt/tallenna/" method="post"> <input type="hidden" name="refererElement" value="1303246170583" autocomplete="off" /> <input type="hidden" name="articleId" value="1480041506734" autocomplete="off" /> <input type="hidden" name="comicId" value autocomplete="off" /> <input type="hidden" name="replyToMessageId" value autocomplete="off" /> <input type="hidden" name="csrfToken" value autocomplete="off" /> <div class="kommentoi-nav"> <img class="kommentoi-image-avatar" src="/webstatic/images/userThumbNotReg.gif" /> </div> <div class="kommentoi-message-bubble"> <textarea class="message" id="send-comment-message" name="message" rows="5" cols="20" placeholder="Kommentti" /> <span class="repliedUserText" /> </div> <div class="kommentoi-name-field"> <input class="name-field" name="username" type="text" placeholder="Nimimerkki" /> <input type="submit" class="comment-btn" name="post" value="Lähetä" /> </div> <div class="kommentoi-message-info"> <div class="max-info" style="display:none;"><p>Maksimi merkkimäärä on 2000</p></div> <div class="comment-sent-message" class="message hidden" /> <div style="clear:both;" /> </div> </form> <div id="reportAbusiveCommentContainer"> <form id="frm-report-abusive-comment" method="post" action="/ajax/nyt/keskustelut/ilmoita"> <p class="report-message"><span class="report-info-message">Oletko varma, että haluat ilmoittaa viestin asiattomaksi?</span></p> <input type="hidden" name="csrfToken" value /> <input type="hidden" name="commentId" value /> <textarea cols="60" rows="3" name="text" class="required placeholder" placeholder="Kuvaile tähän miksi viesti on asiaton" /> <div class="buttons"> <input type="submit" class="report-btn" value="Lähetä" /> <input type="submit" class="report-btn cancel" value="Peruuta" /> </div> </form> <div id="abuse-report-sent-message" class="message" /> </div> <ul class="comment-list-fake" has-more="false" last-index="0" start-index="0" class="comment-list" style="display: none;"> <script class="fakeCommentTemplate" type="text/x-jquery-tmpl">
+&lt;li&gt;
+    &lt;div id=&quot;comment-layer-info&quot;&gt;
+        &lt;div class=&quot;comment-layer-text&quot;&gt;
+            &lt;p&gt;Kommenttisi on moderoitavana. &lt;span&gt;Viestejä julkaistaan sitä mukaa, kun toimitus ehtii niitä tarkistaa.&lt;br&gt;Viestejä tarkistetaan kello 7&amp;ndash;24 (viikonloppuisin 9&amp;ndash;24 ja juhlapyhinä 12&amp;ndash;22). &lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;comment-ftr cf&quot;&gt;
+          &lt;div class=&quot;icon-unknown&quot;&gt;&lt;/div&gt;
+          &lt;div id=&quot;comment-meta000000&quot; class=&quot;meta&quot;&gt;
+              &lt;a href=&quot;#&quot; class=&quot;author fakelink&quot;&gt;${who}&lt;/a&gt;
+              &lt;span class=&quot;posted&quot;&gt; ${when}&lt;/span&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;comment-text&quot;&gt;
+          
+            &lt;p id=&quot;comment-body000000&quot;&gt;{{html what}}&lt;/p&gt;
+          &lt;div class=&quot;comment-text-links&quot;&gt;
+              &lt;ul&gt;
+                  &lt;li class=&quot;comment-reply&quot;&gt;&lt;a class=&quot;fakelink&quot; href=&quot;#commenting&quot; comment-id=&quot;000000&quot;&gt;Vastaa&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class=&quot;comment-recommend&quot;&gt;&lt;a class=&quot;fakelink&quot; href=&quot;#&quot; id=&quot;recommendButton000000&quot; aid=&quot;1303159095376&quot; mid=&quot;000000&quot;&gt;Suosittele (0)&lt;/a&gt;&lt;/li&gt; 
+                  &lt;li class=&quot;comment-report&quot;&gt;&lt;a class=&quot;fakelink&quot; href=&quot;#&quot; comment-id=&quot;000000&quot; title=&quot;Vain kirjautuneille käyttäjille&quot; class=&quot;disabled&quot;&gt;Ilmoita asiaton viesti&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+&lt;/li&gt;
+</script> </ul> <script class="replyToMessageTmpl" type="text/x-jquery-tmpl">
+    Olet vastaamassa käyttäjän &lt;span&gt;{{html nickname}}&lt;/span&gt;  &amp;nbsp;viestiin
+</script> <script>
+$(function() {
+	
+	nyt.commenting.maxCharAmount = 2000;
+    nyt.commenting.commentSentText = &quot;&lt;p&gt;Kommenttisi on moderoitavana. &lt;span&gt;Viestejä julkaistaan sitä mukaa, kun toimitus ehtii niitä tarkistaa.&lt;br&gt;Viestejä tarkistetaan kello 7&amp;ndash;24 (viikonloppuisin 9&amp;ndash;24 ja juhlapyhinä 12&amp;ndash;22). &lt;/span&gt;&lt;/p&gt;&quot;;
+    nyt.commenting.reportSentText = &quot;Viesti lähetetty, kiitos ilmoituksesta.&quot;;
+	
+	if (&quot;HSArticle{name=&apos;Piirteletko paperille puhelimessa puhuessasi tai luennolla Eritt&apos;, description=&apos;Piirteletko paperille puhelimessa puhuessasi tai luennolla Eritt&apos;, assetId=&apos;HS_Article:1480041506734, status=&apos;ED&apos;, createdBy=&apos;hsccirest&apos;, updatedBy=&apos;hsccirest&apos;, createdDate=&apos;Fri Nov 25 09:29:34 EET 2016, updatedDate=&apos;Fri Nov 25 16:29:15 EET 2016, startDate=&apos;Fri Nov 25 09:29:35 EET 2016, endDate=&apos;null}&quot; != &quot;&quot;) {
+        nyt.commenting.initializeCommentSection(&quot;1303246170583&quot;, &quot;1480041506734&quot;, &quot;HS_Article&quot;);
+	} else if (&quot;&quot; != &quot;&quot;) {
+        nyt.commenting.initializeCommentSection(&quot;1303246170583&quot;, &quot;&quot;, &quot;&quot;);
+	}		
+});
+</script> <div class="discussions-list a1480041506734"> <script>
+                        $.get(&quot;/ajax/nyt/keskustelut/1303246170583/a1480041506734&quot;)
+                         .done(function(comments) {
+                            $(&apos;.discussions-list.a1480041506734&apos;).append(comments);
+                         });
+                   </script> </div> </div> </div> </div> </div> </div> </div> </div> <span id="ta1479787272458" /> <div class="additional-article hidden type-article"> <div class="ad-between"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;middlebanner02&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat+islanti+kansanperinne+kirkot+kotimaa+helsinki+elokuvat+ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> <div id="main-content" class="module"> <div id="a1479787272458" class="entry article"> <div class="entry-top"> <p>  <div class="main-image-area image"> <div class="img-wrapper"> <img class="p_1479787277619_960_taysi" lazy-src="http://www.hs.fi/webkuva/taysi/960/1479787277619?ts=568" src="/webstatic/images/clear1x1.gif" /><script type="text/javascript">hs.m.image.loadMobileImage(&quot;img.p_1479787277619_960_taysi[lazy-src]&quot;);</script> </div> </div> <div style="clear: left;"> </div> </p> </div> <div class="entry-content"> <h2><a href="http://nyt.fi/a1479787272458">Tissiviikko on käynnissä somessa – kysyimme kampanjan ideoijalta, mistä on kyse</a></h2> <div class="meta"> <div class="social original-placeholder"> <ul class="article-social-media load-share-count"> <li> <a class="article-facebook-share" data-article-id="1479787272458" data-track-article-event="Nyt-FBShare" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fnyt.fi%2Fa1479787272458%3Fref%3Dfb-share" target="_blank"> <span class="fb-share-count social-media-count" data-minimum-count="10" data-share-url="http://nyt.fi/a1479787272458" /> </a> </li> <li> <a class="article-tweet" data-article-id="1479787272458" data-track-article-event="Nyt-TwitterShare" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fnyt.fi%2Fa1479787272458%3Fref%3Dtw-share&text=Tissiviikko+on+k%C3%A4ynniss%C3%A4+somessa+%E2%80%93+kysyimme+kampanjan+ideoijalta%2C+mist%C3%A4+on+kyse" target="_blank"> <span class="twitter-share-count social-media-count" data-minimum-count="10" data-share-url="http://nyt.fi/a1479787272458" /> </a> </li> </ul> </div> <p class="category"><a href="http://nyt.fi/aihe/internet/">Internet</a></p> <time datetime="2016-11-22T13:56:03+02:00"> <span class="value">22.11.2016 @ 13:56</span> </time> <span class="sp"> | </span> <time datetime="2016-11-24T18:15:18+02:00"> <span>Päivitetty </span><span class="value">24.11.2016 @ 18:15</span> </time> <span class="assistant"><i class="icon-pencil" /> Jussi Ahlroth </span> <span class="permalink">&lt;URL&gt; <a href="http://nyt.fi/a1479787272458">nyt.fi/a1479787272458</a></span> </div>  <div class="text"> <p>Twitterissä ja muualla somessa käynnistyi eilen #tissiviikko-kampanja. Kampanjassa postataan kuvia rinnoista tai kokemuksia rintoihin liittyen. </p><p><a href="/haku/?haku=Sanna-Mari+Paakki&lahde=nimilinkki" class="nimilinkki"> Sanna-Mari Paakki</a>, Twitterissä @pohjoistuulesta, ja <a href="/haku/?haku=Elina+Sorsa&lahde=nimilinkki" class="nimilinkki"> Elina Sorsa</a>, Twitterissä @sorseli, ideoivat kampanjan yhdessä. Sanna-Mari Paakki, mistä #tissiviikko-kampanjassa on kyse?</p><p>”Kyse on rintojen normalisoimisesta. Esimerkiksi, mies saa kulkea rinta paljaana kadulla, mutta nainen ei. Ainoa ero on, että naisilla on maitorauhaset ja rinnassa on aika paljon rasvaa. Silti naisen rinnat on tosi seksualisoitu. Jos rintavako näkyy, heti kysytään miksi päällä on flirttaileva asu.”</p><blockquote class="twitter-tweet" data-lang="fi"> <p lang="fi" dir="ltr">Tänään käynnistyy <a href="https://twitter.com/hashtag/tissiviikko?src=hash">#tissiviikko</a>👙!<br />Tämän päivän aikana kootaan vielä lisäinfoa epätietoisille. :-) <a href="https://t.co/D1x7ST7mXK">https://t.co/D1x7ST7mXK</a></p>— Elina Sorsa 🐣 (@sorseli) <a href="https://twitter.com/sorseli/status/800650274545274880">21. marraskuuta 2016</a> </blockquote><p><span class="korostus">Paakko oli noin</span> vuosi sitten päättänyt Sorsan kanssa, että he snäppäävät – eli julkaisevat Snapchatissä – päivän ajan rintaliiveissä. Viime viikolla he sitten miettivät suuremman kampanjan tekemisestä.</p><p>”Tissiviikko-kampanja syntyi puhelimessa. Halusimme saada mahdollisimman monta ihmistä mukaan ja herättää puhetta aiheesta. Ajattelimme, että olemme tyytyväisiä, jos saamme edes yhden ihmisen mukaan ja ymmärtämään mitä on rintojen yliseksualisointi.”</p><p><span class="korostus">Kampanja on </span>ollut suuri menestys. Jo viime viikolla kampanjaa mainostavaa kuvaa oli katsottu yli 20 000 kertaa. Kampanjan ensimmäinen päivä oli eilen ja sen hashtag #tissiviikko oli erittäin suosittu.</p><p>Kampanjan yksi mainoskuva on tällainen:</p> <div class="main-image-area image embedded-image default" style="max-width: 630px"> <div class="credit" /> <div class="img-wrapper"> <img id="mainpic_1479787282331" src="http://www.hs.fi/webkuva/taysi/630/1479787282331?ts=568" title alt onclick="dispatch('IMAGE_CLICKED', 'mainpic_1479787282331')" /> </div> </div><p>”Vaikka hirveästi on tullut trolleja ja kommentoijia, jotka sanovat että ’jes saadaan lisää runkkumatskua’, niin eniten puhuvat tissilliset, jotka ovat innokkaasti lähteneet tähän mukaan.”</p><p><span class="korostus">Kampanjassa on</span> tarkoitus vielä viikon aikana julkaista kyselyjä. Tänään tiistaina Paakki esimerkiksi suunnittelee kysymystä plastiikkakirurgiasta ja siitä, mitä ajatuksia rintojen kirurginen muokkaus herättää.</p><p>”Yritetään keksiä päivälle puheenaiheita. Tisseihin liittyy paljon sellaista, mistä voisi jutella.”</p><p><span class="korostus">Positiivinen</span> kampanja on myös saanut asiatonta palautetta.</p><p>”Pääpointti on voimauttaa ja tuoda lisää itsevarmuutta olla oman kehonsa kanssa. Ylilaudalla on paljon huorittelua ja muuta sellaista. Olemme rohkaisseet ihmisiä ilmiantamaan ja tekemään sellaisista rikosilmoituksia.</p><blockquote class="twitter-tweet" data-lang="fi"><p lang="fi" dir="ltr">Kaikki creepit ahdistelijat vain todistaa omalla käytöksellään sen, miten tarpeellinen <a href="https://twitter.com/hashtag/tissiviikko?src=hash">#tissiviikko</a> onkaan.</p>— kerttu (@ruismuumi) <a href="https://twitter.com/ruismuumi/status/800686561733947392">21. marraskuuta 2016</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8" /><p>Torstaina mukaan oli lähteny jo satamäärin suomalaisnaisia, ja esimerkiksi Instagramista kuvia löytyi yli 1 000. Joukossa oli esimerkiksi nyrkkeilijä Eva Wahlström, joka kannusti muita näin:</p><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="7" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:58.6574074074% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;" /></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BNMUyqNjYdu/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Tissiviikko. Ehkei pitäisi osallistua, mutta jonkinlaisena esikuvana tai roolimallina nuorille ja varsinkin tytöille, on ehkä hyvä sanoa jotain. Kuten, että aika tyhjiltä näyttää toi urheilutoppi, ja se on täysin ok. Oon geneettisesti pienirintainen, urheilu on tehnyt tehtävänsä ja pojan imetys vei loput. Jokainen saa tehdä keholleen mitä haluaa, mutta kenenkään ei pitäs kokea häpeää tai tuntea itsensä epänaiselliseksi pienirintaisuuden takia. Toisilla on pienet jalat, toisilla pienet korvat tai pienet rinnat. So what. Jos ne on terveet ja ne toimii, se on jo kova juttu! #tissiviikko #pikkutissi</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">Kuva, jonka eva wahlström (@eva_wahlstrom) julkaisi <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2016-11-24T12:16:56+00:00">24. 11ta 2016 klo 4.16 PST</time></p></div></blockquote><script async defer src="//platform.instagram.com/en_US/embeds.js" /><p><a href="http://nyt.fi/a1305942928872">Lue myös viimevuotinen juttumme samankaltaisesta #FreeTheNipple-liikkeestä.</a></p> </div>   <div id="right-col"> <div id="right-ad"> <div class="ad-container"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;side01&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> </div> </div> <div class="article-tools-social"> <div class="social-media-buttons"> <div class="wa"> <a href="whatsapp://send" data-text="Tissiviikko on käynnissä somessa – kysyimme kampanjan ideoijalta, mistä on kyse" data-href="http://nyt.fi/a1479787272458?ref=wa-share" class="wa_btn wa_btn_s" style="display:none">Jaa</a> </div> </div> <span class="permalink"><text>Suora linkki</text><a href="http://nyt.fi/a1479787272458">nyt.fi/a1479787272458</a></span> <div class="comic-tags"> <p class="category"><a href="http://nyt.fi/aihe/internet/">Internet</a></p> <p class="category additional"><a href="http://nyt.fi/aihe/tasaarvo/">Tasa-arvo</a></p> </div> </div> <div id="bottom-ads"> <div class="nyt-ad"> <div class="ad-container"> <script type="text/javascript">
+    (function() {
+        var currentAd = {&quot;positionName&quot;:&quot;rectangle1-1&quot;,&quot;frontPageAd&quot;:false,&quot;mobileAd&quot;:false,&quot;embeddedAd&quot;:false,&quot;stickyAd&quot;:false,&quot;socialMediaAd&quot;:false,&quot;keywords&quot;:&quot;ulkomaat&quot;,&quot;hideFromSubscribers&quot;:false};
+        if (hs.ads.getVisibility(currentAd)) {
+            try {
+                var kvinfo = hs.ads.getKvinfoValue();
+
+                var tags = currentAd.keywords + &quot;;kvinfo=&quot; + kvinfo;
+
+                cts.render(currentAd.positionName, {&quot;tags&quot; : tags});
+
+                if (currentAd.frontPageAd) {
+                    hs.ads.setFrontPageAdVisible();
+                }
+            } catch (err) { 
+                if (typeof cts != &apos;undefined&apos; &amp;&amp; cts !== null) {
+                    cts.log(err);
+                    console.log(err);
+                }
+            }
+        }
+    }());
+    </script> </div> </div> </div> <div class="comment-section"> <div id="commenting" class="module"> <div class="kommentit"> <div class="decor" /> <div class="header"> <h3>Kommentit <span class="value">(0)</span></h3> </div> <form class="form-send-comment" action="/ajax/kommentti/nyt/tallenna/" method="post"> <input type="hidden" name="refererElement" value="1303246170583" autocomplete="off" /> <input type="hidden" name="articleId" value="1479787272458" autocomplete="off" /> <input type="hidden" name="comicId" value autocomplete="off" /> <input type="hidden" name="replyToMessageId" value autocomplete="off" /> <input type="hidden" name="csrfToken" value autocomplete="off" /> <div class="kommentoi-nav"> <img class="kommentoi-image-avatar" src="/webstatic/images/userThumbNotReg.gif" /> </div> <div class="kommentoi-message-bubble"> <textarea class="message" id="send-comment-message" name="message" rows="5" cols="20" placeholder="Kommentti" /> <span class="repliedUserText" /> </div> <div class="kommentoi-name-field"> <input class="name-field" name="username" type="text" placeholder="Nimimerkki" /> <input type="submit" class="comment-btn" name="post" value="Lähetä" /> </div> <div class="kommentoi-message-info"> <div class="max-info" style="display:none;"><p>Maksimi merkkimäärä on 2000</p></div> <div class="comment-sent-message" class="message hidden" /> <div style="clear:both;" /> </div> </form> <div id="reportAbusiveCommentContainer"> <form id="frm-report-abusive-comment" method="post" action="/ajax/nyt/keskustelut/ilmoita"> <p class="report-message"><span class="report-info-message">Oletko varma, että haluat ilmoittaa viestin asiattomaksi?</span></p> <input type="hidden" name="csrfToken" value /> <input type="hidden" name="commentId" value /> <textarea cols="60" rows="3" name="text" class="required placeholder" placeholder="Kuvaile tähän miksi viesti on asiaton" /> <div class="buttons"> <input type="submit" class="report-btn" value="Lähetä" /> <input type="submit" class="report-btn cancel" value="Peruuta" /> </div> </form> <div id="abuse-report-sent-message" class="message" /> </div> <ul class="comment-list-fake" has-more="false" last-index="0" start-index="0" class="comment-list" style="display: none;"> <script class="fakeCommentTemplate" type="text/x-jquery-tmpl">
+&lt;li&gt;
+    &lt;div id=&quot;comment-layer-info&quot;&gt;
+        &lt;div class=&quot;comment-layer-text&quot;&gt;
+            &lt;p&gt;Kommenttisi on moderoitavana. &lt;span&gt;Viestejä julkaistaan sitä mukaa, kun toimitus ehtii niitä tarkistaa.&lt;br&gt;Viestejä tarkistetaan kello 7&amp;ndash;24 (viikonloppuisin 9&amp;ndash;24 ja juhlapyhinä 12&amp;ndash;22). &lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;comment-ftr cf&quot;&gt;
+          &lt;div class=&quot;icon-unknown&quot;&gt;&lt;/div&gt;
+          &lt;div id=&quot;comment-meta000000&quot; class=&quot;meta&quot;&gt;
+              &lt;a href=&quot;#&quot; class=&quot;author fakelink&quot;&gt;${who}&lt;/a&gt;
+              &lt;span class=&quot;posted&quot;&gt; ${when}&lt;/span&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;comment-text&quot;&gt;
+          
+            &lt;p id=&quot;comment-body000000&quot;&gt;{{html what}}&lt;/p&gt;
+          &lt;div class=&quot;comment-text-links&quot;&gt;
+              &lt;ul&gt;
+                  &lt;li class=&quot;comment-reply&quot;&gt;&lt;a class=&quot;fakelink&quot; href=&quot;#commenting&quot; comment-id=&quot;000000&quot;&gt;Vastaa&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class=&quot;comment-recommend&quot;&gt;&lt;a class=&quot;fakelink&quot; href=&quot;#&quot; id=&quot;recommendButton000000&quot; aid=&quot;1303159095376&quot; mid=&quot;000000&quot;&gt;Suosittele (0)&lt;/a&gt;&lt;/li&gt; 
+                  &lt;li class=&quot;comment-report&quot;&gt;&lt;a class=&quot;fakelink&quot; href=&quot;#&quot; comment-id=&quot;000000&quot; title=&quot;Vain kirjautuneille käyttäjille&quot; class=&quot;disabled&quot;&gt;Ilmoita asiaton viesti&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+&lt;/li&gt;
+</script> </ul> <script class="replyToMessageTmpl" type="text/x-jquery-tmpl">
+    Olet vastaamassa käyttäjän &lt;span&gt;{{html nickname}}&lt;/span&gt;  &amp;nbsp;viestiin
+</script> <script>
+$(function() {
+	
+	nyt.commenting.maxCharAmount = 2000;
+    nyt.commenting.commentSentText = &quot;&lt;p&gt;Kommenttisi on moderoitavana. &lt;span&gt;Viestejä julkaistaan sitä mukaa, kun toimitus ehtii niitä tarkistaa.&lt;br&gt;Viestejä tarkistetaan kello 7&amp;ndash;24 (viikonloppuisin 9&amp;ndash;24 ja juhlapyhinä 12&amp;ndash;22). &lt;/span&gt;&lt;/p&gt;&quot;;
+    nyt.commenting.reportSentText = &quot;Viesti lähetetty, kiitos ilmoituksesta.&quot;;
+	
+	if (&quot;HSArticle{name=&apos;Tissiviikko on kaynnissa somessa  kysyimme kampanjan ideoijalta &apos;, description=&apos;Tissiviikko on kaynnissa somessa  kysyimme kampanjan ideoijalta &apos;, assetId=&apos;HS_Article:1479787272458, status=&apos;ED&apos;, createdBy=&apos;hsccirest&apos;, updatedBy=&apos;hsccirest&apos;, createdDate=&apos;Tue Nov 22 13:56:03 EET 2016, updatedDate=&apos;Thu Nov 24 18:15:22 EET 2016, startDate=&apos;Tue Nov 22 13:56:03 EET 2016, endDate=&apos;null}&quot; != &quot;&quot;) {
+        nyt.commenting.initializeCommentSection(&quot;1303246170583&quot;, &quot;1479787272458&quot;, &quot;HS_Article&quot;);
+	} else if (&quot;&quot; != &quot;&quot;) {
+        nyt.commenting.initializeCommentSection(&quot;1303246170583&quot;, &quot;&quot;, &quot;&quot;);
+	}		
+});
+</script> <div class="discussions-list a1479787272458"> <script>
+                        $.get(&quot;/ajax/nyt/keskustelut/1303246170583/a1479787272458&quot;)
+                         .done(function(comments) {
+                            $(&apos;.discussions-list.a1479787272458&apos;).append(comments);
+                         });
+                   </script> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> </div> <script>
+                    handleNavigation();
+				</script> </div>   <footer role="contentinfo">  <div id="footer" class="area"> <div class="footer-wrapper cf"> <div id="footer-contact" class="vcard"> <h4 class="fn org">Helsingin Sanomat</h4> <p class="copyright"> Helsingin Sanomat, a Sanoma company © 2016<br /> Aineiston luvaton käyttö toisen palvelun osana kielletty </p> <div class="geo"> <span class="latitude" /> <span class="longitude" /> </div> </div> <div id="footer-links-1"> <ul class="footer-links"> <li><a href="http://www.hs.fi/yhteystiedot/">Yhteystiedot</a></li> <li><a href="http://www.hs.fi/kayttoehdot/">Käyttöehdot</a></li> <li><a href="http://www.sanoma.fi/tietosuojalauseke">Tietosuoja</a></li> <li><a href="http://www.hs.fi/rekisteriseloste">Rekisteriseloste</a></li> </ul> </div> <div style="clear:both" /> <div id="corporate-footer"> <a href="http://media.sanoma.fi"> <div class="corporate-footer"> <p> Sanoma Media Finlandilta saat käyttöösi monikanavaiset laadukkaat mediaympäristöt. Rakennamme kanssasi tarpeisiisi ratkaisun laajemmasta, tavoittavimmasta ja joustavimmasta mediavalikoimasta. </p> <p class="link">Lue lisää osoitteesta media.sanoma.fi</p> </div> </a> </div> <style>@charset &quot;UTF-8&quot;;@font-face{font-family:TheMessage;font-style:normal;font-weight:400;src:url(/webstaticfonts/the_message-regular-webfont.eot?#iefix) format(&quot;embedded-opentype&quot;),url(/webstatic/fonts/the_message-regular-webfont.woff) format(&quot;woff&quot;),url(/webstatic/fonts/the_message-regular-webfont.ttf) format(&quot;truetype&quot;),url(/webstatic/fonts/the_message-regular-webfont.svg#the_messageregular) format(&quot;svg&quot;)}.cb-container{background:#f2f2f2;width:100%;font-family:TheMessage;font-size:14px;line-height:18px;box-sizing:border-box;padding:20px 10px;box-shadow:0 0 2px rgba(0,0,0,.5);position:fixed;bottom:0;z-index:1000}.cb-container a:link,.cb-container a:visited{color:#1aa1e3}.cb-container .cb-content{max-width:980px;margin:0 auto;overflow:hidden}.cb-container .cb-text{max-width:80%;box-sizing:border-box;display:table-cell;vertical-align:middle}.cb-container .cb-text a{white-space:nowrap}.cb-container .cb-button{box-sizing:border-box;padding-left:20px;display:table-cell;vertical-align:middle}.cb-container a.cb-d-button{background:#1aa1e3;color:#fff;line-height:40px;display:block;text-align:center;min-width:100px;max-width:120px;margin:7px auto;text-decoration:none}.cb-container a.cb-d-button:hover,.cb-container a.dButton:active{background:#48b4e9}.cb-container a.cb-m-button{width:40px;height:40px;margin:6px 0;line-height:40px;text-align:center;border-radius:50%;border:1px solid #1aa1e3;color:#1aa1e3;text-decoration:none;display:none}.cb-container a.cb-m-button:before{content:&quot;\2715&quot;;font-size:24px}.cb-container a.cb-m-button:active,.cb-container a.cb-m-button:hover{background:#1aa1e3;color:#fff}@media screen and (max-width:800px){.cb-container{font-size:13px;padding:15px 10px}}@media screen and (max-width:750px){.cb-container{font-size:13px}.cb-container .cb-long-version{display:none}.cb-container a.cb-d-button{margin:0 auto}}@media screen and (max-width:500px){.cb-container a.cb-d-button{display:none}.cb-container a.cb-m-button{display:block}.cb-container{font-size:12px;padding:10px}}</style><script>$(function(){&quot;use strict&quot;;var t,e,i=&quot;ecc-session&quot;,s=&quot;ecc-init&quot;,c=&quot;ecc-agreed&quot;,a=new Date,o=hs.cookieUtil.getObject(c);a.setFullYear(a.getFullYear()+100);var n=function(){var t=&apos;&lt;div class=&quot;cb-container&quot;&gt;&lt;div class=&quot;cb-content&quot;&gt;&lt;div class=&quot;cb-text&quot;&gt;Jotta sivuston käyttö olisi sinulle sujuvaa ja mainokset kiinnostavia, Sanoma yhteistyökumppaneineen käyttää evästeitä. Jatkamalla lukemista hyväksyt evästeet. &lt;a href=&quot;http://www.sanoma.com/fi/tietosuoja/lue-lisaa-evasteista&quot; class=&quot;cb-more-link&quot;&gt;Lisätietoja&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;cb-button&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;cb-d-button&quot;&gt;Sulje&lt;/a&gt;&lt;a href=&quot;#&quot; class=&quot;cb-m-button&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&apos;;$(&quot;body&quot;).append(t),$(&quot;.cb-container .cb-button&quot;).click(function(e){e.preventDefault();hs.cookieUtil.setObject(c,a,!0),$(&quot;.cb-container&quot;).remove()})};o!==!0&amp;&amp;(t=hs.cookieUtil.getObject(i),e=hs.cookieUtil.getObject(s),t!==!0&amp;&amp;e!==!0?(hs.cookieUtil.setObject(i,null,!0),hs.cookieUtil.setObject(s,a,!0)):e!==!0?hs.cookieUtil.setObject(s,a,!0):t!==!0&amp;&amp;e===!0&amp;&amp;n())});</script> </div> </div>  </footer>   <script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement(&apos;script&apos;);
+    fbds.async = true;
+    fbds.src = &apos;//connect.facebook.net/en_US/fbds.js&apos;;
+    var s = document.getElementsByTagName(&apos;script&apos;)[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+  _fbq.push([&apos;addPixelId&apos;, &apos;1436018986664143&apos;]);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push([&apos;track&apos;, &apos;PixelInitialized&apos;, {}]);
+</script> <noscript><img height="1" width="1" alt style="display:none" src="https://www.facebook.com/tr?id=1436018986664143&ev=NoScript" /></noscript>  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script> <script type="text/javascript">
+    var _sf_async_config={};
+    /** CONFIGURATION START **/
+    _sf_async_config.uid = 54060;
+    _sf_async_config.domain = &apos;hs.fi&apos;;
+    _sf_async_config.useCanonical = true;
+  //  _sf_async_config.sections = &apos;Change this to your Section name&apos;;  //CHANGE THIS
+  //  _sf_async_config.authors = &apos;Change this to your Author name&apos;;    //CHANGE THIS
+    /** CONFIGURATION END **/
+    (function(){
+      function loadChartbeat() {
+        window._sf_endpt=(new Date()).getTime();
+        var e = document.createElement(&apos;script&apos;);
+        e.setAttribute(&apos;language&apos;, &apos;javascript&apos;);
+        e.setAttribute(&apos;type&apos;, &apos;text/javascript&apos;);
+        e.setAttribute(&apos;src&apos;, &apos;//static.chartbeat.com/js/chartbeat.js&apos;);
+        document.body.appendChild(e);
+      }
+      var oldonload = window.onload;
+      window.onload = (typeof window.onload != &apos;function&apos;) ?
+         loadChartbeat : function() { oldonload(); loadChartbeat(); };
+    })();
+</script> </div>  <script src="//gatling.nelonenmedia.fi/files/ruutuplayer/v2/stable/ruutu-player-loader.js" /> <script type="text/javascript">if(typeof wabtn4fg===&quot;undefined&quot;){wabtn4fg=1;h=document.head||document.getElementsByTagName(&quot;head&quot;)[0],s=document.createElement(&quot;script&quot;);s.type=&quot;text/javascript&quot;;s.src=&quot;/webstatic/js/whatsapp-button.js&quot;;h.appendChild(s);}</script> </body> </html> 

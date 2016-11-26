@@ -1,0 +1,317 @@
+   <html lang="en-US" prefix="og: http://ogp.me/ns#">  <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <title>Announcing Ember.JS and Broccoli.JS Task Runner Extension for Visual Studio - Ryan Hayes</title><link rel="profile" href="http://gmpg.org/xfn/11" /> <link rel="pingback" href="https://ryanhayes.net/xmlrpc.php" />  <script>
+  (function(i,s,o,g,r,a,m){i[&apos;GoogleAnalyticsObject&apos;]=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,&apos;script&apos;,&apos;//www.google-analytics.com/analytics.js&apos;,&apos;ga&apos;);
+
+  ga(&apos;create&apos;, &apos;UA-15608898-1&apos;, &apos;ryanhayes.net&apos;);
+  ga(&apos;send&apos;, &apos;pageview&apos;);
+
+</script>  <link rel="canonical" href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/" /> <link rel="publisher" href="https://plus.google.com/+RyanHayesNet" /> <meta property="og:locale" content="en_US" /> <meta property="og:type" content="article" /> <meta property="og:title" content="Announcing Ember.JS and Broccoli.JS Task Runner Extension for Visual Studio - Ryan Hayes" /> <meta property="og:description" content="Visual Studio has an amazing task runner that lets you integrate run task-based command line tools into VS’s build system.  This means you can list commands and even set them to run with builds right inside Visual Studio without even touching the command line!  This is great for getting your team using these command line…" /> <meta property="og:url" content="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/" /> <meta property="og:site_name" content="Ryan Hayes" /> <meta property="article:publisher" content="https://www.facebook.com/Mr.Ryan.Hayes" /> <meta property="article:author" content="http://www.facebook.com/Mr.Ryan.Hayes" /> <meta property="article:section" content="Blog" /> <meta property="article:published_time" content="2015-10-16T02:33:15+00:00" /> <meta property="article:modified_time" content="2015-11-16T02:42:52+00:00" /> <meta property="og:updated_time" content="2015-11-16T02:42:52+00:00" /> <meta property="og:image" content="https://github.com/RyannosaurusRex/BroccoliTaskRunner/blob/master/art/bindings.png?raw=true" /> <meta name="twitter:card" content="summary_large_image" /> <meta name="twitter:description" content="Visual Studio has an amazing task runner that lets you integrate run task-based command line tools into VS’s build system.  This means you can list commands and even set them to run with builds right inside Visual Studio without even touching the command line!  This is great for getting your team using these command line…" /> <meta name="twitter:title" content="Announcing Ember.JS and Broccoli.JS Task Runner Extension for Visual Studio - Ryan Hayes" /> <meta name="twitter:site" content="@RyannosaurusRex" /> <meta name="twitter:domain" content="Ryan Hayes" /> <meta name="twitter:image:src" content="https://i1.wp.com/ryanhayes.net/wp-content/uploads/2015/09/imgres.jpg?resize=402%2C125" /> <meta name="twitter:creator" content="@RyannosaurusRex" />  <link rel="alternate" type="application/rss+xml" title="Ryan Hayes » Feed" href="https://ryanhayes.net/feed/" /> <link rel="alternate" type="application/rss+xml" title="Ryan Hayes » Comments Feed" href="https://ryanhayes.net/comments/feed/" /> <link rel="alternate" type="application/rss+xml" title="Ryan Hayes » Announcing Ember.JS and Broccoli.JS Task Runner Extension for Visual Studio Comments Feed" href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/feed/" /> <link rel="stylesheet" id="bluthcodes-style-css" href="https://ryanhayes.net/wp-content/plugins/bluthcodes/style.css?ver=4.1.11" type="text/css" media="all" /> <link rel="stylesheet" id="et_monarch-open-sans-css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" media="all" /> <link rel="stylesheet" id="et_monarch-css-css" href="https://ryanhayes.net/wp-content/plugins/monarch/css/style.css?ver=1.2.1" type="text/css" media="all" /> <link rel="stylesheet" id="bluth-bootstrap-css" href="https://ryanhayes.net/wp-content/themes/bliss/assets/css/bootstrap.min.css?ver=4.1.11" type="text/css" media="all" /> <link rel="stylesheet" id="bluth-style-css" href="https://ryanhayes.net/wp-content/themes/bliss/style.css?ver=4.1.11" type="text/css" media="all" /> <link rel="stylesheet" id="bluth-responsive-css" href="https://ryanhayes.net/wp-content/themes/bliss/assets/css/style-responsive.css?ver=4.1.11" type="text/css" media="all" /> <link rel="stylesheet" id="bluth-fontello-css" href="https://ryanhayes.net/wp-content/themes/bliss/assets/css/fontello.css?ver=4.1.11" type="text/css" media="all" /> <link rel="stylesheet" id="bluth-nivo-css" href="https://ryanhayes.net/wp-content/themes/bliss/assets/css/nivo-slider.css?ver=4.1.11" type="text/css" media="all" /> <link rel="stylesheet" id="bluth-magnific-css" href="https://ryanhayes.net/wp-content/themes/bliss/assets/css/magnific-popup.css?ver=4.1.11" type="text/css" media="all" /> <link rel="stylesheet" id="bluth-snippet-css" href="https://ryanhayes.net/wp-content/themes/bliss/assets/css/jquery.snippet.min.css?ver=4.1.11" type="text/css" media="all" /> <link rel="stylesheet" id="bluth-googlefonts-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A800%7CNoto+Serif%3A400%7CLato%3A400%2C700%2C400italic%7COpen+Sans%3A400&subset=latin&ver=4.1.11" type="text/css" media="all" /> <link rel="stylesheet" id="jetpack-top-posts-widget-css" href="https://ryanhayes.net/wp-content/plugins/jetpack/modules/widgets/top-posts/style.css?ver=20141013" type="text/css" media="all" /> <link rel="stylesheet" id="genericons-css" href="https://ryanhayes.net/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1" type="text/css" media="all" /> <link rel="stylesheet" id="jetpack_css-css" href="https://ryanhayes.net/wp-content/plugins/jetpack/css/jetpack.css?ver=3.6" type="text/css" media="all" /> <script type="text/javascript" src="https://ryanhayes.net/wp-includes/js/jquery/jquery.js?ver=1.11.1" /> <script type="text/javascript" src="https://ryanhayes.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1" /> <script type="text/javascript" src="https://ryanhayes.net/wp-content/plugins/jetpack/modules/related-posts/related-posts.js?ver=20150408" /> <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ryanhayes.net/xmlrpc.php?rsd" /> <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ryanhayes.net/wp-includes/wlwmanifest.xml" /> <link rel="shortlink" href="https://wp.me/p2yS2e-15Lyhk" /> <style type="text/css" id="et-social-custom-css"> </style> <link rel="dns-prefetch" href="//i0.wp.com" /> <link rel="dns-prefetch" href="//i1.wp.com" /> <link rel="dns-prefetch" href="//i2.wp.com" /> <style> h1,h2,h3,h4,h5{font-family: &quot;Open Sans&quot;,serif;} .widget_calendar table &gt; caption{font-family: &quot;Open Sans&quot;,serif;} body{font-family: &quot;Noto Serif&quot;,Helvetica,sans-serif;} .navbar .nav &gt; li &gt; a{font-family: &quot;Lato&quot;,Helvetica,sans-serif;} .brand-text h1, .mini-text h1{font-family: &quot;Open Sans&quot;,Helvetica,sans-serif;} </style> <style type="text/css"> .box, .entry-container{ box-shadow: 0 0 0 1px rgba(0,0,0,0.05); }.entry-content p, .entry-content ul li, .entry-content p, .entry-content ol li{ font-size:16px; }.entry-content p, .entry-content ul li, .entry-content p, .entry-content ol li{ line-height:1.5; }.top-color, .widget_tag_cloud .tagcloud a:hover, .top-line, .nav-line{ background-color:#45b0ee; }#side-bar .widget_recent_entries li:hover, #side-bar .widget_nav_menu div &gt; ul &gt; li:hover, #side-bar .widget_categories li:hover, #side-bar .widget_recent_comments li:hover, #side-bar .widget_meta li:hover, #side-bar .widget_pages li:hover, #side-bar .widget_archive li:hover, #bl_side_posts &gt; ul li:hover, #bl_side_comments &gt; ul li:hover{ border-left: 3px solid #45b0ee; } .site-footer #footer-body .widget_nav_menu a:hover, .site-footer #footer-body .widget_archive a:hover, .site-footer #footer-body .widget_tag_cloud a:hover, .site-footer #footer-body .widget_recent_entries a:hover, .site-footer #footer-body .widget_meta a:hover, .site-footer #footer-body .widget_categories a:hover, .site-footer #footer-body .widget_pages a:hover, #bl_side_tags .bl_tab_tag:hover{ background-color: #45b0ee; } .dropdown-menu{ border-top: 2px solid #45b0ee; } .bl_tabs ul li .tab_text a span, a{ color: #45b0ee; }body{ background: #EDEDED; } .entry-title a{ color: #333333; } .entry-content p, .entry-content ul li, .entry-content p, .entry-content ol li{ color: #333333; } #masthead .top-banner, #masthead .brand h1, #masthead .brand small{ color: #FFFFFF; } #masthead .top-banner .top-banner-social a { color: #FFFFFF; } header#masthead,.navbar-inverse .navbar-inner,.dropdown-menu,.widget-head{ background: #FFFFFF; } .navbar-inverse .nav li.dropdown.open &gt; .dropdown-toggle, .navbar-inverse .nav li.dropdown.active &gt; .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active &gt; .dropdown-toggle, div.navbar-inverse .nav-collapse .nav &gt; li &gt; a, .navbar-inverse .nav-collapse .dropdown-menu a,#masthead .bluth-navigation.shrunk .mini-logo h1, #masthead .bluth-navigation.shrunk .mini-logo img,#masthead .searchform input,.widget-head, .widget-head a, .navbar .brand, #masthead .searchform a{color:#777777; } .widget-head{ background: #FFFFFF; } .widget-head{color:#333333;} footer.site-footer{ background:#333333; }#footer-body h3{color: #FFFFFF; }#footer-body &gt; div ul li a, footer.site-footer &gt; * { color: #FFFFFF; }#masthead .top-banner{ background: #444444; } .post-format-standard{color: #556270}.tab_standard{background-color:#556270;}.format-standard .post-meta ~ * a, .format-standard .post-meta a:hover, .format-standard .entry-title a:hover{color:#556270;}article.format-standard p a, article.format-standard p a:hover span:before, article.format-standard p a:focus span:before, .format-standard a.more-link, .format-standard a.more-link:hover{ color: #556270; padding:0; margin:0; }.post-format-gallery{color: #4ECDC4}.tab_gallery{background-color:#4ECDC4;}.format-gallery .post-meta ~ * a, .format-gallery .post-meta a:hover, .format-gallery .entry-title a:hover{color:#4ECDC4;}article.format-gallery p a, article.format-gallery p a:hover span:before, article.format-gallery p a:focus span:before, .format-gallery a.more-link, .format-gallery a.more-link:hover{ color: #4ECDC4; padding:0; margin:0; }.post-format-image{color: #C7F464}.tab_image{background-color:#C7F464;}.format-image .post-meta ~ * a, .format-image .post-meta a:hover, .format-image .entry-title a:hover{color:#C7F464;}article.format-image p a, article.format-image p a:hover span:before, article.format-image p a:focus span:before, .format-image a.more-link, .format-image a.more-link:hover{ color: #C7F464; padding:0; margin:0; }.post-format-link, .post-format-link a{color: #FF6B6B}.tab_link{background-color:#FF6B6B;}.format-link .post-meta ~ * a, .format-link .post-meta a:hover, .format-link .entry-title a:hover{color:#FF6B6B;}article.format-link p a, article.format-link p a:hover span:before, article.format-link p a:focus span:before, .format-link a.more-link, .format-link a.more-link:hover{ color: #FF6B6B; padding:0; margin:0; }.post-format-quote{color: #C44D58}.tab_quote{background-color:#C44D58;}.format-quote .post-meta ~ * a, .format-quote .post-meta a:hover, .format-quote .entry-title a:hover{color:#C44D58;}article.format-quote p a, article.format-quote p a:hover span:before, article.format-quote p a:focus span:before, .format-quote a.more-link, .format-quote a.more-link:hover{ color: #C44D58; padding:0; margin:0; }.post-format-audio{color: #5EBCF2}.tab_audio{background-color:#5EBCF2;}.format-audio .post-meta ~ * a, .format-audio .post-meta a:hover, .format-audio .entry-title a:hover{color:#5EBCF2;}article.format-audio p a, article.format-audio p a:hover span:before, article.format-audio p a:focus span:before, .format-audio a.more-link, .format-audio a.more-link:hover{ color: #5EBCF2; padding:0; margin:0; }.post-format-video{color: #A576F7}.tab_video{background-color:#A576F7;}.format-video .post-meta ~ * a, .format-video .post-meta a:hover, .format-video .entry-title a:hover{color:#A576F7;}article.format-video p a, article.format-video p a:hover span:before, article.format-video p a:focus span:before, .format-video a.more-link, .format-video a.more-link:hover{ color: #A576F7; padding:0; margin:0; }.post-format-status{color: #A576F7}.tab_status{background-color:#556270;}.format-status .post-meta ~ * a, .format-status .post-meta a:hover, .format-status .entry-title a:hover{color:#556270;}article.format-status p a, article.format-status p a:hover span:before, article.format-status p a:focus span:before, .format-status a.more-link, .format-status a.more-link:hover{ color: #A576F7; padding:0; margin:0; }.sticky .post-format-badge{color: };.sticky .post-meta ~ * a, .sticky .post-meta a:hover, .sticky .entry-title a:hover{color: #90DB91;}#related-posts { display:none; } h1, h2, h3 { font-weight:700; } #discovery { display:none; }</style> </head> <body class="single single-post postid-1001347698 single-format-standard et_monarch"> <div class="bl_search_overlay" /> <script type="text/javascript">
+	
+		var y;
+		y = jQuery(window).scrollTop();
+		if(jQuery(window).width() &gt; 979){
+			// Shrink menu on scroll
+			var didScroll = false;
+			jQuery(window).scroll(function() {
+			    didScroll = true;
+			});
+			setInterval(function() {
+			    if ( didScroll ) {
+			        didScroll = false;
+			        y = jQuery(window).scrollTop();
+			        if(y &gt; jQuery(&apos;#masthead .top-banner&apos;).height() ){
+			        	jQuery(&apos;#masthead .bluth-navigation&apos;).addClass(&apos;fixed&apos;);
+			        	jQuery(&apos;#main&apos;).css(&apos;padding-top&apos;, 71);
+			        }else{
+			        	jQuery(&apos;#masthead .bluth-navigation&apos;).removeClass(&apos;fixed&apos;);
+			        	jQuery(&apos;#main&apos;).css(&apos;padding-top&apos;, &apos;&apos;);
+			        }
+			        if(y &gt; ( jQuery(&apos;#masthead .top-banner&apos;).height()+100 ) ){
+			        	jQuery(&apos;#masthead .bluth-navigation&apos;).addClass(&apos;shrunk&apos;);
+			        }else{
+			        	jQuery(&apos;#masthead .bluth-navigation&apos;).removeClass(&apos;shrunk&apos;);
+			        }
+
+					changeHeader();
+			    }
+			}, 50);
+		}
+		
+		jQuery(function() {
+		// if the page is in mobile mode, then don&apos;t make the header transparent!
+		if( jQuery(window).width() &gt; 979 )
+			changeHeader();
+		else{
+			jQuery(&apos;#masthead .bluth-navigation .navbar .nav &gt; li &gt; a, #masthead .searchform a&apos;).animate({ color: &apos;#777777&apos;}, 10);
+			jQuery(&apos;#masthead .bluth-navigation&apos;).animate({ backgroundColor: &apos;#FFFFFF&apos;}, 100);
+		}
+
+		// listen to resize!
+	    var didresize = false;
+	    jQuery(window).resize( function() {
+
+			// if the user refreshes the page while the sticky header is active, then add some padding for a friend.
+			// if( y &gt; jQuery(&apos;#masthead&apos;).height() )
+				// jQuery(&apos;#main&apos;).css(&apos;padding-top&apos;, (/*jQuery(&apos;#masthead&apos;).height()+*/25));
+			// else
+				// jQuery(&apos;#main&apos;).css(&apos;padding-top&apos;, (/*jQuery(&apos;#masthead&apos;).height()+*/25));
+	        // didresize = true;
+	    });
+	    setInterval(function() {
+	        if ( didresize ) {
+	            didresize = false;
+	        }
+	    }, 3000);
+
+
+
+				resetNavLine(250);
+
+		jQuery(&apos;#masthead .nav li&apos;).mouseover(function(){
+			jQuery(&apos;.nav-line&apos;).stop();
+			jQuery(&apos;.nav-line&apos;).animate({
+				left : jQuery(this).offset().left-jQuery(&apos;.bluth-navigation .container .navbar&apos;).offset().left,
+				width: jQuery(this).width()
+			}, 250);
+		});
+		jQuery(&apos;#masthead .nav li&apos;).mouseout(function(){
+			resetNavLine(250);
+		});
+	});
+
+	// change the color of the header if it&apos;s transparent
+	function changeHeader(){
+		var y;
+		y = jQuery(window).scrollTop();
+		
+		jQuery(&apos;#masthead .bluth-navigation&apos;).stop();
+			}
+	function resetNavLine(time){
+		// didScroll = true;
+		jQuery(&apos;.nav-line&apos;).stop();
+		if(jQuery(&apos;.nav&apos;).children(&apos;li&apos;).hasClass(&apos;current-menu-item&apos;)){
+			jQuery(&apos;.nav-line&apos;).animate({
+				left : jQuery(&apos;.current-menu-item&apos;).offset().left-jQuery(&apos;.bluth-navigation .container .navbar&apos;).offset().left,
+				width: jQuery(&apos;.current-menu-item&apos;).width()
+			}, time);
+		}else if(jQuery(&apos;.nav&apos;).children(&apos;li&apos;).hasClass(&apos;current-menu-ancestor&apos;)){
+			jQuery(&apos;.nav-line&apos;).animate({
+					left : jQuery(&apos;.current-menu-ancestor&apos;).offset().left-jQuery(&apos;.bluth-navigation .container .navbar&apos;).offset().left,
+					width: jQuery(&apos;.current-menu-ancestor&apos;).width()
+			}, time);
+		}else{
+			jQuery(&apos;.nav-line&apos;).animate({
+				width : 0
+			});
+		}
+	}
+	</script> <div id="fb-root" /> <script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = &quot;//connect.facebook.net/en_GB/all.js#xfbml=1&amp;appId=107778392597863&quot;;
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, &apos;script&apos;, &apos;facebook-jssdk&apos;));</script> <div style="background-image: url('https://ryanhayes.net/wp-content/themes/bliss/assets/img/pattern/large/grid.png')" id="background_pattern" /> <div id="page" class="site"> <header id="masthead" role="banner" class="header_normal"> <div class="image-overflow"> <div class="header-background-image"> </div> </div> <div class="row-fluid top-banner"> <div class="container"> <div class="banner-overlay" /> <a class="brand brand-text" href="https://ryanhayes.net/" title="Ryan Hayes" rel="home"><h1>Ryan Hayes<small>Freelance Software Engineer, Speaker, Blogger, Guitarist, Microsoft MVP, Red Hat Alumni, Open Source advocate.</small></h1></a> <div class="top-banner-social pull-right"><a target="_blank" href="http://twitter.com/ryannosaurusrex"><i class="icon-twitter-1" /></a><a target="_blank" href="http://gplus.to/ryanhayes"><i class="icon-gplus-1" /></a><a target="_blank" href="http://linkedin.com/in/jryanhayes"><i class="icon-linkedin-1" /></a><a target="_blank" href="http://youtube.com/ryanhayesnet"><i class="icon-youtube" /></a><a target="_blank" href="http://instagram.com/ryannosaurusrex"><i class="icon-instagram-1" /></a> </div> </div> </div> <div class="row-fluid bluth-navigation"> <div class="container"> <div class="mini-logo"> <a class="mini mini-text" href="https://ryanhayes.net/" title="Ryan Hayes" rel="home"><h1>Ryan Hayes</h1></a> </div> <div class="navbar navbar-inverse"> <div class="navbar-inner"> <div class="visible-tablet visible-phone bl_search"> <form action="https://ryanhayes.net/" method="get" class="searchform" role="search"> <fieldset> <a href="#"><i class="icon-search-1" /></a> <input type="text" name="s" value placeholder="Search.." /> </fieldset> </form> </div>   <div class="nav-collapse collapse"><ul id="menu-main-menu" class="nav visible-desktop"><li id="menu-item-1001347362" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ryanhayes.net/contact/">Contact</a></li><li id="menu-item-1001347717" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ryanhayes.net/now/">Now</a></li><li id="menu-item-1001347316" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ryanhayes.net/about-ryan-hayes/">About Me</a></li><li id="menu-item-1001347608" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ryanhayes.net/blog/">The Blog</a></li><li id="menu-item-1001347305" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://careers.stackoverflow.com/ryan-hayes">Resume/CV</a></li><li id="menu-item-1001347318" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ryanhayes.net/services/">Hire Me</a></li><li id="menu-item-1001347262" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">The Community<i class="icon-angle-down" /></a> <ul class="dropdown-menu"> <li id="menu-item-1001347389" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://github.com/RyannosaurusRex">Github</a></li> <li id="menu-item-1001347304" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://www.codeplex.com/site/users/view/RyannosaurusRex">Codeplex</a></li> <li id="menu-item-1001347306" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://programmers.stackexchange.com/users/1521/ryan-hayes">Programmers.SE</a></li> <li id="menu-item-1001347307" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://stackoverflow.com/users/403661/ryan-hayes">StackOverflow</a></li> <li id="menu-item-1001347314" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://mvp.support.microsoft.com/profile/Ryan.Hayes">MVP Profile</a></li> </ul> </li><li id="menu-item-1001347315" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://sonatacove.freshbooks.com">Client Login</a></li></ul></div><div class="menu-main-menu-container"><div id="mobile-menu" class="pull-right visible-tablet visible-phone mobile-menu"><form style="margin-top: 15px; margin-bottom: 5px;"><select style="max-width:150px;" onchange="if (this.value) window.location.href=this.value"><option>-- Menu --</option><option value="https://ryanhayes.net/contact/">Contact</option> <option value="https://ryanhayes.net/now/">Now</option> <option value="https://ryanhayes.net/about-ryan-hayes/">About Me</option> <option value="https://ryanhayes.net/blog/">The Blog</option> <option value="http://careers.stackoverflow.com/ryan-hayes">Resume/CV</option> <option value="https://ryanhayes.net/services/">Hire Me</option> <option value>The Community<option value="https://github.com/RyannosaurusRex"> - Github</option> <option value="http://www.codeplex.com/site/users/view/RyannosaurusRex"> - Codeplex</option> <option value="http://programmers.stackexchange.com/users/1521/ryan-hayes"> - Programmers.SE</option> <option value="http://stackoverflow.com/users/403661/ryan-hayes"> - StackOverflow</option> <option value="https://mvp.support.microsoft.com/profile/Ryan.Hayes"> - MVP Profile</option> </option> <option value="https://sonatacove.freshbooks.com">Client Login</option> </select></form></div></div> </div> <div class="nav-line" /> </div> <div class="bl_search visible-desktop nav-collapse collapse"> <form action="https://ryanhayes.net/" method="get" class="searchform" role="search"> <fieldset> <a href="#"><i class="icon-search-1" /></a> <input type="text" name="s" value placeholder="Search.." /> </fieldset> </form> </div> </div> </div>  </header> <div id="main" class="container"> <div id="primary" class="row right_side"> <div id="content" class="span8" role="main"> <article id="post-1001347698" class="post-1001347698 post type-post status-publish format-standard has-post-thumbnail hentry category-blog"> <div class="post-title box"> <h1 class="entry-title"><a href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/">Announcing Ember.JS and Broccoli.JS Task Runner Extension for Visual Studio</a></h1> <div class="post-meta"> <ul> <li><time class="entry-date updated" datetime="2015-10-16T02:33:15+00:00">16. Oct. 2015</time></li> <li class="divider">/</li> <li><a href="https://ryanhayes.net/blog/" title="View all posts in Blog">Blog</a></li> <li class="divider">/</li> <li><a href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/#comments"><span class="dsq-postid" data-dsqidentifier="1001347698 http://ryanhayes.net/?p=1001347698">No Comments</span></a></li> </ul> </div> <div class="post-format-badge post-format-standard"> <i class="icon-calendar-3" /> </div> </div> <div class="entry-image" style> <a href="https://i1.wp.com/ryanhayes.net/wp-content/uploads/2015/09/imgres.jpg?fit=1024%2C1024" class="lightbox" title="Announcing Ember.JS and Broccoli.JS Task Runner Extension for Visual Studio" rel="bookmark"> <img src="https://i1.wp.com/ryanhayes.net/wp-content/uploads/2015/09/imgres.jpg?resize=402%2C125" class="attachment-gallery-large wp-post-image" alt="imgres" /> </a> </div> <div class="entry-container "> <div class="entry-content"> <p>Visual Studio has an amazing task runner that lets you integrate run task-based command line tools into VS’s build system. This means you can list commands and even set them to run with builds right inside Visual Studio without even touching the command line! This is great for getting your team using these command line tools, while taking baby steps if your team isn’t comfortable with the command line yet. The Broccoli Task Runner adds support for both Broccoli files as well as EmberCLI files, which means all your Ember.JS apps now have full support in Visual Studio!</p> <p>You can <a href="https://visualstudiogallery.msdn.microsoft.com/dd19e6af-a1f7-4606-a82a-46833f810865">download the tools in the Visual Studio Gallery</a> or <a href="https://github.com/RyannosaurusRex/BroccoliTaskRunner">contribute to it (since it’s open source) on Github</a>.</p> <p><img class="alignnone" src="https://github.com/RyannosaurusRex/BroccoliTaskRunner/blob/master/art/bindings.png?raw=true" alt width="361" height="216" /></p> <div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-1001347698" class="share-google-plus-1 sd-button share-icon" href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/?share=google-plus-1" target="_blank" title="Click to share on Google+"><span>Google</span></a></li><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-1001347698" class="share-twitter sd-button share-icon" href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-1001347698" class="share-facebook sd-button share-icon" href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/?share=facebook" target="_blank" title="Share on Facebook"><span>Facebook</span></a></li><li class="share-linkedin"><a rel="nofollow" data-shared="sharing-linkedin-1001347698" class="share-linkedin sd-button share-icon" href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-reddit"><a rel="nofollow" data-shared class="share-reddit sd-button share-icon" href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-pocket"><a rel="nofollow" data-shared class="share-pocket sd-button share-icon" href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li><a href="#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end" /></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-pinterest"><a rel="nofollow" data-shared="sharing-pinterest-1001347698" class="share-pinterest sd-button share-icon" href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-tumblr"><a rel="nofollow" data-shared class="share-tumblr sd-button share-icon" href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-end" /><li class="share-print"><a rel="nofollow" data-shared class="share-print sd-button share-icon" href="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/#print" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end" /></ul></div></div></div></div></div> <div id="jp-relatedposts" class="jp-relatedposts"> <h3 class="jp-relatedposts-headline"><em>Related</em></h3> </div><span class="et_social_bottom_trigger" /> <footer class="entry-meta clearfix"> </footer> </div> </div> <span class="vcard" style="display: none;"> <span class="fn"> <a href="https://ryanhayes.net/author/ryanhayes/" class="author">Ryan Hayes</a> </span> </span> </article> <div style="margin-top: 30px;" class="above_content box pad15"> <article style="text-align: center;"> <div id="google-ads-1" class="google-ads" /> <script type="text/javascript">
+
+			    /* Calculate the width of available ad space */
+			    ad = jQuery(&apos;#google-ads-1&apos;)[0];
+			     
+			    if (ad.getBoundingClientRect().width) {
+			   	 	adWidth = ad.getBoundingClientRect().width; // for modern browsers
+			    } else {
+			    	adWidth = ad.offsetWidth; // for old IE
+			    }
+			     
+			    /* Replace ca-pub-XXX with your AdSense Publisher ID */
+			    google_ad_client = &quot;ca-pub-7576562857125097&quot;;
+			     
+			    /* Replace 1234567890 with the AdSense Ad Slot ID */
+			    google_ad_slot = &quot;5952327740&quot;;
+			    /* Do not change anything after this line */
+			    if ( adWidth &gt;= 728 )
+			    	google_ad_size = [&quot;728&quot;, &quot;90&quot;]; /* Leaderboard 728x90 */
+			    else if ( adWidth &gt;= 468 )
+			    	google_ad_size = [&quot;468&quot;, &quot;60&quot;]; /* Banner (468 x 60) */
+			    else if ( adWidth &gt;= 336 )
+			    	google_ad_size = [&quot;336&quot;, &quot;280&quot;]; /* Large Rectangle (336 x 280) */
+			    else if ( adWidth &gt;= 300 )
+			    	google_ad_size = [&quot;300&quot;, &quot;250&quot;]; /* Medium Rectangle (300 x 250) */
+			    else if ( adWidth &gt;= 250 )
+			    	google_ad_size = [&quot;250&quot;, &quot;250&quot;]; /* Square (250 x 250) */
+			    else if ( adWidth &gt;= 200 )
+			    	google_ad_size = [&quot;200&quot;, &quot;200&quot;]; /* Small Square (200 x 200) */
+			    else if ( adWidth &gt;= 180 )
+			    	google_ad_size = [&quot;180&quot;, &quot;150&quot;]; /* Small Rectangle (180 x 150) */
+			    else
+			    	google_ad_size = [&quot;125&quot;, &quot;125&quot;]; /* Button (125 x 125) */
+			     
+
+			    document.write (
+			    &apos;&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:inline-block;width:&apos;
+			    + google_ad_size[0] + &apos;px;height:&apos;
+			    + google_ad_size[1] + &apos;px&quot; data-ad-client=&quot;&apos;
+			    + google_ad_client + &apos;&quot; data-ad-slot=&quot;&apos;
+			    + google_ad_slot + &apos;&quot;&gt;&lt;/ins&gt;&apos;
+			    );
+			    (adsbygoogle = window.adsbygoogle || []).push({});
+
+			</script> <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+			</script> </article></div> <div class="single-pagination clearfix"> <div class="box clearfix"> <a href="https://ryanhayes.net/how-to-set-up-an-emberjs-app-inside-of-an-asp-net-mvc-app/" class="nav-previous"> <div class="bgfallback"> </div> <span> </span> <div class="tab_icon tab_standard"><i class="icon-calendar-3" /></div> <div class="bgimage" style="background-image: url('https://github.com/RyannosaurusRex/BroccoliTaskRunner/blob/master/art/bindings.png?raw=true');" /> <h5><i class="icon-angle-double-left" /> How To Set Up an EmberJS App Inside of an ASP.NET MVC App</h5> </a> <a href="https://ryanhayes.net/moving-from-ios-to-windows-10-phone-on-the-lumia-950-xl/" class="nav-next" style="float:left;"> <div class="bgfallback"> </div> <span> </span> <div class="tab_icon tab_standard"><i class="icon-calendar-3" /></div> <div class="bgimage" style="background-image: url('https://i1.wp.com/ryanhayes.net/wp-content/uploads/2015/11/download.jpg?resize=194%2C150');" /> <h5>Moving from iOS to Windows 10 Phone on the Lumia 950 XL <i class="icon-angle-double-right" /></h5> </a> </div> </div> <div class="author-meta box"> <div class="author-header" style="background-image:url(http://ryanhayes.net/wp-content/uploads/2014/09/ComputerBackground.jpg); background-size:cover;"> <div class="author-image"> <img src="https://secure.gravatar.com/avatar/fc214b883b1c89fc2d391cb1ebf282b2?s=120&d=retro&r=G" /> </div> </div> <div class="author-body"> <span class="vcard author"> <h2> <span class="fn"> <a href="https://ryanhayes.net/author/ryanhayes/">Ryan Hayes</a> </span> </h2> <p>Ryan is a Microsoft MVP award winner with over eight years of software experience, working with big-name clients such as Discovery Channel, AOL, Toyota, and the National Academy of Sciences. Ryan has helped teams deliver award-winning applications that drive business processes, site traffic, and profit, putting his experience and creativity to work to build amazing solutions for the enterprise web, desktop and mobile platforms.</p> </span> </div> </div> <div id="disqus_thread"> </div> <script type="text/javascript">
+var disqus_url = &apos;https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/&apos;;
+var disqus_identifier = &apos;1001347698 http://ryanhayes.net/?p=1001347698&apos;;
+var disqus_container_id = &apos;disqus_thread&apos;;
+var disqus_shortname = &apos;ryanhayesblog&apos;;
+var disqus_title = &quot;Announcing Ember.JS and Broccoli.JS Task Runner Extension for Visual Studio&quot;;
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = &apos;&apos;;
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don&apos;t block the page
+        var script = document.createElement(&apos;script&apos;);
+        script.async = true;
+        script.src = &apos;?cf_action=sync_comments&amp;post_id=1001347698&apos;;
+
+        var firstScript = document.getElementsByTagName(&apos;script&apos;)[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement(&apos;script&apos;); dsq.type = &apos;text/javascript&apos;;
+    dsq.async = true;
+    dsq.src = &apos;//&apos; + disqus_shortname + &apos;.disqus.com/embed.js&apos;;
+    (document.getElementsByTagName(&apos;head&apos;)[0] || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(dsq);
+})();
+</script> </div> <aside id="side-bar" class="span4 widget-area"> <div id="bl_googlebadge-2" class="box bl_googlebadge"> <div class="widget-body" id="googlebadge">  <div class="g-person" data-width="370" data-href="//plus.google.com/u/0/103600848384812805784" data-rel="author" />  <script type="text/javascript">
+  (function() {
+    var po = document.createElement(&apos;script&apos;); po.type = &apos;text/javascript&apos;; po.async = true;
+    po.src = &apos;https://apis.google.com/js/platform.js&apos;;
+    var s = document.getElementsByTagName(&apos;script&apos;)[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script> </div> </div><div id="text-3" class="box widget_text"> <div class="textwidget"><div style="text-align: center"><img src="/wp-content/uploads/2011/09/mvp-horizontal-fullcolor1.png" width="300" /></div></div> </div><div id="top-posts-2" class="box widget_top-posts"><h3 class="widget-head">What’s Popular</h3><ul> <li> <a href="https://ryanhayes.net/synchronize-node-js-install-version-with-visual-studio-2015/" class="bump-view" data-bump-view="tp"> Synchronize Node.JS Install Version with Visual Studio 2015 </a> </li> <li> <a href="https://ryanhayes.net/redirect-www-non-www-using-web-config/" class="bump-view" data-bump-view="tp"> Redirect WWW to Non-WWW using the Web.config </a> </li> <li> <a href="https://ryanhayes.net/use-css-background-rbga-darken-background-photos-improved-ux/" class="bump-view" data-bump-view="tp"> Use CSS background:rbga to Darken Background Photos For Improved UX </a> </li> <li> <a href="https://ryanhayes.net/why-math-is-important-for-software-engineering-even-if-you-never-use-it-again/" class="bump-view" data-bump-view="tp"> Why Math is Important for Software Engineering (Even if You Never Use it Again) </a> </li> <li> <a href="https://ryanhayes.net/data-annotations-for-entity-framework-4-entities-as-an-mvc-model/" class="bump-view" data-bump-view="tp"> Using DataAnnotations with Entity Framework 4 Entities for a More Dynamic MVC Model </a> </li> <li> <a href="https://ryanhayes.net/how-to-completely-set-up-typescript-in-visual-studio-2012/" class="bump-view" data-bump-view="tp"> How To &quot;Completely&quot; Set-Up TypeScript in Visual Studio 2012 </a> </li> <li> <a href="https://ryanhayes.net/ghost-vs-wordpress-review-and-how-to-migrate/" class="bump-view" data-bump-view="tp"> Ghost VS Wordpress (and Why I Migrated Back to Wordpress) </a> </li> <li> <a href="https://ryanhayes.net/why-you-should-build-your-website-using-static-html-files/" class="bump-view" data-bump-view="tp"> Why You Should Build Your Website Using Static .html Files </a> </li> <li> <a href="https://ryanhayes.net/how-to-set-up-an-emberjs-app-inside-of-an-asp-net-mvc-app/" class="bump-view" data-bump-view="tp"> How To Set Up an EmberJS App Inside of an ASP.NET MVC App </a> </li> <li> <a href="https://ryanhayes.net/moving-from-ios-to-windows-10-phone-on-the-lumia-950-xl/" class="bump-view" data-bump-view="tp"> Moving from iOS to Windows 10 Phone on the Lumia 950 XL </a> </li> </ul></div> </aside> </div> </div> <footer id="colophon" class="site-footer" role="contentinfo"> <div class="container"> <div class="row-fluid" id="footer-body"> <div id="rss_links-2" class="span12 widget_rss_links"><ul><li><a target="_self" href="https://ryanhayes.net/feed/" title="Subscribe to Posts">RSS - Posts</a></li><li><a target="_self" href="https://ryanhayes.net/comments/feed/" title="Subscribe to Comments">RSS - Comments</a></li></ul> </div> </div> </div> <div class="row-fluid" id="footer-bottom"> Copyright 2016 · Ryan Hayes of Sonata Cove Software, LLC · <a href="http://sonatacove.com">sonatacove.com</a> </div> </footer> </div> <script type="text/javascript">
+        // &lt;![CDATA[
+        var disqus_shortname = &apos;ryanhayesblog&apos;;
+        (function () {
+            var nodes = document.getElementsByTagName(&apos;span&apos;);
+            for (var i = 0, url; i &lt; nodes.length; i++) {
+                if (nodes[i].className.indexOf(&apos;dsq-postid&apos;) != -1) {
+                    nodes[i].parentNode.setAttribute(&apos;data-disqus-identifier&apos;, nodes[i].getAttribute(&apos;data-dsqidentifier&apos;));
+                    url = nodes[i].parentNode.href.split(&apos;#&apos;, 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + &apos;#disqus_thread&apos;;
+                }
+            }
+            var s = document.createElement(&apos;script&apos;); 
+            s.async = true;
+            s.type = &apos;text/javascript&apos;;
+            s.src = &apos;//&apos; + disqus_shortname + &apos;.disqus.com/count.js&apos;;
+            (document.getElementsByTagName(&apos;HEAD&apos;)[0] || document.getElementsByTagName(&apos;BODY&apos;)[0]).appendChild(s);
+        }());
+        // ]]&gt;
+        </script> <div class="et_social_pin_images_outer"> <div class="et_social_pinterest_window"> <div class="et_social_modal_header"><h3>Pin It on Pinterest</h3><span class="et_social_close" /></div> <div class="et_social_pin_images" data-permalink="https://ryanhayes.net/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio/" data-title="Announcing Ember.JS and Broccoli.JS Task Runner Extension for Visual Studio" data-post_id="1001347698" /> </div> </div><div class="et_social_sidebar_networks et_social_visible_sidebar et_social_slideright et_social_animated et_social_rectangle et_social_sidebar_flip et_social_mobile_on"> <ul class="et_social_icons_container"><li class="et_social_twitter"> <a href="http://twitter.com/share?text=Announcing%20Ember.JS%20and%20Broccoli.JS%20Task%20Runner%20Extension%20for%20Visual%20Studio&url=https%3A%2F%2Fryanhayes.net%2Fannouncing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio%2F&via=RyannosaurusRex" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_twitter" /> <span class="et_social_overlay" /> </a> </li><li class="et_social_facebook"> <a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fryanhayes.net%2Fannouncing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio%2F&t=Announcing%20Ember.JS%20and%20Broccoli.JS%20Task%20Runner%20Extension%20for%20Visual%20Studio" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_facebook" /> <span class="et_social_overlay" /> </a> </li><li class="et_social_reddit"> <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fryanhayes.net%2Fannouncing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio%2F&title=Announcing%20Ember.JS%20and%20Broccoli.JS%20Task%20Runner%20Extension%20for%20Visual%20Studio" class="et_social_share" rel="nofollow" data-social_name="reddit" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_reddit" /> <span class="et_social_overlay" /> </a> </li><li class="et_social_hackernews"> <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fryanhayes.net%2Fannouncing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio%2F&t=Announcing%20Ember.JS%20and%20Broccoli.JS%20Task%20Runner%20Extension%20for%20Visual%20Studio" class="et_social_share" rel="nofollow" data-social_name="hackernews" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_hackernews" /> <span class="et_social_overlay" /> </a> </li><li class="et_social_buffer"> <a href="https://bufferapp.com/add?url=https%3A%2F%2Fryanhayes.net%2Fannouncing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio%2F&title=Announcing%20Ember.JS%20and%20Broccoli.JS%20Task%20Runner%20Extension%20for%20Visual%20Studio" class="et_social_share" rel="nofollow" data-social_name="buffer" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_buffer" /> <span class="et_social_overlay" /> </a> </li><li class="et_social_googleplus"> <a href="https://plus.google.com/share?url=https%3A%2F%2Fryanhayes.net%2Fannouncing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio%2F&t=Announcing%20Ember.JS%20and%20Broccoli.JS%20Task%20Runner%20Extension%20for%20Visual%20Studio" class="et_social_share" rel="nofollow" data-social_name="googleplus" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_googleplus" /> <span class="et_social_overlay" /> </a> </li><li class="et_social_pinterest"> <a href="#" class="et_social_share_pinterest" rel="nofollow" data-social_name="pinterest" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_pinterest" /> <span class="et_social_overlay" /> </a> </li></ul> <span class="et_social_hide_sidebar et_social_icon" /> </div><div class="et_social_mobile_button" /> <div class="et_social_mobile et_social_fadein"> <div class="et_social_heading">Share This</div> <span class="et_social_close" /> <div class="et_social_networks et_social_simple et_social_rounded et_social_left"> <ul class="et_social_icons_container"><li class="et_social_twitter"> <a href="http://twitter.com/share?text=Announcing%20Ember.JS%20and%20Broccoli.JS%20Task%20Runner%20Extension%20for%20Visual%20Studio&url=https%3A%2F%2Fryanhayes.net%2Fannouncing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio%2F&via=RyannosaurusRex" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_twitter" /> <div class="et_social_network_label"><div class="et_social_networkname">Twitter</div></div> <span class="et_social_overlay" /> </a> </li><li class="et_social_facebook"> <a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fryanhayes.net%2Fannouncing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio%2F&t=Announcing%20Ember.JS%20and%20Broccoli.JS%20Task%20Runner%20Extension%20for%20Visual%20Studio" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_facebook" /> <div class="et_social_network_label"><div class="et_social_networkname">Facebook</div></div> <span class="et_social_overlay" /> </a> </li><li class="et_social_reddit"> <a href="http://www.reddit.com/submit?url=https%3A%2F%2Fryanhayes.net%2Fannouncing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio%2F&title=Announcing%20Ember.JS%20and%20Broccoli.JS%20Task%20Runner%20Extension%20for%20Visual%20Studio" class="et_social_share" rel="nofollow" data-social_name="reddit" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_reddit" /> <div class="et_social_network_label"><div class="et_social_networkname">reddit</div></div> <span class="et_social_overlay" /> </a> </li><li class="et_social_hackernews"> <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fryanhayes.net%2Fannouncing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio%2F&t=Announcing%20Ember.JS%20and%20Broccoli.JS%20Task%20Runner%20Extension%20for%20Visual%20Studio" class="et_social_share" rel="nofollow" data-social_name="hackernews" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_hackernews" /> <div class="et_social_network_label"><div class="et_social_networkname">Hacker News</div></div> <span class="et_social_overlay" /> </a> </li><li class="et_social_buffer"> <a href="https://bufferapp.com/add?url=https%3A%2F%2Fryanhayes.net%2Fannouncing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio%2F&title=Announcing%20Ember.JS%20and%20Broccoli.JS%20Task%20Runner%20Extension%20for%20Visual%20Studio" class="et_social_share" rel="nofollow" data-social_name="buffer" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_buffer" /> <div class="et_social_network_label"><div class="et_social_networkname">Buffer</div></div> <span class="et_social_overlay" /> </a> </li><li class="et_social_googleplus"> <a href="https://plus.google.com/share?url=https%3A%2F%2Fryanhayes.net%2Fannouncing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio%2F&t=Announcing%20Ember.JS%20and%20Broccoli.JS%20Task%20Runner%20Extension%20for%20Visual%20Studio" class="et_social_share" rel="nofollow" data-social_name="googleplus" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_googleplus" /> <div class="et_social_network_label"><div class="et_social_networkname">Google+</div></div> <span class="et_social_overlay" /> </a> </li><li class="et_social_pinterest"> <a href="#" class="et_social_share_pinterest" rel="nofollow" data-social_name="pinterest" data-post_id="1001347698" data-social_type="share"> <i class="et_social_icon et_social_icon_pinterest" /> <div class="et_social_network_label"><div class="et_social_networkname">Pinterest</div></div> <span class="et_social_overlay" /> </a> </li></ul> </div> </div> <div class="et_social_mobile_overlay" /> <div style="display:none"> <div class="grofile-hash-map-fc214b883b1c89fc2d391cb1ebf282b2"> </div> </div> <script type="text/javascript">
+		window.WPCOM_sharing_counts = {&quot;https:\/\/ryanhayes.net\/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio\/&quot;:1001347698};
+		window.WPCOM_jetpack = true;
+				window.WPCOM_site_ID = 37863538;
+			</script> <script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( &apos;ready post-load&apos;, function(){
+			jQuery( &apos;a.share-google-plus-1&apos; ).on( &apos;click&apos;, function() {
+				if ( &apos;undefined&apos; !== typeof windowOpen ){ // If there&apos;s another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( &apos;href&apos; ), &apos;wpcomgoogle-plus-1&apos;, &apos;menubar=1,resizable=1,width=480,height=550&apos; );
+				return false;
+			});
+		});
+		</script> <script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( &apos;ready post-load&apos;, function(){
+			jQuery( &apos;a.share-twitter&apos; ).on( &apos;click&apos;, function() {
+				if ( &apos;undefined&apos; !== typeof windowOpen ){ // If there&apos;s another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( &apos;href&apos; ), &apos;wpcomtwitter&apos;, &apos;menubar=1,resizable=1,width=600,height=350&apos; );
+				return false;
+			});
+		});
+		</script> <script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( &apos;ready post-load&apos;, function(){
+			jQuery( &apos;a.share-facebook&apos; ).on( &apos;click&apos;, function() {
+				if ( &apos;undefined&apos; !== typeof windowOpen ){ // If there&apos;s another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( &apos;href&apos; ), &apos;wpcomfacebook&apos;, &apos;menubar=1,resizable=1,width=600,height=400&apos; );
+				return false;
+			});
+		});
+		</script> <script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( &apos;ready post-load&apos;, function(){
+			jQuery( &apos;a.share-linkedin&apos; ).on( &apos;click&apos;, function() {
+				if ( &apos;undefined&apos; !== typeof windowOpen ){ // If there&apos;s another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( &apos;href&apos; ), &apos;wpcomlinkedin&apos;, &apos;menubar=1,resizable=1,width=580,height=450&apos; );
+				return false;
+			});
+		});
+		</script> <script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( &apos;ready post-load&apos;, function(){
+			jQuery( &apos;a.share-pocket&apos; ).on( &apos;click&apos;, function() {
+				if ( &apos;undefined&apos; !== typeof windowOpen ){ // If there&apos;s another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( &apos;href&apos; ), &apos;wpcompocket&apos;, &apos;menubar=1,resizable=1,width=450,height=450&apos; );
+				return false;
+			});
+		});
+		</script> <script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( &apos;ready post-load&apos;, function(){
+			jQuery( &apos;a.share-tumblr&apos; ).on( &apos;click&apos;, function() {
+				if ( &apos;undefined&apos; !== typeof windowOpen ){ // If there&apos;s another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( &apos;href&apos; ), &apos;wpcomtumblr&apos;, &apos;menubar=1,resizable=1,width=450,height=450&apos; );
+				return false;
+			});
+		});
+		</script> <script type="text/javascript" src="https://ryanhayes.net/wp-content/plugins/jetpack/modules/photon/photon.js?ver=20130122" /> <script type="text/javascript" src="https://ryanhayes.net/wp-content/plugins/monarch/js/idle-timer.min.js?ver=1.2.1" /> <script type="text/javascript">
+/* &lt;![CDATA[ */
+var monarchSettings = {&quot;ajaxurl&quot;:&quot;https:\/\/ryanhayes.net\/wp-admin\/admin-ajax.php&quot;,&quot;pageurl&quot;:&quot;https:\/\/ryanhayes.net\/announcing-ember-js-and-broccoli-js-task-runner-extension-for-visual-studio\/&quot;,&quot;stats_nonce&quot;:&quot;a7530554be&quot;,&quot;share_counts&quot;:&quot;c1e7fec3e8&quot;,&quot;follow_counts&quot;:&quot;560655e174&quot;,&quot;total_counts&quot;:&quot;8d8fe61c40&quot;,&quot;media_single&quot;:&quot;9dee1699bf&quot;,&quot;media_total&quot;:&quot;33447e890c&quot;,&quot;generate_all_window_nonce&quot;:&quot;0d6297edd1&quot;,&quot;no_img_message&quot;:&quot;No images available for sharing on this page&quot;};
+/* ]]&gt; */
+</script> <script type="text/javascript" src="https://ryanhayes.net/wp-content/plugins/monarch/js/custom.js?ver=1.2.1" /> <script type="text/javascript" src="https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201647" /> <script type="text/javascript" src="https://secure.gravatar.com/js/gprofiles.js?ver=2016Novaa" /> <script type="text/javascript">
+/* &lt;![CDATA[ */
+var WPGroHo = {&quot;my_hash&quot;:&quot;&quot;};
+/* ]]&gt; */
+</script> <script type="text/javascript" src="https://ryanhayes.net/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.1.11" /> <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js?ver=3.01" /> <script type="text/javascript" src="https://ryanhayes.net/wp-content/themes/bliss/assets/js/jquery.snippet.min.js?ver=3.01" /> <script type="text/javascript" src="https://ryanhayes.net/wp-content/themes/bliss/assets/js/jquery.nivo.slider.pack.js?ver=3.01" /> <script type="text/javascript" src="https://ryanhayes.net/wp-content/themes/bliss/assets/js/jquery.timeago.js?ver=3.01" /> <script type="text/javascript" src="https://ryanhayes.net/wp-content/themes/bliss/assets/js/bootstrap.min.js?ver=3.01" /> <script type="text/javascript" src="https://ryanhayes.net/wp-content/themes/bliss/assets/js/jquery.magnific-popup.js?ver=3.01" /> <script type="text/javascript">
+/* &lt;![CDATA[ */
+var blu = {&quot;site_url&quot;:&quot;https:\/\/ryanhayes.net&quot;,&quot;ajaxurl&quot;:&quot;https:\/\/ryanhayes.net\/wp-admin\/admin-ajax.php&quot;,&quot;locale&quot;:{&quot;no_search_results&quot;:&quot;No results match your search.&quot;,&quot;searching&quot;:&quot;Searching...&quot;,&quot;search_results&quot;:&quot;Search Results&quot;,&quot;see_all&quot;:&quot;see all&quot;,&quot;loading&quot;:&quot;Loading...&quot;,&quot;no_more_posts&quot;:&quot;No more posts&quot;,&quot;see_more_articles&quot;:&quot;See more articles&quot;,&quot;no_email_provided&quot;:&quot;No email provided&quot;,&quot;thank_you_for_subscribing&quot;:&quot;Thank you for subscribing!&quot;}};
+/* ]]&gt; */
+</script> <script type="text/javascript" src="https://ryanhayes.net/wp-content/themes/bliss/assets/js/theme.min.js?ver=3.01" /> <script type="text/javascript" src="https://ryanhayes.net/wp-content/themes/bliss/assets/js/plugins.js?ver=3.01" /> <script type="text/javascript" src="https://ryanhayes.net/wp-content/themes/bliss/assets/js/retina.js?ver=3.01" /> <script type="text/javascript" src="https://ryanhayes.net/wp-includes/js/comment-reply.min.js?ver=4.1.11" /> <script type="text/javascript">
+/* &lt;![CDATA[ */
+var sharing_js_options = {&quot;lang&quot;:&quot;en&quot;,&quot;counts&quot;:&quot;1&quot;};
+/* ]]&gt; */
+</script> <script type="text/javascript" src="https://ryanhayes.net/wp-content/plugins/jetpack/modules/sharedaddy/sharing.js?ver=3.6" /> <script type="text/javascript" src="https://stats.wp.com/e-201647.js" async defer /> <script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ &apos;view&apos;, {v:&apos;ext&apos;,j:&apos;1:3.6&apos;,blog:&apos;37863538&apos;,post:&apos;1001347698&apos;,tz:&apos;0&apos;,srv:&apos;ryanhayes.net&apos;} ]);
+	_stq.push([ &apos;clickTrackerInit&apos;, &apos;37863538&apos;, &apos;1001347698&apos; ]);
+</script> </body> </html>
