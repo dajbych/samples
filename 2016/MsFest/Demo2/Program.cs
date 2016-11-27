@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MsFest2016 {
@@ -22,8 +23,10 @@ namespace MsFest2016 {
         public static void Main(string[] args) {
 
             // načtení trénovacích dat
+            var cntA = 0;
+            var files = Directory.GetFiles("dataset");
             var dataset = new ConcurrentBag<DescriptorWithLabel>();
-            Parallel.ForEach(Directory.GetFiles("dataset"), file => {
+            Parallel.ForEach(files, file => {
                 var page = new HtmlDocument();
                 page.Load(file);
                 foreach (var element in page.DocumentNode.Descendants()) {
@@ -35,7 +38,11 @@ namespace MsFest2016 {
                             dataset.Add(new DescriptorWithLabel(word, false));
                         }
                     }
-                }               
+                }
+                var cntB = Interlocked.Increment(ref cntA);
+                if (cntB % 100 == 0) {
+                    Console.WriteLine($"{Math.Round(cntB / (double)files.Length * 100d)} %");
+                }
             });
 
             var input = (from s in dataset select s.ToInputVector()).ToArray();
@@ -67,7 +74,7 @@ namespace MsFest2016 {
             {
                 var test = new Descriptor("@twitter");
                 var result = network.Compute(test.ToInputVector());
-                Console.WriteLine($" Je \"@twitter\" emailová adresa? {Math.Abs(result[0] - 1) < threshold}");
+                Console.WriteLine($" Je \"@twitter\" emailová adresa? {result[0]}");
             }
 
             Console.ReadKey();

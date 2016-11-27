@@ -15,7 +15,7 @@ namespace MsFest2016 {
              - Accord.Neuro
                - Accord
                - Accord.Math
-             - Accord.Statistics
+               - Accord.Statistics
              
              */
 
@@ -57,7 +57,7 @@ namespace MsFest2016 {
             {
                 var test = new Descriptor("@twitter");
                 var result = network.Compute(test.ToInputVector());
-                Console.WriteLine($" Je \"@twitter\" emailová adresa? {Math.Abs(result[0]-1) < threshold}");
+                Console.WriteLine($" Je \"@twitter\" emailová adresa? {result[0]}");
             }
 
             Console.ReadKey();
