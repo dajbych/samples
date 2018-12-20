@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Downloaded <span id="count1"></span> characters</p>
+    <p>Downloaded <span id="count2"></span> characters</p>
+    <p>Downloaded <span id="count3"></span> characters</p>
+
+    <script type="text/javascript">
+
+        // XMLHttpRequest
+        // event-driven programming
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById('count1').innerText = xmlhttp.responseText.length;
+            }
+        };
+        xmlhttp.open('GET', 'http://localhost:55558/');
+        xmlhttp.send();
+
+        // Fetch API + Promise
+        // asynchronous programming
+
+        window.fetch('http://localhost:55558/').then(function (response) {
+            if (response.ok) {
+                response.text().then(function (html) {
+                    document.querySelector('#count2').innerText = html.length;
+                });
+            }
+        });
+
+        // ECMAScript 2017
+        // functional programming 
+
+        async function ecmaScript2017Test() {
+            let response = await window.fetch('http://localhost:55558/');
+            if (response.ok) {
+                let html = await response.text();
+                document.querySelector('#count3').innerText = html.length;
+            }
+        }
+
+        ecmaScript2017Test();
+
+    </script>
+</body>
+</html>
