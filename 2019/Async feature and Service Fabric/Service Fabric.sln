@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "ServiceFabric", "ServiceFabric\ServiceFabric.sfproj", "{3B347B0D-0C8B-4FC6-A359-D4BA6E39F241}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatefulWebApp", "StatefulWebApp\StatefulWebApp.csproj", "{5F106BAA-339B-41B2-95BE-709210C65E2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B347B0D-0C8B-4FC6-A359-D4BA6E39F241}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{3B347B0D-0C8B-4FC6-A359-D4BA6E39F241}.Debug|Any CPU.Build.0 = Debug|x64
+		{3B347B0D-0C8B-4FC6-A359-D4BA6E39F241}.Debug|Any CPU.Deploy.0 = Debug|x64
+		{3B347B0D-0C8B-4FC6-A359-D4BA6E39F241}.Debug|x64.ActiveCfg = Debug|x64
+		{3B347B0D-0C8B-4FC6-A359-D4BA6E39F241}.Debug|x64.Build.0 = Debug|x64
+		{3B347B0D-0C8B-4FC6-A359-D4BA6E39F241}.Debug|x64.Deploy.0 = Debug|x64
+		{3B347B0D-0C8B-4FC6-A359-D4BA6E39F241}.Release|Any CPU.ActiveCfg = Release|x64
+		{3B347B0D-0C8B-4FC6-A359-D4BA6E39F241}.Release|x64.ActiveCfg = Release|x64
+		{3B347B0D-0C8B-4FC6-A359-D4BA6E39F241}.Release|x64.Build.0 = Release|x64
+		{3B347B0D-0C8B-4FC6-A359-D4BA6E39F241}.Release|x64.Deploy.0 = Release|x64
+		{5F106BAA-339B-41B2-95BE-709210C65E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F106BAA-339B-41B2-95BE-709210C65E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F106BAA-339B-41B2-95BE-709210C65E2C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5F106BAA-339B-41B2-95BE-709210C65E2C}.Debug|x64.Build.0 = Debug|Any CPU
+		{5F106BAA-339B-41B2-95BE-709210C65E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F106BAA-339B-41B2-95BE-709210C65E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F106BAA-339B-41B2-95BE-709210C65E2C}.Release|x64.ActiveCfg = Release|Any CPU
+		{5F106BAA-339B-41B2-95BE-709210C65E2C}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4F4FC63-720A-4784-939F-4CB1DF649D7B}
+	EndGlobalSection
+EndGlobal

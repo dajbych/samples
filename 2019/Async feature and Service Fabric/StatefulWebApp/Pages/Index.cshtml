@@ -1,0 +1,38 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Service Fabric Demo</h1>
+    <p>By <a href="https://dajbych.net">Václav Dajbych</a></p>
+</div>
+
+<form method="post" class="form-inline">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var fruit in Model.Fruits) {
+                <tr>
+                    <td>@fruit.Key</td>
+                    <td>@fruit.Value.Name</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <input name="id" class="form-control mx-sm-1" />
+                    <input name="name" class="form-control mx-sm-3" />
+                    <button class="btn btn-primary">Insert</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
